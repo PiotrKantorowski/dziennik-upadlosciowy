@@ -104,6 +104,16 @@ DUiR powstał w kancelarii Kantorowski x Głąb do własnej pracy z portfelem kl
 
 Każdy pakiet to program z licencją organizacyjną, ankieta wdrożeniowa, raport zasad korzystania, checklista i wsparcie — narzędzia wspierają pracę prawnika i nie zastępują jego kontroli ani decyzji. Wdrożenie DUiR albo pytania o niego: przez formularz na **[lexpilot.app](https://lexpilot.app)**.
 
-## Licencja
+## Licencja i autorstwo
 
-Kod udostępniony publicznie do wglądu. Wszelkie prawa zastrzeżone — Kantorowski x Głąb (`"license": "proprietary"` w `composer.json`). Chcesz użyć tego u siebie w innej formie niż własna instalacja na własne potrzeby? Napisz przez [lexpilot.app](https://lexpilot.app).
+**Apache License 2.0** — [LICENSE](LICENSE). Wolno używać, modyfikować i rozpowszechniać, także komercyjnie i we własnych produktach. Warunek jest jeden i dotyczy autorstwa: zachowaj notę o prawach autorskich, kopię licencji i plik [NOTICE](NOTICE), a w plikach, które zmienisz, zaznacz, że zostały zmienione (sekcja 4 licencji). Licencja nie daje praw do nazw i znaków towarowych — w tym „LexPilot", „easyEPU", „Anonimio", „OLA" (sekcja 6).
+
+```
+Copyright 2026 Kancelaria Prawna Kantorowski, Głąb i Wspólnicy Sp.j.
+ul. Baczyńskiego 6B, 35-345 Rzeszów
+KRS 0000897641 — Sąd Rejonowy w Rzeszowie, XII Wydział Gospodarczy KRS
+NIP 5170383178 | REGON 367784460
+https://lexpilot.app
+```
+
+Zbudowałeś coś na tym albo wdrażasz to u siebie? Napisz przez [lexpilot.app](https://lexpilot.app) — chętnie zobaczymy.
