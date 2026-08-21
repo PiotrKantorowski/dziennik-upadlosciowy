@@ -1,0 +1,38 @@
+# --- Sekrety: NIGDY do repozytorium ---
+.env
+.env.*
+!.env.example
+# pliki z sufiksem .env (np. zrzut z panelu hostingu: 0__domains_..._.env)
+*.env
+!.env.example
+*.pem
+*.pfx
+*.key
+
+# Dokument wdrożeniowy konkretnej instalacji — zawiera żywe tokeny środowiska
+HANDOFF_WDROZENIE_SUBDOMENA.md
+
+# --- Dane runtime i logi ---
+storage/logs/*
+!storage/logs/.gitkeep
+storage/cache/
+storage/tmp/
+*.log
+
+# --- Paczki wydaniowe i artefakty budowania (odtwarzalne z kodu) ---
+release_*/
+*.zip
+CHROME_EXTENSION_VERIFY_LOG.txt
+
+# --- Zależności ---
+# Projekt nie ma pakietów zewnętrznych (composer.json wymaga tylko PHP i rozszerzeń),
+# więc composer.lock nie powstaje. Gdyby doszły zależności, lock ma trafić do repozytorium.
+vendor/
+node_modules/
+
+# --- Systemowe i edytorskie ---
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+.agents/

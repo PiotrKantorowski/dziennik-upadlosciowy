@@ -1,0 +1,56 @@
+{
+  "manifest_version": 3,
+  "name": "Dziennik Upadłościowy — asystent KRZ",
+  "version": "1.8.7",
+  "description": "Odczytuje obwieszczenia z portali KRZ i MSiG w Twojej przeglądarce i przekazuje je do lokalnego programu Dziennik Upadłościowy. Działa w Twojej realnej sesji — bez omijania zabezpieczeń.",
+  "permissions": [
+    "storage",
+    "alarms",
+    "tabs",
+    "debugger"
+  ],
+  "host_permissions": [
+    "https://krz.ms.gov.pl/*",
+    "https://prs.ms.gov.pl/*",
+    "https://*.apps.ocp.prod.ms.gov.pl/*",
+    "https://wyszukiwarka-msig.ms.gov.pl/*",
+    "http://127.0.0.1/*",
+    "http://localhost/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "options_page": "options.html",
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Asystent KRZ/MSiG — Dziennik Upadłościowy"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://krz.ms.gov.pl/*",
+        "https://prs.ms.gov.pl/*",
+        "https://*.apps.ocp.prod.ms.gov.pl/*"
+      ],
+      "js": [
+        "content_krz.js"
+      ],
+      "run_at": "document_idle",
+      "all_frames": true,
+      "match_origin_as_fallback": true
+    },
+    {
+      "matches": [
+        "https://wyszukiwarka-msig.ms.gov.pl/*"
+      ],
+      "js": [
+        "content_msig.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "optional_host_permissions": [
+    "http://*/*",
+    "https://*/*"
+  ]
+}

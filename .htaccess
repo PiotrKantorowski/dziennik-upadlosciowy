@@ -1,0 +1,32 @@
+Options -Indexes
+DirectoryIndex index.php
+
+# Wymuszenie PHP 8.2 dla tego katalogu (hosting cyber_folks / LiteSpeed).
+# Bez tego subdomena spada na domyślne PHP 7.4 konta i aplikacja (składnia PHP 8)
+# wykłada się parse errorem — gołe HTTP 500 na każdym wejściu w PHP.
+AddHandler application/x-lsphp82 .php
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteRule ^(app|bin|database|docs|storage|tests|chrome_extension|knowledge)(/|$) - [F,L]
+  RewriteRule ^(composer\.(json|lock)|README\.md|CHANGELOG\.md|RELEASE-NOTES.*|VERSION)$ - [F,L]
+  # Notatki wdrożeniowe, raporty, logi i KAŻDY wariant .env nie są częścią aplikacji WWW.
+  # Wgranie całego folderu projektu (np. HANDOFF*.md z tokenami) nie może ich upublicznić.
+  RewriteRule \.(md|txt|log|bak|sql|lock)$ - [F,L]
+  RewriteRule \.env - [F,L]
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+  RewriteRule ^ index.php [L]
+</IfModule>
+
+<FilesMatch "(^\.(git|ht|user\.ini)|\.env)">
+  Require all denied
+</FilesMatch>
+
+<IfModule mod_authz_core.c>
+  RedirectMatch 403 ^/(app|bin|database|docs|storage|tests|chrome_extension|knowledge)(/|$)
+  RedirectMatch 403 ^/(composer\.(json|lock)|README\.md|CHANGELOG\.md|RELEASE-NOTES.*|VERSION)$
+  RedirectMatch 403 \.(md|txt|log|bak|sql|lock)$
+  RedirectMatch 403 \.env
+</IfModule>
