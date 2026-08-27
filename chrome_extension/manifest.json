@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Dziennik Upadłościowy — asystent KRZ",
-  "version": "1.8.7",
+  "version": "1.8.8",
   "description": "Odczytuje obwieszczenia z portali KRZ i MSiG w Twojej przeglądarce i przekazuje je do lokalnego programu Dziennik Upadłościowy. Działa w Twojej realnej sesji — bez omijania zabezpieczeń.",
   "permissions": [
     "storage",

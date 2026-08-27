@@ -706,9 +706,19 @@
     // kompletny co do sygnatur/rodzajów/dat, a ramka zdąży zgłosić go przed watchdogiem.
     const drillDeadline = (JOB_STARTED_AT || Date.now()) + DRILL_DEADLINE_MS;
 
+    // Metadane samego wiersza postępowania (rodzaj/sygnatura/daty/status) z natury
+    // NIE zawierają identyfikatora ani nazwy DŁUŻNIKA — KRZ pokazuje w wierszu dane
+    // sprawy, nie strony. Bramka `captureMatchesSubject` w background.js (i serwerowe
+    // `textMatchesSubject`) wymagają twardego identyfikatora/nazwy w treści, więc taki
+    // fragment sam w sobie zostałby odrzucony, mimo że strona wyników JUŻ została
+    // zweryfikowana (`resultRowsMatchCurrentQuery`) jako dotycząca właściwego podmiotu.
+    // Dopisujemy więc jawnie kryterium wyszukiwania — ten sam, już zaufany wzorzec co
+    // w `visiblePageText()` przy potwierdzonym braku wyników.
+    const criterionSuffix = job && job.query ? " [Kryterium wyszukiwania: " + job.query + "]" : "";
     const flush = async (item) => {
-      items.push(item);
-      try { await send("krzCapture", { items: [item], url: location.href, subjectId: (job && job.subjectId) || null }); }
+      const withCriterion = criterionSuffix ? { ...item, text: String(item.text || "") + criterionSuffix } : item;
+      items.push(withCriterion);
+      try { await send("krzCapture", { items: [withCriterion], url: location.href, subjectId: (job && job.subjectId) || null }); }
       catch (_) {}
     };
 

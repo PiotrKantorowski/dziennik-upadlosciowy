@@ -1,5 +1,34 @@
 # Changelog
 
+## Wtyczka 1.8.8 (2026-08-27) — KRZ: metadane wiersza dostają jawny identyfikator podmiotu
+
+- BŁĄD (user, raport z 26.08: „Wygląda na to że KRZ w ogóle nie trafia" — trzy
+  podmioty z realnymi wpisami, AD MARKET, FAN M.M. ANTONIUK, RAFAŁ MUCHARSKI,
+  kończyły się błędem „wynik nie zawiera identyfikatora ani zgodnej nazwy
+  podmiotu"): to sam fix 1.8.7 (wysyłka `flush()` metadanych wiersza PRZED
+  ryzykownym kliknięciem w obwieszczenie) wprowadził tę regresję.
+- ROOT CAUSE: metadane samego wiersza postępowania KRZ (rodzaj postępowania,
+  sygnatura, daty, status) opisują SPRAWĘ, nie DŁUŻNIKA — z natury nie zawierają
+  jego NIP/PESEL/nazwy. Niezależna bramka `captureMatchesSubject` w
+  `background.js` (funkcja `matchSubject`, wspólna z odpowiednikiem serwerowym
+  `RiskAnalyzer::textMatchesSubject`) wymaga twardego identyfikatora albo nazwy
+  W SAMEJ TREŚCI przechwyconej pozycji — i odrzucała taki fragment jeszcze PRZED
+  wysyłką do serwera, mimo że strona wyników JUŻ wcześniej przeszła
+  `resultRowsMatchCurrentQuery(job)`, czyli była potwierdzona jako dotycząca
+  właściwego podmiotu.
+- FIX: `flush()` w `content_krz.js` dopisuje teraz do każdego wysyłanego
+  fragmentu jawne kryterium wyszukiwania (`job.query` — identyfikator/nazwę,
+  którymi KRZ już przeszukano) w formacie `[Kryterium wyszukiwania: ...]` — ten
+  sam, już zaufany wzorzec, jaki `visiblePageText()` stosuje od dawna przy
+  potwierdzonym braku wyników. Nie osłabia to żadnej bramki (klienckiej ani
+  serwerowej) — czyni jedynie jawną informację, którą strona już potwierdziła.
+- Testy: `tests/test_extension.php` — 130/130 przechodzi lokalnie (kontrakt na
+  treść pliku; brak dostępu do żywego portalu KRZ w tej sesji, więc fix
+  NIEZWERYFIKOWANY na żywym portalu — do potwierdzenia w kolejnym raporcie
+  dziennym).
+- To plik wtyczki Chrome (`chrome_extension/`) — NIE jest wdrażany na serwer
+  WWW; działa lokalnie z folderu wczytanego jako „unpacked" w Chrome.
+
 ## Wtyczka 1.8.7 (2026-08-21) — KRZ: dane wysyłane NA BIEŻĄCO, nie na końcu drążenia
 
 - BŁĄD (user: „działa gdy KRZ puste, zawodzi gdy ma wpisy" — trafna obserwacja):

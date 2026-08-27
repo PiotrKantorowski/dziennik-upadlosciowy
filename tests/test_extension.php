@@ -162,8 +162,10 @@ function test_extension_validates_capture_and_schedules_msig_independently(): vo
 function test_extension_identifies_safe_protocol_version(): void {
     $manifest = json_decode(file_get_contents(dirname(__DIR__).'/chrome_extension/manifest.json'), true);
     // Wersja manifestu jest pinowana świadomie: podbicie wtyczki ma wymuszać przejście przez ten test.
-    // 1.8.7 = wysyłka pozycji KRZ na bieżąco (przed ryzykownym kliknięciem w obwieszczenie).
-    assert_eq('1.8.7', $manifest['version'] ?? null, 'wydanie musi wysyłać pozycje KRZ na bieżąco, a nie dopiero po drążeniu');
+    // 1.8.8 = flush() dopisuje kryterium wyszukiwania do każdej pozycji, żeby gołe
+    // metadane wiersza (bez identyfikatora/nazwy dłużnika) przechodziły przez bramkę
+    // captureMatchesSubject zamiast być odrzucane jako niedopasowane do podmiotu.
+    assert_eq('1.8.8', $manifest['version'] ?? null, 'wydanie musi dopisywać kryterium wyszukiwania do każdej wysyłanej pozycji KRZ');
     // Budżet drążenia treści KRZ: bez niego drążenie postępowania (jedyny podmiot
     // z realnym wpisem) przekraczało watchdog 105 s → błąd „ramka nie zgłosiła wyniku".
     $krz = file_get_contents(dirname(__DIR__).'/chrome_extension/content_krz.js');
@@ -262,7 +264,7 @@ function test_krz_flushes_each_item_immediately_before_risky_notice_click(): voi
     $content = file_get_contents(dirname(__DIR__).'/chrome_extension/content_krz.js');
     assert_true(str_contains($content, 'async function collectItems(job)'), 'collectItems musi znać job (subjectId) do wysyłki na bieżąco');
     assert_true(str_contains($content, 'const flush = async (item) => {'), 'musi istnieć funkcja wysyłająca każdą pozycję od razu');
-    assert_true(str_contains($content, 'send("krzCapture", { items: [item]'), 'flush ma wysyłać krzCapture per-pozycja, nie na końcu');
+    assert_true(str_contains($content, 'send("krzCapture", { items: [withCriterion]'), 'flush ma wysyłać krzCapture per-pozycja, nie na końcu');
     // Metadane wiersza (await flush({...proceedingMeta...)) muszą wystąpić PRZED
     // pętlą klikającą w obwieszczenia (for (let j = 0; j < openers.length...),
     // inaczej ryzykowne kliknięcie mogłoby zabić ramkę przed wysłaniem czegokolwiek.
@@ -272,6 +274,26 @@ function test_krz_flushes_each_item_immediately_before_risky_notice_click(): voi
     // searchInKind nie ma już wysyłać zbiorczo po collectItems — to by tylko
     // niepotrzebnie duplikowało już wysłane przez flush() pozycje.
     assert_true(!str_contains($content, 'const res = await send("krzCapture", { items, url: location.href, subjectId: job.subjectId || null });'), 'searchInKind nie może już wysyłać całej tablicy zbiorczo — flush() już to zrobił per-pozycja');
+}
+
+// Regresja 2026-08-26 (user: „Wygląda na to że KRZ w ogóle nie trafia" — trzy
+// podmioty z realnymi wynikami odrzucane błędem „wynik nie zawiera identyfikatora
+// ani zgodnej nazwy podmiotu"). Root cause: sam fix z 1.8.7 (flush metadanych wiersza
+// PRZED klikaniem) wysyła fragment, który z natury nie zawiera identyfikatora/nazwy
+// DŁUŻNIKA (KRZ pokazuje w wierszu dane sprawy: rodzaj/sygnatura/daty/status, nie
+// stronę) — bramka `captureMatchesSubject` w background.js odrzucała go, mimo że
+// strona wyników już wcześniej przeszła `resultRowsMatchCurrentQuery`. Fix: `flush`
+// dopisuje jawnie kryterium wyszukiwania (`job.query`) do każdego wysyłanego
+// fragmentu — ten sam, już zaufany wzorzec co `visiblePageText()` przy braku wyników.
+function test_krz_flush_appends_search_criterion_so_bare_metadata_matches_subject(): void {
+    $content = file_get_contents(dirname(__DIR__).'/chrome_extension/content_krz.js');
+    assert_true(str_contains($content, 'const criterionSuffix = job && job.query'), 'flush musi znać kryterium wyszukiwania joba, żeby dopisać je do treści');
+    assert_true(str_contains($content, 'Kryterium wyszukiwania: " + job.query'), 'dopisek musi zawierać identyfikator/nazwę użyte do wyszukania (job.query)');
+    assert_true(str_contains($content, 'const withCriterion = criterionSuffix ? { ...item, text: String(item.text || "") + criterionSuffix } : item;'), 'każdy element flush musi mieć dopisane kryterium do własnej treści, nie tylko do zbiorczego tekstu');
+    // Dopisek musi trafić do items[] (co widzi caller) I do payloadu wysyłanego na serwer —
+    // inaczej lokalna bramka captureMatchesSubject dalej widziałaby „gołą" treść bez identyfikatora.
+    assert_true(str_contains($content, 'items.push(withCriterion);'), 'items() zwracane przez collectItems musi zawierać wersję z dopisanym kryterium');
+    assert_true(str_contains($content, 'send("krzCapture", { items: [withCriterion]'), 'krzCapture musi wysyłać wersję z dopisanym kryterium, nie surowy item');
 }
 
 function test_krz_rejects_stale_row_before_opening_details_and_always_cleans_managed_tab(): void {
