@@ -12,6 +12,10 @@ final class KrsClient
     // "JDG bez KRS" od "nieznanego identyfikatora".
     private bool $lastWhitelistKnown = false;
     private ?string $lastWhitelistName = null;
+    // Przyczyny nieudanych zapytań do API KRS (jedna na wywołanie safeGet) — bez tego
+    // "Nie udało się pobrać odpisu KRS" wygląda identycznie przy odmowie połączenia,
+    // błędzie HTTP i uszkodzonym JSON, i nie da się tego odróżnić z karty podmiotu.
+    private array $fetchErrors = [];
 
     public function __construct(private ?Client $http = null) { $this->http ??= new Client(); }
 
@@ -26,7 +30,11 @@ final class KrsClient
                 // Przejściowa awaria Białej Listy MF (timeout/5xx) — NIE mylić z podmiotem
                 // bez numeru KRS. Zwracamy status 'error' (zgodny z logiką CheckService),
                 // ale z opisowym komunikatem, że sprawdzenie należy powtórzyć.
-                return ['source'=>'KRS','status'=>'error','status_label'=>'Błąd rozwiązania numeru KRS przez Białą Listę MF (przejściowy) — spróbuj ponownie później. NIP: '.$nip.'.'];
+                return [
+                    'source'=>'KRS','status'=>'error',
+                    'status_label'=>'Błąd rozwiązania numeru KRS przez Białą Listę MF (przejściowy) — spróbuj ponownie później. NIP: '.$nip.'.',
+                    'raw_json'=>['fetch_error'=>$e->getMessage()],
+                ];
             }
         }
         if (!$krs) {
@@ -38,9 +46,13 @@ final class KrsClient
             ];
         }
         $base = rtrim((string)Config::get('KRS_API_BASE','https://api-krs.ms.gov.pl/api/krs'), '/');
+        $this->fetchErrors = [];
         $actual = $this->safeGet("$base/OdpisAktualny/$krs?rejestr=P&format=json");
         $full = $this->safeGet("$base/OdpisPelny/$krs?rejestr=P&format=json");
-        if (!$actual && !$full) return ['source'=>'KRS','status'=>'error','status_label'=>'Nie udało się pobrać odpisu KRS.','krs'=>$krs,'registry_url'=>'https://wyszukiwarka-krs.ms.gov.pl/podmiot/'.$krs];
+        if (!$actual && !$full) return [
+            'source'=>'KRS','status'=>'error','status_label'=>'Nie udało się pobrać odpisu KRS.','krs'=>$krs,
+            'registry_url'=>'https://wyszukiwarka-krs.ms.gov.pl/podmiot/'.$krs,'raw_json'=>['fetch_errors'=>$this->fetchErrors],
+        ];
         $profile = $this->parseProfile($actual ?: [], $full ?: [], $krs);
         $profile['financial_check'] = (new FinancialStatementChecker())->fromKrsProfile($profile);
         return $profile;
@@ -100,7 +112,8 @@ final class KrsClient
 
     private function safeGet(string $url): ?array
     {
-        try { return $this->http->getJson($url); } catch (\Throwable) { return null; }
+        try { return $this->http->getJson($url); }
+        catch (\Throwable $e) { $this->fetchErrors[] = $e->getMessage(); return null; }
     }
 
     private function findValue(mixed $data, array $keys): ?string

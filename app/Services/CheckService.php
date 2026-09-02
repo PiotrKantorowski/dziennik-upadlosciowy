@@ -324,6 +324,10 @@ final class CheckService
         foreach ($subjects as $s) {
             if ((int)$s['monitored'] !== 1) continue;
             if ($limit !== null && $count >= $limit) break;
+            // Krótki odstęp MIĘDZY podmiotami (nie przed pierwszym) — jedno przeciążenie
+            // API KRS/Białej Listy/CEIDG rozłożone w czasie nie zabiera całej serii naraz,
+            // tak jak działo się to przy zapytaniach wystrzelonych w pętli bez przerwy.
+            if ($count > 0) usleep(300_000);
             $this->checkSubject($s);
             $count++;
         }

@@ -1,5 +1,70 @@
 # Changelog
 
+## Dane 2026-09-02 — scalenie zduplikowanego podmiotu SŁAWOMIR KAŹMIERCZAK
+
+- W bazie istniały dwa rekordy tego samego podmiotu (NIP 6581003887): id=18
+  (utworzony 2026-07-15, historia: 152 source_checks/36 krz_tasks/36
+  msig_tasks/0 events) i id=19 (przypadkowy duplikat z 2026-08-21: 41
+  source_checks/1 event/10 krz_tasks/10 msig_tasks/2 reports). Oba
+  sprawdzane były CODZIENNIE równolegle (identyczny `last_checked_at`) i oba
+  pojawiały się w każdym raporcie dziennym.
+- FIX: cała historia z id=19 PRZENIESIONA (nie skasowana) pod kanoniczny
+  id=18 (starszy, głębsza historia) — `UPDATE ... SET subject_id=18 WHERE
+  subject_id=19` na `source_checks/events/krz_tasks/msig_tasks/reports`,
+  dopiero potem usunięty pusty rekord `subjects` id=19. Backup pełnej treści
+  obu rekordów przed scaleniem: `storage/backups/subjects_18_19_pre_merge_20260902.json`
+  (katalog `storage/` blokowany z zewnątrz przez `.htaccess` — zweryfikowane HTTP 403).
+  Zweryfikowane po scaleniu: 193 source_checks / 1 event / 46 krz_tasks / 46
+  msig_tasks / 2 reports pod id=18, id=19 nie istnieje, bramka wtyczki
+  zwraca teraz 9 podmiotów (było 10) z jednym Kaźmierczakiem.
+- LOCKUS K2 (id=16): `service_mode='one_time'`, `monitored=0`,
+  `last_checked_at=2026-07-13` — to NIE był błąd, tylko świadome
+  zachowanie trybu jednorazowego (sprawdzenie zrobione raz, celowo poza
+  bieżącym monitoringiem). Na wyraźne życzenie użytkownika przełączony na
+  `office_monitoring`/`monitored=1` (tryb większości podmiotów-spółek w tej
+  bazie) przez `Repository::updateSubject()` — od jutrzejszego crona wchodzi
+  do codziennego sprawdzania i będzie pojawiać się w raportach.
+
+## Serwer 2026-09-02 — KRS/CEIDG: prawdziwe ponowienia zamiast ślepego "Nie udało się pobrać URL"
+
+- BŁĄD (raporty 31.08 i 01.09: AD MARKET, ADCOOKIE, FAN M.M. ANTONIUK, HORTINO,
+  SMART & GREEN — wszystkie „Nie udało się pobrać odpisu KRS"; PETSTARS — „Nie
+  udało się pobrać URL" z CEIDG): sześć realnych numerów KRS z bazy sprawdzonych
+  bezpośrednio na API Ministerstwa dało 6× HTTP 200 w ~0,2 s — źródło i numery
+  były sprawne, awaria była po stronie DUiR.
+- ROOT CAUSE #1 (`app/Support/Client.php`): `getJson()`/`postJson()` używały
+  `file_get_contents()` bez ŻADNEGO ponowienia — jedno przejściowe mignięcie
+  sieci (DNS/TCP/TLS) na hostingu kończyło zapytanie od razu, bez szans na
+  powtórzenie za chwilę.
+- ROOT CAUSE #2 (`app/Services/KrsClient.php::safeGet()`): łapał KAŻDY
+  `\Throwable` i zwracał `null` — odmowa połączenia, błąd HTTP i uszkodzony
+  JSON dawały identyczny, ślepy komunikat. Dla porównania KRZ/MSiG zapisują
+  meta+próbkę treści przy błędzie (stąd konkretne komunikaty), więc przy KRS
+  nie dało się nic rozpoznać z karty podmiotu.
+- FIX: `Client.php` przepisany na cURL z do 3 próbami i odstępem (400 ms,
+  900 ms) dla awarii TRANSPORTOWYCH (brak połączenia, 5xx, 429) — błąd 4xx
+  (poza 429) i nieprawidłowy URL/schemat kończą się od razu, bo ponowienie
+  dałoby identyczny wynik. Fallback do starego `file_get_contents`, gdyby
+  cURL nie był dostępny na jakimś SAPI. `KrsClient::safeGet()` zapisuje teraz
+  przyczynę każdego nieudanego zapytania (`raw_json.fetch_errors`) — widoczna
+  pod „🔍 Diagnoza" zamiast ginąć.
+- Dodatkowo: `CheckService::checkAllMonitored()` wstawia 300 ms odstępu
+  MIĘDZY podmiotami w pętli crona — jedno przeciążenie źródła nie zabiera już
+  całej serii sprawdzeń naraz.
+- WDROŻENIE: zsynchronizowano też rozjazd wersji — produkcja miała
+  `MIN_PLUGIN_VERSION=1.8.5` z 17.07 (żaden sierpniowy fix do
+  Krz/MsigApiController nie był wdrożony), lokalnie już `1.8.6`. Wgrano cały
+  folder `app/` (kopia poprzedniej wersji: `app_old_20260902` na serwerze).
+  Zweryfikowano na żywo: `cron.php` przez HTTP 200, 9 podmiotów, bez błędu.
+- Testy: `tests/test_http_client.php` (nowy) — realne ponowienie z odstępem
+  (min. 1200 ms) na odrzuconym porcie lokalnym, brak ponowień przy złym
+  schemacie URL, propagacja `fetch_errors` z `KrsClient`. Suite 133/133.
+- OBSERWACJA UBOCZNA (niezmieniona w tym fixie — wymaga decyzji użytkownika):
+  LOCKUS K2 (id 16, monitored prawdopodobnie=0 albo tryb jednorazowy) nie
+  pojawia się w raportach od kilku dni — do sprawdzenia na karcie podmiotu.
+  SŁAWOMIR KAŹMIERCZAK istnieje w bazie DWUKROTNIE (subject_id 18 i 19,
+  identyczne NIP/REGON) — prawdopodobny duplikat do scalenia/usunięcia.
+
 ## Wtyczka 1.8.8 (2026-08-27) — KRZ: metadane wiersza dostają jawny identyfikator podmiotu
 
 - BŁĄD (user, raport z 26.08: „Wygląda na to że KRZ w ogóle nie trafia" — trzy
