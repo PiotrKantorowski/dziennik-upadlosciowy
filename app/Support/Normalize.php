@@ -15,6 +15,20 @@ final class Normalize
         return preg_replace('/\D+/', '', (string)$value) ?: '';
     }
 
+    /**
+     * Numer KRS zawsze w pełnej, 10-cyfrowej postaci. Portal KRZ wprost wymaga
+     * zer wiodących („musi on być uzupełniony zerami wiodącymi do 10 cyfr"),
+     * MSiG szuka po pełnym numerze, a API KRS na krótkim numerze odpowiada
+     * niestabilnie. Numer wpisany bez zer („666918") dawał więc fałszywy brak
+     * wyników w KRZ, not_announcement w MSiG i losowe błędy odpisu KRS.
+     */
+    public static function krs(?string $value): string
+    {
+        $d = self::digits($value);
+        if ($d === '' || strlen($d) >= 10) return $d;
+        return str_pad($d, 10, '0', STR_PAD_LEFT);
+    }
+
     public static function fold(?string $value): string
     {
         $v = mb_strtolower((string)$value, 'UTF-8');

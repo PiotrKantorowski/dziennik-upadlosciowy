@@ -15,6 +15,8 @@ const DEFAULTS = { appUrl: "http://127.0.0.1:8080", token: "", scheduleHour: 10,
 // przez claimed_by), nie równoległością w jednej przeglądarce. NIE podnosić bez
 // rozwiązania keepalive dla service workera MV3.
 const MAX_CONCURRENT_TABS = 1;
+// Bezpiecznik pętli runSource — musi być większy niż liczba monitorowanych podmiotów.
+const MAX_RUN_ROUNDS = 500;
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 // Chrome potrafi chwilowo odrzucić tabs.create/tabs.update komunikatem "Tabs cannot
@@ -464,6 +466,31 @@ async function withTabSlot(work) {
   finally { release(); }
 }
 
+// Chrome działający w tle bez żadnego otwartego okna (wszystkie okna zamknięte,
+// proces trzymany przez „Kontynuuj działanie aplikacji w tle") odrzuca
+// tabs.create komunikatem "No current window". 18.10.2026 tak przepadł cały
+// przebieg KRZ i MSiG. Wtedy otwieramy własne okno z kartą automatu.
+async function openAutomationTab() {
+  try {
+    return await withTabEditRetry(() => chrome.tabs.create({ url: AUTOMATION_STAGING_URL, active: true }));
+  } catch (e) {
+    if (!/no current window/i.test(String((e && e.message) || e))) throw e;
+    const win = await chrome.windows.create({ url: AUTOMATION_STAGING_URL, focused: true, type: "normal" });
+    const tab = win && win.tabs && win.tabs[0];
+    if (!tab) throw e;
+    return tab;
+  }
+}
+
+// Ponawiamy tylko zadania, które nie dały ŻADNEGO rozstrzygnięcia (ani pozycji,
+// ani potwierdzonego braku wyników): timeout, brak odpowiedzi portalu, padnięta
+// ramka. Portal KRZ bywa chwilowo wolny — świeża karta zwykle przechodzi.
+function shouldRetryItem(result) {
+  if (!result) return false;
+  if (result.captured || result.noResults) return false;
+  return !!(result.error || result.timedOut);
+}
+
 function waitForTabJob(tabId, timeoutMs) {
   return new Promise((resolve) => {
     const job = jobsByTab[tabId];
@@ -484,7 +511,7 @@ async function processItemInTab(source, item, portalUrl) {
     // Najpierw własna, neutralna strona rozszerzenia. Dopiero po zapisaniu jobu
     // przechodzimy do portalu — kolejność nie zależy już od timingu tabs.create().
     // withTabEditRetry pochłania chwilowe "Tabs cannot be edited right now".
-    tab = await withTabEditRetry(() => chrome.tabs.create({ url: AUTOMATION_STAGING_URL, active: true }));
+    tab = await openAutomationTab();
     try { await chrome.windows.update(tab.windowId, { focused: true }); } catch (_) {}
   } catch (e) {
     return { task_id: item.task_id, claim_token: item.claim_token, subject_id: item.subject_id, subject: item.name, error: `Nie udało się otworzyć karty ${source.key}: ` + e };
@@ -557,7 +584,11 @@ async function runSource(source) {
   // Dlatego pętla: bierz paczkę -> przetwórz -> poproś o następną, aż pusto.
   // Twardy limit rund to bezpiecznik przed nieskończoną pętlą przy błędzie serwera.
   const seenTasks = new Set();
-  for (let round = 0; round < 20; round++) {
+  // Serwer wydaje po JEDNYM zadaniu (TASK_BATCH=1), więc liczba rund = liczba
+  // zadań. Dawny limit 20 rund ucinał przebieg przy 25 podmiotach: 5 zadań KRZ
+  // i 5 MSiG zostawało „w toku" do następnego dnia (raport 19.10.2026). Przed
+  // nieskończoną pętlą chroni seenTasks; MAX_RUN_ROUNDS to tylko bezpiecznik.
+  for (let round = 0; round < MAX_RUN_ROUNDS; round++) {
     const { items, portalUrl } = await getWorklist(source);
     // Guard na powtórki: jeśli serwer z jakiegokolwiek powodu wyda ponownie zadanie
     // już przetworzone w TYM przebiegu (np. stara wersja backendu bez rezerwacji),
@@ -570,7 +601,15 @@ async function runSource(source) {
     // komputerów. Portal KRZ nie jest niezawodny przy kilku kartach w jednym Chrome.
     for (let i = 0; i < fresh.length; i += MAX_CONCURRENT_TABS) {
       const slice = fresh.slice(i, i + MAX_CONCURRENT_TABS);
-      const results = await Promise.all(slice.map((item) => processItem(source, item, portalUrl)));
+      const results = await Promise.all(slice.map(async (item) => {
+        const first = await processItem(source, item, portalUrl);
+        if (!shouldRetryItem(first)) return first;
+        // Jedna ponowna próba od razu — dzierżawa zadania (15 min) jest jeszcze ważna.
+        await delay(5000);
+        const second = await processItem(source, item, portalUrl);
+        if (!shouldRetryItem(second)) return second;
+        return second.error ? { ...second, error: second.error + " (po ponownej próbie)" } : second;
+      }));
       summary.items.push(...results);
     }
   }

@@ -209,7 +209,7 @@ final class Repository
         $monitored = $serviceMode === 'one_time' ? 0 : 1;
         $st = $this->pdo->prepare('INSERT INTO subjects (name,krs,nip,regon,pesel,aliases,type,email,service_mode,monitored,created_at,updated_at) VALUES (?,?,?,?,?,?,?,?,?,?,NOW(),NOW())');
         $st->execute([
-            Normalize::text($data['name'] ?? ''), Normalize::digits($data['krs'] ?? ''), Normalize::digits($data['nip'] ?? ''),
+            Normalize::text($data['name'] ?? ''), Normalize::krs($data['krs'] ?? ''), Normalize::digits($data['nip'] ?? ''),
             Normalize::digits($data['regon'] ?? ''), Normalize::digits($data['pesel'] ?? ''), Normalize::text($data['aliases'] ?? ''),
             $type, Normalize::text($data['email'] ?? ''), $serviceMode, $monitored,
         ]);
@@ -228,7 +228,7 @@ final class Repository
         $monitored = $serviceMode === 'one_time' ? 0 : 1;
         $st = $this->pdo->prepare('UPDATE subjects SET name=?,krs=?,nip=?,regon=?,pesel=?,aliases=?,type=?,email=?,service_mode=?,monitored=?,updated_at=NOW() WHERE id=?');
         $st->execute([
-            Normalize::text($data['name'] ?? ''), Normalize::digits($data['krs'] ?? ''), Normalize::digits($data['nip'] ?? ''),
+            Normalize::text($data['name'] ?? ''), Normalize::krs($data['krs'] ?? ''), Normalize::digits($data['nip'] ?? ''),
             Normalize::digits($data['regon'] ?? ''), Normalize::digits($data['pesel'] ?? ''), Normalize::text($data['aliases'] ?? ''),
             $type, Normalize::text($data['email'] ?? ''), $serviceMode, $monitored, $id,
         ]);
@@ -285,7 +285,7 @@ final class Repository
         if (!$s) return [];
         $updates = [];
         foreach (['krs','regon','nip'] as $field) {
-            $value = Normalize::digits((string)($profile[$field] ?? ''));
+            $value = $field === 'krs' ? Normalize::krs((string)($profile[$field] ?? '')) : Normalize::digits((string)($profile[$field] ?? ''));
             if ($value !== '' && Normalize::digits((string)($s[$field] ?? '')) === '') $updates[$field] = $value;
         }
         $legal = Normalize::text((string)($profile['legal_name'] ?? ''));

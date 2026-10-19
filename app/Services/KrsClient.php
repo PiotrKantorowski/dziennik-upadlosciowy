@@ -21,7 +21,7 @@ final class KrsClient
 
     public function fetchProfile(array $subject): array
     {
-        $krs = Normalize::digits($subject['krs'] ?? '');
+        $krs = Normalize::krs($subject['krs'] ?? '');
         if (!$krs && Normalize::digits($subject['nip'] ?? '')) {
             $nip = Normalize::digits($subject['nip']);
             try {
@@ -107,7 +107,7 @@ final class KrsClient
         $subject = $data['result']['subject'] ?? null;
         $this->lastWhitelistKnown = is_array($subject) && $subject !== [];
         $this->lastWhitelistName = $this->lastWhitelistKnown ? Normalize::text((string)($subject['name'] ?? '')) : null;
-        return Normalize::digits((string)($subject['krs'] ?? ''));
+        return Normalize::krs((string)($subject['krs'] ?? ''));
     }
 
     private function safeGet(string $url): ?array

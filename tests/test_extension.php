@@ -165,7 +165,17 @@ function test_extension_identifies_safe_protocol_version(): void {
     // 1.8.8 = flush() dopisuje kryterium wyszukiwania do każdej pozycji, żeby gołe
     // metadane wiersza (bez identyfikatora/nazwy dłużnika) przechodziły przez bramkę
     // captureMatchesSubject zamiast być odrzucane jako niedopasowane do podmiotu.
-    assert_eq('1.8.8', $manifest['version'] ?? null, 'wydanie musi dopisywać kryterium wyszukiwania do każdej wysyłanej pozycji KRZ');
+    // 1.8.9 = okno awaryjne przy „No current window", jedna ponowna próba zadania
+    // bez rozstrzygnięcia i ponowne „Wyszukaj", gdy portal KRZ milczy.
+    assert_eq('1.8.9', $manifest['version'] ?? null, 'wydanie musi otwierać własne okno i ponawiać zadania bez rozstrzygnięcia');
+    $bg = file_get_contents(dirname(__DIR__).'/chrome_extension/background.js');
+    assert_true(str_contains($bg, 'chrome.windows.create') && str_contains($bg, 'no current window'), 'background musi otworzyć okno, gdy Chrome działa bez okien');
+    assert_true(str_contains($bg, 'shouldRetryItem'), 'background musi ponawiać zadania bez rozstrzygnięcia');
+    // Zadania wydawane są po jednym — limit rund to faktyczny limit podmiotów na przebieg.
+    assert_true(str_contains($bg, 'round < MAX_RUN_ROUNDS') && str_contains($bg, 'const MAX_RUN_ROUNDS = 500;'), 'przebieg nie może ucinać kolejki po 20 zadaniach');
+    assert_true(!str_contains($bg, 'round < 20'), 'stary limit 20 rund nie może wrócić');
+    $krzRetry = file_get_contents(dirname(__DIR__).'/chrome_extension/content_krz.js');
+    assert_true(str_contains($krzRetry, 'submitted.loaded == null'), 'content_krz musi ponowić wyszukiwanie, gdy portal nie odpowiedział');
     // Budżet drążenia treści KRZ: bez niego drążenie postępowania (jedyny podmiot
     // z realnym wpisem) przekraczało watchdog 105 s → błąd „ramka nie zgłosiła wyniku".
     $krz = file_get_contents(dirname(__DIR__).'/chrome_extension/content_krz.js');
@@ -234,7 +244,15 @@ function test_krz_job_is_registered_before_portal_navigation(): void {
     $start = strpos($bg, 'async function processItemInTab');
     $end = strpos($bg, 'async function processItem(', $start);
     $fn = substr($bg, $start, $end - $start);
-    $create = strpos($fn, 'chrome.tabs.create({ url: AUTOMATION_STAGING_URL');
+    // Karta stagingowa powstaje w openAutomationTab() (z oknem awaryjnym przy
+    // „No current window"); sama funkcja musi otwierać WYŁĄCZNIE staging.
+    $create = strpos($fn, 'await openAutomationTab()');
+    $openStart = strpos($bg, 'async function openAutomationTab');
+    $openFn = substr($bg, $openStart, strpos($bg, "
+}
+", $openStart) - $openStart);
+    assert_true(str_contains($openFn, 'chrome.tabs.create({ url: AUTOMATION_STAGING_URL') && str_contains($openFn, 'chrome.windows.create({ url: AUTOMATION_STAGING_URL'), 'karta i okno awaryjne muszą startować od stagingu');
+    assert_true(!str_contains($openFn, 'portalUrl'), 'openAutomationTab nie może otwierać portalu');
     $job = strpos($fn, 'jobsByTab[tab.id] =');
     $wait = strpos($fn, 'const resultPromise = waitForTabJob');
     $navigate = strpos($fn, 'chrome.tabs.update(tab.id, { url: portalUrl');

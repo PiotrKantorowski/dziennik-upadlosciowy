@@ -42,7 +42,10 @@ final class CronController
         // (wtyczka nie dostarczyła wyniku) — inaczej karta podmiotu bezterminowo
         // pokazywałaby "running", a kolejka rosłaby o duplikaty.
         $expired = $this->repo->expireStaleTasks();
-        $limit = max(1, (int)Config::get('CRON_BATCH_SIZE', 25));
+        // CRON biegnie raz dziennie, więc limit MUSI obejmować wszystkie monitorowane
+        // podmioty. Przy 25 i 33 podmiotach (19.10.2026) osiem podmiotów codziennie
+        // wypadało z przebiegu — nie dostawały ani CEIDG/KRS, ani zadań KRZ/MSiG.
+        $limit = max(1, (int)Config::get('CRON_BATCH_SIZE', 200));
         $checked = $this->check->checkAllMonitored($limit);
         $this->repo->setSetting('cron_last_run_at', date(DATE_ATOM));
         $this->repo->setSetting('cron_last_checked_count', (string)$checked);

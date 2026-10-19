@@ -44,3 +44,19 @@ function test_msig_task_query_empty_when_only_pesel_and_weak_name(): void {
     assert_eq($key, '');
     assert_eq($value, '');
 }
+function test_short_krs_is_padded_to_ten_digits_for_every_source(): void {
+    // 19.10.2026: KRS wpisane bez zer wiodących („123456") dawały w KRZ fałszywy
+    // brak wyników (portal wymaga 10 cyfr), w MSiG not_announcement, w API KRS losowe błędy.
+    $subject = ['type'=>'company','krs'=>'123456','nip'=>'1112223344','name'=>'PRZYKŁADOWA SPÓŁKA Z OGRANICZONĄ ODPOWIEDZIALNOŚCIĄ'];
+    assert_eq(['krs','0000123456'], SearchPlan::krzQuery($subject));
+    assert_eq(['krs','0000123456'], SearchPlan::msigTaskQuery($subject));
+    assert_true(in_array('0000123456', SearchPlan::identifiers($subject), true), 'identyfikatory muszą zawierać pełny KRS');
+    assert_eq('0001234567', \Duir\Support\Normalize::krs('1234567'));
+    assert_eq('0000654321', \Duir\Support\Normalize::krs('0000654321'));
+    assert_eq('', \Duir\Support\Normalize::krs(''));
+}
+function test_cron_default_batch_covers_whole_daily_portfolio(): void {
+    // Limit 25 przy 33 podmiotach wyrzucał co dzień 8 podmiotów z przebiegu.
+    $cron = file_get_contents(dirname(__DIR__).'/app/Controllers/CronController.php');
+    assert_true(str_contains($cron, "Config::get('CRON_BATCH_SIZE', 200)"), 'domyślny limit CRON musi obejmować cały portfel');
+}

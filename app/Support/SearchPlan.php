@@ -7,7 +7,7 @@ final class SearchPlan
     {
         $ids = [];
         foreach (['krs','nip','regon','pesel'] as $field) {
-            $v = Normalize::digits($subject[$field] ?? '');
+            $v = $field === 'krs' ? Normalize::krs($subject[$field] ?? '') : Normalize::digits($subject[$field] ?? '');
             if ($v !== '') $ids[$field] = $v;
         }
         return $ids;
@@ -27,7 +27,7 @@ final class SearchPlan
             default => ['krs','nip','regon','pesel'],
         };
         foreach ($priority as $field) {
-            $v = Normalize::digits($subject[$field] ?? '');
+            $v = $field === 'krs' ? Normalize::krs($subject[$field] ?? '') : Normalize::digits($subject[$field] ?? '');
             if ($v !== '') return [$field, $v];
         }
         $name = Normalize::text($subject['name'] ?? '');
@@ -44,7 +44,7 @@ final class SearchPlan
     public static function msigTaskQuery(array $subject): array
     {
         foreach (['krs','nip','regon'] as $field) {
-            $v = Normalize::digits($subject[$field] ?? '');
+            $v = $field === 'krs' ? Normalize::krs($subject[$field] ?? '') : Normalize::digits($subject[$field] ?? '');
             if ($v !== '') return [$field, $v];
         }
         $name = Normalize::text($subject['name'] ?? '');

@@ -1039,8 +1039,23 @@
       const czysc = byText("button, a, [role=button]", /^\s*wyczy[śs][ćc]\s*$/i)[0];
       if (czysc) { clickElement(czysc); await sleep(700); }
     }
-    const submitted = await submitSearch(attempt);
+    let submitted = await submitSearch(attempt);
     if (!submitted.ok) return { error: submitted.error };
+    // Portal nie pokazał w 20 s ani wyników, ani komunikatu o ich braku. Od wersji
+    // portalu 1.22.004 (13.10.2026) zdarza się to przy obciążeniu — pierwsze
+    // „Wyszukaj" bywa zgubione. Jedno ponowienie w tej samej karcie, zanim
+    // uznamy, że portal nie odpowiedział.
+    if (submitted.loaded == null) {
+      LOG("Portal KRZ nie odpowiedział na wyszukiwanie — ponawiam „Wyszukaj”.");
+      submitted = await submitSearch(attempt);
+      if (!submitted.ok) return { error: submitted.error };
+      if (submitted.loaded == null) {
+        return {
+          error: "Portal KRZ nie odpowiedział na wyszukiwanie (brak wyników i brak komunikatu po dwóch próbach).",
+          pageText: visiblePageText(8000),
+        };
+      }
+    }
     // Brak wyników rozstrzygamy najpierw — zanim spróbujemy cokolwiek drążyć.
     const earlyText = visiblePageText(8000);
     if (looksLikeNoResultsText(earlyText)) return { noResults: true, pageText: earlyText };

@@ -79,7 +79,7 @@ albo:
 wget -q -O - 'https://twoja-domena.pl/cron/run?token=TU_WKLEJ_CRON_TOKEN' >> /dev/null 2>&1
 ```
 
-Zalecany start: raz dziennie albo co kilka godzin, zależnie od liczby monitorowanych podmiotów. Przy większej liczbie podmiotów ustaw `CRON_BATCH_SIZE`, np. `25`, aby jeden przebieg nie był zbyt ciężki dla hostingu współdzielonego. CRON wybiera podmioty rotacyjnie — najpierw te nigdy niesprawdzane, potem najdawniej sprawdzane — więc większa baza nie powinna powodować stałego pomijania dalszych podmiotów.
+Zalecany start: raz dziennie albo co kilka godzin, zależnie od liczby monitorowanych podmiotów. Przy większej liczbie podmiotów `CRON_BATCH_SIZE` (domyślnie `200`) musi być co najmniej równy liczbie monitorowanych podmiotów, jeśli CRON biegnie raz dziennie — inaczej część podmiotów wypada z dziennego sprawdzenia. Mniejszy limit ma sens tylko przy CRON uruchamianym kilka razy dziennie. CRON wybiera podmioty rotacyjnie — najpierw te nigdy niesprawdzane, potem najdawniej sprawdzane — więc większa baza nie powinna powodować stałego pomijania dalszych podmiotów.
 
 ## 7. Ważne ograniczenie KRZ/MSiG
 
