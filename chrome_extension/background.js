@@ -6,7 +6,7 @@
 // od content-scriptu przechwycone wyniki i odesłać je do programu. Bez
 // headless, bez podszywania — to realna sesja.
 
-const DEFAULTS = { appUrl: "http://127.0.0.1:8080", token: "", scheduleHour: 10, scheduleMinute: 0, autoRun: true, instanceLabel: "" };
+const DEFAULTS = { appUrl: "http://127.0.0.1:8080", token: "", scheduleHour: 10, scheduleMinute: 0, autoRun: true, instanceLabel: "", backgroundWindow: true };
 // Ile kart naraz w JEDNEJ przeglądarce. COFNIĘTE DO 1 (2026-07-13): po włączeniu
 // równoległości (2) przebiegi KRZ przestały się KOŃCZYĆ — wieloramkowy, wrażliwy na
 // czas przepływ KRZ + dławienie kart w tle przez Chrome + limity service workera MV3
@@ -466,11 +466,67 @@ async function withTabSlot(work) {
   finally { release(); }
 }
 
+// Okno robocze automatu (od 1.9.0). Wcześniej każda karta KRZ/MSiG otwierała
+// się jako aktywna w bieżącym oknie i wtyczka wywoływała to okno na wierzch —
+// w trakcie przebiegu użytkownik tracił klawiaturę i mysz. Teraz automat pracuje
+// w OSOBNYM oknie tworzonym bez fokusu (focused:false). Pierwsza karta okna to
+// strona-uchwyt: dzięki niej zamknięcie karty zadania nie zamyka całego okna.
+// Okno zamykamy po zakończeniu przebiegu (closeAutomationWindow w runAll).
+const AUTOMATION_WINDOW_KEY = "duirAutomationWindowV1";
+const AUTOMATION_HOLDER_URL = chrome.runtime.getURL("automation_window.html");
+
+async function existingAutomationWindowId() {
+  const stored = (await chrome.storage.local.get(AUTOMATION_WINDOW_KEY))[AUTOMATION_WINDOW_KEY];
+  const id = stored && Number(stored.windowId);
+  if (!Number.isInteger(id)) return null;
+  try {
+    const win = await chrome.windows.get(id, { populate: true });
+    // Ochrona przed ponownym użyciem windowId po restarcie Chrome: okno musi
+    // nadal zawierać naszą stronę-uchwyt.
+    const ours = (win.tabs || []).some((t) => String(t.url || t.pendingUrl || "") === AUTOMATION_HOLDER_URL);
+    return ours ? id : null;
+  } catch (_) { return null; }
+}
+
+async function openAutomationWindowTab() {
+  const windowId = await existingAutomationWindowId();
+  if (windowId !== null) {
+    // active:true dotyczy tylko karty WEWNĄTRZ okna robocze — nie przenosi fokusu.
+    return withTabEditRetry(() => chrome.tabs.create({ windowId, url: AUTOMATION_STAGING_URL, active: true }));
+  }
+  // Pierwszy adres okna jest kartą aktywną — to karta zadania; uchwyt czeka obok.
+  const win = await chrome.windows.create({
+    url: [AUTOMATION_STAGING_URL, AUTOMATION_HOLDER_URL], focused: false, type: "normal", width: 1280, height: 900,
+  });
+  await chrome.storage.local.set({ [AUTOMATION_WINDOW_KEY]: { windowId: win.id, createdAt: Date.now() } });
+  const tab = (win.tabs || []).find((t) => String(t.url || t.pendingUrl || "") !== AUTOMATION_HOLDER_URL);
+  if (tab) return tab;
+  return withTabEditRetry(() => chrome.tabs.create({ windowId: win.id, url: AUTOMATION_STAGING_URL, active: true }));
+}
+
+async function closeAutomationWindow() {
+  const windowId = await existingAutomationWindowId();
+  await chrome.storage.local.remove(AUTOMATION_WINDOW_KEY);
+  if (windowId === null) return;
+  try {
+    const win = await chrome.windows.get(windowId, { populate: true });
+    // Zamykamy okno tylko wtedy, gdy zostały w nim wyłącznie nasze strony —
+    // karta otwarta tam ręcznie przez użytkownika nie zniknie bez ostrzeżenia.
+    const foreign = (win.tabs || []).some((t) => {
+      const url = String(t.url || t.pendingUrl || "");
+      return url !== AUTOMATION_HOLDER_URL && url !== AUTOMATION_STAGING_URL;
+    });
+    if (!foreign) await chrome.windows.remove(windowId);
+  } catch (_) {}
+}
+
 // Chrome działający w tle bez żadnego otwartego okna (wszystkie okna zamknięte,
 // proces trzymany przez „Kontynuuj działanie aplikacji w tle") odrzuca
 // tabs.create komunikatem "No current window". 18.10.2026 tak przepadł cały
 // przebieg KRZ i MSiG. Wtedy otwieramy własne okno z kartą automatu.
 async function openAutomationTab() {
+  const cfg = await getConfig();
+  if (cfg.backgroundWindow !== false) return openAutomationWindowTab();
   try {
     return await withTabEditRetry(() => chrome.tabs.create({ url: AUTOMATION_STAGING_URL, active: true }));
   } catch (e) {
@@ -512,7 +568,10 @@ async function processItemInTab(source, item, portalUrl) {
     // przechodzimy do portalu — kolejność nie zależy już od timingu tabs.create().
     // withTabEditRetry pochłania chwilowe "Tabs cannot be edited right now".
     tab = await openAutomationTab();
-    try { await chrome.windows.update(tab.windowId, { focused: true }); } catch (_) {}
+    // Wywołanie okna na wierzch tylko w trybie zgodności (backgroundWindow=false).
+    if ((await getConfig()).backgroundWindow === false) {
+      try { await chrome.windows.update(tab.windowId, { focused: true }); } catch (_) {}
+    }
   } catch (e) {
     return { task_id: item.task_id, claim_token: item.claim_token, subject_id: item.subject_id, subject: item.name, error: `Nie udało się otworzyć karty ${source.key}: ` + e };
   }
@@ -655,6 +714,7 @@ async function runAll() {
     return summary;
   } finally {
     clearInterval(keepAlive);
+    try { await closeAutomationWindow(); } catch (_) {}
     await chrome.storage.local.set({ lastRun: { at: new Date().toISOString(), summary } });
     runInProgress = false;
   }

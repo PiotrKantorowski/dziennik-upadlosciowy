@@ -1,5 +1,5 @@
 const $ = (id) => document.getElementById(id);
-const DEFAULTS = { appUrl: "http://127.0.0.1:8080", token: "", scheduleHour: 10, scheduleMinute: 0, autoRun: true };
+const DEFAULTS = { appUrl: "http://127.0.0.1:8080", token: "", scheduleHour: 10, scheduleMinute: 0, autoRun: true, backgroundWindow: true };
 
 
 function originPattern(appUrl) {
@@ -39,6 +39,7 @@ async function load() {
   $("scheduleHour").value = c.scheduleHour;
   $("scheduleMinute").value = c.scheduleMinute;
   $("autoRun").checked = !!c.autoRun;
+  $("backgroundWindow").checked = c.backgroundWindow !== false;
 }
 
 function readConfig() {
@@ -48,6 +49,7 @@ function readConfig() {
     scheduleHour: Math.min(23, Math.max(0, parseInt($("scheduleHour").value, 10) || 10)),
     scheduleMinute: Math.min(59, Math.max(0, parseInt($("scheduleMinute").value, 10) || 0)),
     autoRun: $("autoRun").checked,
+    backgroundWindow: $("backgroundWindow").checked,
   };
 }
 

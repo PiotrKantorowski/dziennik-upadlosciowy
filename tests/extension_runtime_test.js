@@ -32,6 +32,7 @@ async function testBackgroundRegistersJobBeforeNavigation() {
       local: {
         get: async (key) => typeof key === "string" ? { [key]: storage[key] } : { ...storage },
         set: async (values) => Object.assign(storage, values),
+        remove: async (key) => { delete storage[key]; },
       },
     },
     tabs: {
@@ -66,7 +67,20 @@ async function testBackgroundRegistersJobBeforeNavigation() {
       },
       sendMessage: async () => ({}),
     },
-    windows: { update: async () => ({}) },
+    windows: {
+      update: async () => { events.push({ step: "focus" }); return {}; },
+      // Okno robocze (1.9.0): pierwsza karta to karta zadania, druga to uchwyt.
+      create: async (details) => {
+        const urls = Array.isArray(details.url) ? details.url : [details.url];
+        events.push({ step: "create", url: urls[0], focused: details.focused });
+        const tab = { id: 42, windowId: 7, url: urls[0] };
+        tabs.set(tab.id, tab);
+        const holder = { id: 41, windowId: 7, url: urls[1] };
+        return { id: 7, tabs: [{ ...tab }, holder] };
+      },
+      get: async () => { throw new Error("No window with id"); },
+      remove: async () => {},
+    },
     debugger: {
       onEvent: browserEvent,
       attach: async () => {},
@@ -117,6 +131,8 @@ async function testBackgroundRegistersJobBeforeNavigation() {
 
   assert.strictEqual(events[0].step, "create");
   assert.strictEqual(events[0].url, "chrome-extension://duir-runtime-test/staging.html");
+  assert.strictEqual(events[0].focused, false, "okno robocze nie może zabierać fokusu");
+  assert.ok(!events.some((event) => event.step === "focus"), "przebieg nie może wywoływać okna na wierzch");
   assert.ok(update, "chrome.tabs.update must be called");
   assert.strictEqual(update.jobPresent, true);
   assert.strictEqual(update.resolverPresent, true);

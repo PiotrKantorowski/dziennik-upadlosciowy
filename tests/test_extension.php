@@ -167,7 +167,8 @@ function test_extension_identifies_safe_protocol_version(): void {
     // captureMatchesSubject zamiast być odrzucane jako niedopasowane do podmiotu.
     // 1.8.9 = okno awaryjne przy „No current window", jedna ponowna próba zadania
     // bez rozstrzygnięcia i ponowne „Wyszukaj", gdy portal KRZ milczy.
-    assert_eq('1.8.9', $manifest['version'] ?? null, 'wydanie musi otwierać własne okno i ponawiać zadania bez rozstrzygnięcia');
+    // 1.9.0 = osobne okno robocze bez fokusu — przebieg nie odbiera użytkownikowi klawiatury.
+    assert_eq('1.9.0', $manifest['version'] ?? null, 'wydanie musi pracować w oknie roboczym bez fokusu');
     $bg = file_get_contents(dirname(__DIR__).'/chrome_extension/background.js');
     assert_true(str_contains($bg, 'chrome.windows.create') && str_contains($bg, 'no current window'), 'background musi otworzyć okno, gdy Chrome działa bez okien');
     assert_true(str_contains($bg, 'shouldRetryItem'), 'background musi ponawiać zadania bez rozstrzygnięcia');
@@ -336,4 +337,24 @@ function test_krz_has_native_cdp_click_fallback_for_cross_origin_tab(): void {
     assert_true(str_contains($bg, 'Input.dispatchMouseEvent'), 'fallback must dispatch one browser-level mouse click');
     assert_true(str_contains($bg, 'chrome.debugger.detach(root)'), 'debugger must always be detached after the click');
     assert_true(str_contains($content, 'krzTrustedTabClick'), 'content script must invoke the fallback only after ordinary selection fails');
+}
+
+function test_automation_runs_in_unfocused_window(): void {
+    $dir = dirname(__DIR__).'/chrome_extension';
+    $bg = file_get_contents($dir.'/background.js');
+    $start = strpos($bg, 'async function openAutomationWindowTab');
+    $fn = substr($bg, $start, strpos($bg, "
+}
+", $start) - $start);
+    assert_true(str_contains($fn, 'focused: false'), 'okno robocze musi powstawać bez fokusu');
+    assert_true(!str_contains($fn, 'focused: true') && !str_contains($fn, 'windows.update'), 'okno robocze nie może wywoływać się na wierzch');
+    assert_true(str_contains($fn, 'AUTOMATION_HOLDER_URL'), 'okno robocze musi mieć kartę-uchwyt, żeby nie znikało po każdym zadaniu');
+    assert_true(str_contains($bg, 'backgroundWindow: true'), 'tryb w tle musi być domyślny');
+    // Fokus okna tylko w trybie zgodności, nigdy bezwarunkowo.
+    $proc = substr($bg, strpos($bg, 'async function processItemInTab'), 1200);
+    assert_true(str_contains($proc, 'backgroundWindow === false') && strpos($proc, 'backgroundWindow === false') < strpos($proc, 'focused: true'), 'processItemInTab może przenieść fokus tylko w trybie zgodności');
+    $finally = substr($bg, strpos($bg, '  } finally {', strpos($bg, 'async function runAll')), 300);
+    assert_true(str_contains($finally, 'closeAutomationWindow'), 'po przebiegu okno robocze musi zostać zamknięte');
+    assert_true(is_file($dir.'/automation_window.html'), 'brak strony-uchwytu okna roboczego');
+    assert_true(str_contains(file_get_contents($dir.'/options.html'), 'id="backgroundWindow"'), 'ustawienia muszą pozwalać wyłączyć tryb w tle');
 }
