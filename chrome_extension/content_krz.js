@@ -918,16 +918,37 @@
       .join("\n").slice(0, 16000);
   }
 
-  function resultRowsMatchCurrentQuery(job) {
-    const rows = subjectResultRowsText();
-    const query = String(job.query || "").trim();
-    if (!rows || !query) return false;
+  function textMatchesQuery(text, query) {
+    if (!text || !query) return false;
     const queryDigits = query.replace(/\D/g, "");
     if (queryDigits.length >= 6) {
-      const ids = rows.match(/(?<!\d)\d[\d\s-]{4,18}\d(?!\d)/g) || [];
+      const ids = text.match(/(?<!\d)\d[\d\s-]{4,18}\d(?!\d)/g) || [];
       return ids.some((value) => value.replace(/\D/g, "") === queryDigits);
     }
-    return norm(rows).includes(norm(query));
+    return norm(text).includes(norm(query));
+  }
+
+  // Tekst samej sekcji „Wyniki wyszukania" (od jej nagłówka do końca strony),
+  // bez wartości pól formularza. Portal potrafi pokazać wynik w układzie kartowym
+  // („Nazwa … KRS 0001072376 NIP …") bez elementów tr/[role=row] — 20.10.2026
+  // bramka wierszy odrzucała wtedy poprawny wynik jako „wiersz niezgodny".
+  function resultsSectionText() {
+    const body = ((document.body && document.body.innerText) || "").replace(/\s+/g, " ");
+    // Pierwszy nagłówek sekcji (przed licznikiem „Liczba podmiotów"); link
+    // „Przejdź do wyników wyszukania" ma inną odmianę i nie pasuje.
+    const at = body.search(/wyniki wyszukania/i);
+    return at >= 0 ? body.slice(at, at + 16000) : "";
+  }
+
+  function resultRowsMatchCurrentQuery(job) {
+    const query = String(job.query || "").trim();
+    if (!query) return false;
+    if (textMatchesQuery(subjectResultRowsText(), query)) return true;
+    // Zapas: ten sam ścisły test (identyfikator jako osobny token) w sekcji wyników.
+    // Stary wynik innego podmiotu nie zawiera bieżącego identyfikatora, więc
+    // ochrona przed buforowaną ramką zostaje zachowana.
+    const section = resultsSectionText();
+    return /liczba podmiotow: [1-9]/.test(norm(section)) && textMatchesQuery(section, query);
   }
 
   function send(type, payload) {

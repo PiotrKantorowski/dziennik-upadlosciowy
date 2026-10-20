@@ -95,6 +95,10 @@ function test_krz_discontinued_enforcement_is_named_and_high(): void {
     assert_eq('enforcement_discontinued', $events[0]['proceeding_status']);
     assert_eq('Km 396/25', $events[0]['signature'], 'sygnatura egzekucyjna musi zostać zachowana');
     assert_true(str_contains($events[0]['title'], 'umorzone postępowanie egzekucyjne'), 'tytuł musi nazywać rodzaj wpisu');
+    // Układ kartowy portalu (zapasowy odczyt całej sekcji, bez dwukropków).
+    $card = $r->krzEventsFromText('Umorzone postępowania egzekucyjne Lista wyszukanych postępowań Organ wydający orzeczenie Komornik Sądowy przy Sądzie Rejonowym w Przykładowie Sygnatura Km 396/25 Data ujawnienia 17.11.2025 Data umorzenia 16.10.2025', ['name'=>'Przykład sp. z o.o.','krs'=>'0001234567','type'=>'company']);
+    assert_eq('Km 396/25', $card[0]['signature'] ?? null, 'sygnatura z układu kartowego');
+    assert_eq('enforcement_discontinued', $card[0]['proceeding_status'] ?? null);
     // Umorzone postępowanie UPADŁOŚCIOWE nie może trafić do gałęzi egzekucji.
     $up = $r->riskFromText('postępowanie upadłościowe umorzone, egzekucyjne zabezpieczenie zniesione');
     assert_true($up['status'] !== 'enforcement_discontinued', 'upadłość ma pierwszeństwo przed egzekucją');

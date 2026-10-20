@@ -304,8 +304,9 @@ final class RiskAnalyzer
         preg_match(self::SIG_RE, $chunk, $m);
         $signature = $m[0] ?? null;
         // Sygnatury egzekucyjne („Km 396/25", „1425-SEE.7113…") nie mają formatu
-        // sądowego SIG_RE — wtyczka podaje je jawnie jako „Sygnatura: …".
-        if (!$signature && preg_match('/Sygnatura[^:;]{0,20}:\s*([^;\n]{3,80})/u', $chunk, $ms)) $signature = trim($ms[1]);
+        // sądowego SIG_RE — wtyczka podaje je jako „Sygnatura: …;" (tabela) albo
+        // „Sygnatura Km 396/25 Data ujawnienia …" (układ kartowy portalu).
+        if (!$signature && preg_match('/Sygnatura(?:[^:;\n]{0,20}:)?\s+(.{3,80}?)(?=\s*(?:;|\n|Data ujawnienia|Data umorzenia|$))/u', $chunk, $ms)) $signature = trim($ms[1]);
         if (!$signature && !preg_match('/post[eę]powan|restrukturyzac|upad[łl]o|umorzen|oddalen|zako[ńn]czon|uk[łl]ad/ui', $chunk)) return null;
         // Tytuł niesie RODZAJ postępowania (a nie tylko sygnaturę) — dzięki temu
         // i karta, i ocena LLM mówią WPROST, jakie to postępowanie.
