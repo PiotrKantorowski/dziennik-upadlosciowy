@@ -85,3 +85,17 @@ function test_krz_event_title_names_proceeding_kind(): void {
     $up = $r->krzEventsFromText('postępowanie upadłościowe XX1U/GUp/5/2024 w toku', ['name'=>'ABC','pesel'=>'80010112345']);
     assert_true(str_contains($up[0]['title'], 'upadłościowe'), 'rodzaj upadłościowy w tytule');
 }
+function test_krz_discontinued_enforcement_is_named_and_high(): void {
+    // Format pozycji, którą wtyczka 1.9.2 wysyła z tabeli „Umorzone postępowania egzekucyjne".
+    $r = new RiskAnalyzer();
+    $text = 'Umorzone postępowanie egzekucyjne. Organ wydający orzeczenie: Komornik Sądowy przy Sądzie Rejonowym w Przykładowie; Sygnatura: Km 396/25; Data ujawnienia: 02.09.2025; Data umorzenia: 28.08.2025 [Kryterium wyszukiwania: 0001234567]';
+    $events = $r->krzEventsFromText($text, ['name'=>'Przykład sp. z o.o.','krs'=>'0001234567','type'=>'company']);
+    assert_true(count($events) === 1, 'jedna pozycja egzekucji = jedno zdarzenie');
+    assert_eq('wysoki', $events[0]['risk'], 'umorzona egzekucja to wysokie ryzyko');
+    assert_eq('enforcement_discontinued', $events[0]['proceeding_status']);
+    assert_eq('Km 396/25', $events[0]['signature'], 'sygnatura egzekucyjna musi zostać zachowana');
+    assert_true(str_contains($events[0]['title'], 'umorzone postępowanie egzekucyjne'), 'tytuł musi nazywać rodzaj wpisu');
+    // Umorzone postępowanie UPADŁOŚCIOWE nie może trafić do gałęzi egzekucji.
+    $up = $r->riskFromText('postępowanie upadłościowe umorzone, egzekucyjne zabezpieczenie zniesione');
+    assert_true($up['status'] !== 'enforcement_discontinued', 'upadłość ma pierwszeństwo przed egzekucją');
+}

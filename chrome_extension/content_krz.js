@@ -618,6 +618,60 @@
     return uniq.slice(0, MAX_PROCEEDINGS);
   }
 
+  // „Umorzone postępowania egzekucyjne" (KRZ, sekcja pod wierszem podmiotu): organ
+  // egzekucyjny (komornik, urząd skarbowy), sygnatura egzekucyjna („Km 396/25",
+  // „1425-SEE.7113…"), data ujawnienia, data umorzenia. Te sygnatury nie pasują do
+  // SIG_RE, a nagłówki kolumn do rowKw postępowań, więc do 1.9.1 tabela była
+  // niewidoczna: collectItems nie widział wierszy, openResultDetailsIfNeeded klikał
+  // ostatni link tabeli — sygnaturę egzekucji — portal zmieniał widok i ramka ginęła
+  // bez zgłoszenia wyniku (stały błąd dwóch spółek, 19–20.10.2026). Odczytujemy
+  // tylko widoczne wiersze; w sygnatury egzekucji NIE klikamy.
+  const ENFORCEMENT_HEADER_RE = /data umorzenia|organ wydajacy orzeczenie/;
+  function collectEnforcementItems() {
+    const items = [];
+    const tables = [...document.querySelectorAll("table, [role=table], [role=grid]")].filter(visible);
+    const TABLE_SEL = "table, [role=table], [role=grid]";
+    for (const table of tables) {
+      // Tabela egzekucji bywa zagnieżdżona w rozwiniętym wierszu tabeli wyników —
+      // każda tabela bierze WYŁĄCZNIE własne nagłówki i wiersze.
+      const own = (el) => el.parentElement && el.parentElement.closest(TABLE_SEL) === table || el.closest(TABLE_SEL) === table;
+      const headers = [...table.querySelectorAll("th, [role=columnheader]")].filter(own).map((h) => textOf(h).replace(/\s+/g, " ").trim());
+      if (!headers.some((h) => ENFORCEMENT_HEADER_RE.test(norm(h)))) continue;
+      const rows = [...table.querySelectorAll("tbody tr, [role=row]")].filter((tr) => own(tr) && visible(tr) && tr.querySelector("td, [role=cell], [role=gridcell]"));
+      for (const tr of rows) {
+        const cells = [...tr.querySelectorAll("td, [role=cell], [role=gridcell]")].filter((c) => c.closest("tr, [role=row]") === tr).map((c) => textOf(c).replace(/\s+/g, " ").trim());
+        if (!cells.some(Boolean)) continue;
+        const fields = cells.map((value, k) => (headers[k] ? headers[k] + ": " : "") + value).filter((x) => x.replace(/^[^:]*:\s*/, ""));
+        const sigIdx = headers.findIndex((h) => /^sygnatura/.test(norm(h)));
+        const signature = sigIdx >= 0 && cells[sigIdx] ? cells[sigIdx] : null;
+        const umorzIdx = headers.findIndex((h) => /data umorzenia/.test(norm(h)));
+        items.push({
+          text: "Umorzone postępowanie egzekucyjne. " + fields.join("; "),
+          signature,
+          publication_date: extractPublicationDate((umorzIdx >= 0 && cells[umorzIdx]) || cells.join(" ")) || null,
+          title: "Umorzone postępowanie egzekucyjne",
+        });
+      }
+    }
+    if (items.length) return items;
+    // Zapas, gdy portal nie oznacza nagłówków jako <th>: cała widoczna sekcja jako
+    // jedna pozycja (bez rozbicia na wiersze, ale z pełną treścią).
+    const section = [...document.querySelectorAll("section, div, [role=region]")]
+      .filter(visible)
+      .map((el) => ({ el, t: (el.innerText || "").trim() }))
+      .filter((x) => /^umorzone postepowania egzekucyjne/.test(norm(x.t)) && DATE_RE.test(x.t) && x.t.length < 8000)
+      .sort((a, b) => a.t.length - b.t.length)[0];
+    if (section) {
+      items.push({
+        text: section.t.replace(/[ \t]+/g, " ").slice(0, 8000),
+        signature: null,
+        publication_date: extractPublicationDate(section.t) || null,
+        title: "Umorzone postępowanie egzekucyjne",
+      });
+    }
+    return items;
+  }
+
   // Znajduje w obrębie wiersza/kontenera postępowania przyciski/linki otwierające obwieszczenia.
   function findNoticeOpenersIn(scope) {
     const root = scope || document;
@@ -722,10 +776,15 @@
       catch (_) {}
     };
 
+    // Umorzone egzekucje — wysyłane od razu, bez klikania (patrz collectEnforcementItems).
+    const enforcement = collectEnforcementItems();
+    for (const item of enforcement) await flush({ ...item, url: location.href });
+
     let rows = collectProceedingRows();
     // Jeśli lista nie jest jeszcze rozwinięta, spróbuj rozwinąć pierwszy wynik (jak dotychczas),
-    // co często odsłania tabelę postępowań.
-    if (!rows.length) {
+    // co często odsłania tabelę postępowań. Gdy widać już tabelę egzekucji, wynik JEST
+    // rozwinięty — dodatkowy klik trafiłby w link sygnatury egzekucji i zabił ramkę.
+    if (!rows.length && !enforcement.length) {
       try { await openResultDetailsIfNeeded(); } catch (_) {}
       rows = collectProceedingRows();
     }

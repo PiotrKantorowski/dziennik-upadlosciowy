@@ -170,7 +170,15 @@ function test_extension_identifies_safe_protocol_version(): void {
     // 1.9.0 = osobne okno robocze bez fokusu — przebieg nie odbiera użytkownikowi klawiatury.
     // 1.9.1 = wynik każdego zadania zgłaszany od razu, przebieg nie kończy się na
     // ponownie wydanym zadaniu, harmonogram 7:00 z nadrabianiem przez poll.
-    assert_eq('1.9.1', $manifest['version'] ?? null, 'wydanie musi zgłaszać wynik każdego zadania od razu');
+    assert_eq('1.9.2', $manifest['version'] ?? null, 'wydanie musi odczytywać umorzone postępowania egzekucyjne KRZ');
+    // 1.9.2 = tabela „Umorzone postępowania egzekucyjne": odczyt bez klikania i bez
+    // „rozwijania" wyniku, które trafiało w link sygnatury egzekucji i zabijało ramkę.
+    $krzEnf = file_get_contents(dirname(__DIR__).'/chrome_extension/content_krz.js');
+    $collect = substr($krzEnf, strpos($krzEnf, 'async function collectItems'), 6000);
+    assert_true(strpos($collect, 'collectEnforcementItems()') !== false && strpos($collect, 'collectEnforcementItems()') < strpos($collect, 'openResultDetailsIfNeeded'), 'egzekucje muszą być odczytane przed jakimkolwiek rozwijaniem wyniku');
+    assert_true(str_contains($collect, '!rows.length && !enforcement.length'), 'widoczna tabela egzekucji blokuje klik „rozwiń"');
+    $enfFn = substr($krzEnf, strpos($krzEnf, 'function collectEnforcementItems'), 3500);
+    assert_true(!str_contains($enfFn, 'clickElement'), 'odczyt egzekucji nie może niczego klikać');
     $bg = file_get_contents(dirname(__DIR__).'/chrome_extension/background.js');
     $run = substr($bg, strpos($bg, 'async function runSource'), 4000);
     assert_true(str_contains($run, 'await reportItem(source, result)'), 'wynik zadania musi trafić do serwera zaraz po wykonaniu');

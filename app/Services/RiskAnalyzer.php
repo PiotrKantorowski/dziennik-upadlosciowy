@@ -246,6 +246,12 @@ final class RiskAnalyzer
         if (str_contains($f, 'kurator') && !$bankruptcy) {
             return ['risk'=>'wysoki','status'=>'kurator','reason'=>'Sąd ustanowił kuratora wobec podmiotu — najczęściej z powodu braku organów uprawnionych do jego reprezentacji. Ustal, kto i na jakich zasadach może obecnie działać w imieniu kontrahenta, oraz czy toczy się postępowanie o jego likwidację (art. 42 k.c.).'];
         }
+        // KRZ „Umorzone postępowania egzekucyjne": organ egzekucyjny (komornik, urząd
+        // skarbowy) umorzył egzekucję wobec podmiotu. Do KRZ trafiają egzekucje umorzone
+        // z powodu bezskuteczności — z majątku dłużnika nie udało się zaspokoić wierzyciela.
+        if (str_contains($f, 'egzekucyj') && str_contains($f, 'umorz') && !$bankruptcy) {
+            return ['risk'=>'wysoki','status'=>'enforcement_discontinued','reason'=>'Organ egzekucyjny umorzył egzekucję wobec podmiotu — w KRZ ujawnia się egzekucje umorzone z powodu bezskuteczności, czyli brak majątku, z którego wierzyciel mógł się zaspokoić. Silny sygnał niewypłacalności: zweryfikuj zabezpieczenia i warunki płatności przed dalszą współpracą.'];
+        }
         $closedNegative = ['z zakonczonym niepowodzeniem','niepowodzeniem','umorzen','umorzono','oddalen','oddalono','odmow','odmowiono','nie zatwierdz','niezatwierdz','bezskutecz','odrzuc','uchylenie ukladu','uchylono uklad'];
         foreach ($closedNegative as $n) if (str_contains($f,$n)) return ['risk'=>'wysoki','status'=>'found_closed_negative','reason'=>'Treść wskazuje na zakończone negatywnie albo problematyczne postępowanie; taki wpis jest istotny nawet po formalnym zakończeniu sprawy.'];
         // Najpierw jednoznaczne sygnały zakończenia — inaczej gołe rdzenie z $active ('restrukturyzac',
@@ -272,6 +278,8 @@ final class RiskAnalyzer
     {
         $f = Normalize::fold($chunk);
         $map = [
+            'postepowanie egzekucyjne' => 'umorzone postępowanie egzekucyjne',
+            'postepowania egzekucyjne' => 'umorzone postępowanie egzekucyjne',
             'zakazie prowadzenia dzialalnosci' => 'orzeczenie o zakazie prowadzenia działalności',
             'zakaz prowadzenia dzialalnosci' => 'orzeczenie o zakazie prowadzenia działalności',
             'zatwierdzenie ukladu' => 'postępowanie o zatwierdzenie układu',
@@ -295,6 +303,9 @@ final class RiskAnalyzer
         $risk = $this->riskFromText($chunk, self::isLegalPerson($subject));
         preg_match(self::SIG_RE, $chunk, $m);
         $signature = $m[0] ?? null;
+        // Sygnatury egzekucyjne („Km 396/25", „1425-SEE.7113…") nie mają formatu
+        // sądowego SIG_RE — wtyczka podaje je jawnie jako „Sygnatura: …".
+        if (!$signature && preg_match('/Sygnatura[^:;]{0,20}:\s*([^;\n]{3,80})/u', $chunk, $ms)) $signature = trim($ms[1]);
         if (!$signature && !preg_match('/post[eę]powan|restrukturyzac|upad[łl]o|umorzen|oddalen|zako[ńn]czon|uk[łl]ad/ui', $chunk)) return null;
         // Tytuł niesie RODZAJ postępowania (a nie tylko sygnaturę) — dzięki temu
         // i karta, i ocena LLM mówią WPROST, jakie to postępowanie.
