@@ -6,7 +6,7 @@
 // od content-scriptu przechwycone wyniki i odesłać je do programu. Bez
 // headless, bez podszywania — to realna sesja.
 
-const DEFAULTS = { appUrl: "http://127.0.0.1:8080", token: "", scheduleHour: 10, scheduleMinute: 0, autoRun: true, instanceLabel: "", backgroundWindow: true };
+const DEFAULTS = { appUrl: "http://127.0.0.1:8080", token: "", scheduleHour: 7, scheduleMinute: 0, autoRun: true, instanceLabel: "", backgroundWindow: true };
 // Ile kart naraz w JEDNEJ przeglądarce. COFNIĘTE DO 1 (2026-07-13): po włączeniu
 // równoległości (2) przebiegi KRZ przestały się KOŃCZYĆ — wieloramkowy, wrażliwy na
 // czas przepływ KRZ + dławienie kart w tle przez Chrome + limity service workera MV3
@@ -636,38 +636,66 @@ async function processItem(source, item, portalUrl) {
   return withTabSlot(() => processItemInTab(source, item, portalUrl));
 }
 
+// Wynik zadania zgłaszamy serwerowi OD RAZU po jego wykonaniu, a nie zbiorczo na
+// końcu przebiegu. Serwer trzyma zadanie jako „running" do zgłoszenia wyniku i po
+// 15 min dzierżawy uznaje je za porzucone. 20.10.2026 przebieg KRZ trwał dłużej:
+// serwer wydał ponownie pierwsze, jeszcze niezgłoszone zadanie, wtyczka uznała
+// to za koniec kolejki i przerwała przebieg o 10:07 — 21 zadań KRZ czekało do
+// wieczora. Zgłoszenie bieżące zamyka zadanie, zanim dzierżawa wygaśnie.
+async function reportItem(source, result) {
+  try {
+    const res = await finishRun(source, { ok: !(result.error || result.timedOut), partial: true, items: [result] });
+    return !!(res && res.ok !== false);
+  } catch (_) { return false; }
+}
+
+// Ile razy w jednym przebiegu wolno przyjąć to samo zadanie. Drugi raz serwer
+// wyda je tylko wtedy, gdy nasze zgłoszenie wyniku się nie powiodło i dzierżawa
+// wygasła — wtedy zadanie ma nowy token i trzeba je wykonać jeszcze raz.
+const MAX_TASK_ISSUES_PER_RUN = 2;
+// Kolejne puste rundy (tylko zadania już wykonane dwa razy) przed zakończeniem.
+const MAX_IDLE_ROUNDS = 3;
+
 async function runSource(source) {
   const summary = { ok: true, items: [] };
-  // Serwer wydaje zadania w MAŁYCH PACZKACH z atomową rezerwacją (claimed_by),
-  // żeby wiele wtyczek w kancelarii dzieliło kolejkę zamiast dublować pracę.
-  // Dlatego pętla: bierz paczkę -> przetwórz -> poproś o następną, aż pusto.
-  // Twardy limit rund to bezpiecznik przed nieskończoną pętlą przy błędzie serwera.
-  const seenTasks = new Set();
-  // Serwer wydaje po JEDNYM zadaniu (TASK_BATCH=1), więc liczba rund = liczba
-  // zadań. Dawny limit 20 rund ucinał przebieg przy 25 podmiotach: 5 zadań KRZ
-  // i 5 MSiG zostawało „w toku" do następnego dnia (raport 19.10.2026). Przed
-  // nieskończoną pętlą chroni seenTasks; MAX_RUN_ROUNDS to tylko bezpiecznik.
+  // Serwer wydaje po JEDNYM zadaniu (TASK_BATCH=1) z atomową rezerwacją
+  // (claimed_by), żeby wiele wtyczek w kancelarii dzieliło kolejkę. Pętla: weź
+  // zadanie -> wykonaj -> zgłoś wynik -> poproś o następne, aż serwer odda pustą
+  // listę. MAX_RUN_ROUNDS to tylko bezpiecznik przed nieskończoną pętlą.
+  const issued = new Map();
+  const unsent = [];
+  let idleRounds = 0;
   for (let round = 0; round < MAX_RUN_ROUNDS; round++) {
     const { items, portalUrl } = await getWorklist(source);
-    // Guard na powtórki: jeśli serwer z jakiegokolwiek powodu wyda ponownie zadanie
-    // już przetworzone w TYM przebiegu (np. stara wersja backendu bez rezerwacji),
-    // nie wolno mielić go w kółko — to produkowało dziesiątki identycznych błędów.
-    const fresh = items.filter((it) => !seenTasks.has(it.task_id ?? `s${it.subject_id}`));
-    if (!fresh.length) break;
-    for (const item of fresh) seenTasks.add(item.task_id ?? `s${item.subject_id}`);
-    // Pętla zachowuje kontrakt paczek, lecz MAX_CONCURRENT_TABS=1: oba źródła
-    // przeplata uczciwa kolejka withTabSlot, a skalowanie odbywa się przez wiele
-    // komputerów. Portal KRZ nie jest niezawodny przy kilku kartach w jednym Chrome.
+    if (!items.length) break;
+    // Ponowne wydanie tego samego zadania NIE oznacza końca kolejki (tak było do
+    // 1.9.0). Zadanie wydane po raz trzeci pomijamy, żeby nie mielić go w kółko.
+    const fresh = items.filter((it) => (issued.get(it.task_id ?? `s${it.subject_id}`) || 0) < MAX_TASK_ISSUES_PER_RUN);
+    if (!fresh.length) {
+      if (++idleRounds >= MAX_IDLE_ROUNDS) break;
+      await delay(2000);
+      continue;
+    }
+    idleRounds = 0;
+    for (const item of fresh) {
+      const key = item.task_id ?? `s${item.subject_id}`;
+      issued.set(key, (issued.get(key) || 0) + 1);
+    }
+    // MAX_CONCURRENT_TABS=1: oba źródła przeplata uczciwa kolejka withTabSlot,
+    // a skalowanie odbywa się przez wiele komputerów.
     for (let i = 0; i < fresh.length; i += MAX_CONCURRENT_TABS) {
       const slice = fresh.slice(i, i + MAX_CONCURRENT_TABS);
       const results = await Promise.all(slice.map(async (item) => {
         const first = await processItem(source, item, portalUrl);
-        if (!shouldRetryItem(first)) return first;
-        // Jedna ponowna próba od razu — dzierżawa zadania (15 min) jest jeszcze ważna.
-        await delay(5000);
-        const second = await processItem(source, item, portalUrl);
-        if (!shouldRetryItem(second)) return second;
-        return second.error ? { ...second, error: second.error + " (po ponownej próbie)" } : second;
+        let result = first;
+        if (shouldRetryItem(first)) {
+          // Jedna ponowna próba od razu — dzierżawa zadania (15 min) jest jeszcze ważna.
+          await delay(5000);
+          const second = await processItem(source, item, portalUrl);
+          result = shouldRetryItem(second) && second.error ? { ...second, error: second.error + " (po ponownej próbie)" } : second;
+        }
+        if (!(await reportItem(source, result))) unsent.push(result);
+        return result;
       }));
       summary.items.push(...results);
     }
@@ -677,7 +705,8 @@ async function runSource(source) {
     summary.ok = false;
     summary.error = `Niepełny przebieg ${source.key}: ${failed.length} zadań zakończyło się błędem lub timeoutem.`;
   }
-  try { await finishRun(source, summary); } catch (_) {}
+  // Na koniec wysyłamy już tylko wyniki, których bieżące zgłoszenie się nie powiodło.
+  try { await finishRun(source, { ...summary, items: unsent }); } catch (_) {}
   return summary;
 }
 
@@ -736,7 +765,18 @@ async function rescheduleAlarm() {
   chrome.alarms.create("krzDaily", { when: next.getTime(), periodInMinutes: 1440 });
 }
 
-function todayStr() { return new Date().toISOString().slice(0, 10); }
+// Data LOKALNA: toISOString() dawało datę UTC, więc między 0:00 a 2:00 czasu
+// polskiego „dziś" wtyczki było jeszcze wczoraj.
+function todayStr() {
+  const d = new Date();
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+}
+// Przebieg uznajemy za wykonany, gdy faktycznie przeszedł przez kolejkę — także
+// z błędami pojedynczych zadań (te wrócą jutro). Nie liczy się „Przebieg już
+// trwa" ani brak połączenia z programem: wtedy poll spróbuje ponownie za 3 min.
+function dailyRunCompleted(r) {
+  return !!r && !/Przebieg już trwa|Brak połączenia/i.test(String(r.error || ""));
+}
 async function markRunToday() { try { await chrome.storage.local.set({ lastRunDate: todayStr() }); } catch (_) {} }
 
 // Catch-up: jeśli zaplanowany przebieg na dziś został przegapiony (przeglądarka
@@ -751,12 +791,25 @@ async function maybeCatchUp() {
                  (now.getHours() === cfg.scheduleHour && now.getMinutes() >= cfg.scheduleMinute);
   if (lastRunDate !== todayStr() && passed) {
     const r = await runAll();
-    if (r && r.ok) await markRunToday();
+    if (dailyRunCompleted(r)) await markRunToday();
   }
 }
 
 // Przy instalacji/starcie: harmonogram, ping (rejestracja aktywności) i catch-up.
+// Jednorazowe przestawienie godziny przebiegu z dawnego domyślnego 10:00 na 7:00
+// (20.10.2026). Godzinę ustawioną ręcznie na inną niż 10:00 zostawiamy.
+const SCHEDULE_VERSION = 2;
+async function migrateSchedule() {
+  const c = await chrome.storage.local.get(["scheduleVersion", "scheduleHour", "scheduleMinute"]);
+  if (Number(c.scheduleVersion || 1) >= SCHEDULE_VERSION) return;
+  const update = { scheduleVersion: SCHEDULE_VERSION };
+  const oldDefault = c.scheduleHour === undefined || (Number(c.scheduleHour) === 10 && Number(c.scheduleMinute || 0) === 0);
+  if (oldDefault) { update.scheduleHour = 7; update.scheduleMinute = 0; }
+  await chrome.storage.local.set(update);
+}
+
 async function onInit() {
+  try { await migrateSchedule(); } catch (_) {}
   await rescheduleAlarm();
   try { await ping(); } catch (_) {}
   try { await maybeCatchUp(); } catch (_) {}
@@ -803,10 +856,16 @@ async function checkPendingSweep() {
 }
 
 chrome.alarms.onAlarm.addListener(async (alarm) => {
-  if (alarm.name === "krzPoll") { await checkPendingSweep(); return; }
+  if (alarm.name === "krzPoll") {
+    // Poll co 3 min nadrabia też dzienny przebieg: pierwszy komputer, na którym
+    // po 7:00 działa Chrome z wtyczką, wykonuje dzisiejsze sprawdzenia.
+    try { await maybeCatchUp(); } catch (_) {}
+    await checkPendingSweep();
+    return;
+  }
   if (alarm.name !== "krzDaily") return;
   const cfg = await getConfig();
-  if (cfg.autoRun) { const r = await runAll(); if (r && r.ok) await markRunToday(); }
+  if (cfg.autoRun) { const r = await runAll(); if (dailyRunCompleted(r)) await markRunToday(); }
 });
 
 // --- Komunikaty -----------------------------------------------------------

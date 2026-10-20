@@ -168,7 +168,18 @@ function test_extension_identifies_safe_protocol_version(): void {
     // 1.8.9 = okno awaryjne przy „No current window", jedna ponowna próba zadania
     // bez rozstrzygnięcia i ponowne „Wyszukaj", gdy portal KRZ milczy.
     // 1.9.0 = osobne okno robocze bez fokusu — przebieg nie odbiera użytkownikowi klawiatury.
-    assert_eq('1.9.0', $manifest['version'] ?? null, 'wydanie musi pracować w oknie roboczym bez fokusu');
+    // 1.9.1 = wynik każdego zadania zgłaszany od razu, przebieg nie kończy się na
+    // ponownie wydanym zadaniu, harmonogram 7:00 z nadrabianiem przez poll.
+    assert_eq('1.9.1', $manifest['version'] ?? null, 'wydanie musi zgłaszać wynik każdego zadania od razu');
+    $bg = file_get_contents(dirname(__DIR__).'/chrome_extension/background.js');
+    $run = substr($bg, strpos($bg, 'async function runSource'), 4000);
+    assert_true(str_contains($run, 'await reportItem(source, result)'), 'wynik zadania musi trafić do serwera zaraz po wykonaniu');
+    assert_true(str_contains($run, 'items: unsent'), 'na końcu przebiegu wysyłamy tylko niezgłoszone wyniki');
+    assert_true(!preg_match('/if \(!fresh\.length\) break;/', $run), 'ponownie wydane zadanie nie może kończyć przebiegu');
+    assert_true(str_contains($bg, 'scheduleHour: 7,') && str_contains($bg, 'async function migrateSchedule'), 'domyślna godzina 7:00 z migracją z 10:00');
+    $poll = substr($bg, strpos($bg, 'if (alarm.name === "krzPoll")'), 400);
+    assert_true(str_contains($poll, 'maybeCatchUp()'), 'poll musi nadrabiać dzisiejszy przebieg na pierwszym działającym komputerze');
+    assert_true(!str_contains($bg, 'new Date().toISOString().slice(0, 10)'), 'data przebiegu musi być lokalna, nie UTC');
     $bg = file_get_contents(dirname(__DIR__).'/chrome_extension/background.js');
     assert_true(str_contains($bg, 'chrome.windows.create') && str_contains($bg, 'no current window'), 'background musi otworzyć okno, gdy Chrome działa bez okien');
     assert_true(str_contains($bg, 'shouldRetryItem'), 'background musi ponawiać zadania bez rozstrzygnięcia');

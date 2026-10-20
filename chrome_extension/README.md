@@ -19,8 +19,9 @@ fingerprintem, bez łamania CAPTCHA. To po prostu Twoja sesja, zautomatyzowana o
 3. Program rozpoznaje typ i sygnaturę, deduplikuje i pokazuje wpis obok KRS i MSiG —
    dokładnie jak przy ręcznym wklejaniu, tylko automatycznie.
 
-Działa codziennie o ustawionej godzinie (domyślnie 10:00) **gdy przeglądarka jest
-uruchomiona**, oraz na żądanie (ikona wtyczki → „Sprawdź KRZ teraz"). Jest też przycisk
+Działa codziennie o ustawionej godzinie (domyślnie 7:00) **gdy przeglądarka jest
+uruchomiona**; jeśli o 7:00 żaden komputer nie działa, przebieg wykona pierwszy komputer
+z uruchomionym Chrome i wtyczką, oraz na żądanie (ikona wtyczki → „Sprawdź KRZ teraz"). Jest też przycisk
 **„📤 Wyślij obwieszczenie do DUiR"** na stronie KRZ — gdy oglądasz obwieszczenie ręcznie,
 jednym kliknięciem trafia ono do programu (z automatycznym dopasowaniem podmiotu).
 

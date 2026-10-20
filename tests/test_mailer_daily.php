@@ -31,7 +31,7 @@ function test_daily_mail_body_reports_monitoring_failures(): void {
 function test_daily_auto_send_gate(): void {
     $today = '2026-07-13';
     $should = fn($now,$sent,$empty) => \Duir\Services\ReportService::shouldAutoSendDaily($now,$today,$sent,$empty);
-    assert_true(!$should('09:59', null, true), 'przed godziną wysyłki — nie');
+    assert_true(!$should('06:59', null, true), 'przed godziną wysyłki — nie');
     assert_true($should('10:01', null, true), 'po godzinie + pusta kolejka — tak');
     assert_true(!$should('10:01', null, false), 'kolejka pracuje — czekaj');
     assert_true($should('10:46', null, false), 'po godzinie granicznej — wysyłaj mimo kolejki');

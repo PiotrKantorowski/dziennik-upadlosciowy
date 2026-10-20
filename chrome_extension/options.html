@@ -31,14 +31,14 @@
   <div class="row">
     <div>
       <label>Godzina automatycznego przebiegu</label>
-      <input type="number" id="scheduleHour" min="0" max="23" value="10">
+      <input type="number" id="scheduleHour" min="0" max="23" value="7">
     </div>
     <div>
       <label>Minuta</label>
       <input type="number" id="scheduleMinute" min="0" max="59" value="0">
     </div>
   </div>
-  <div class="hint">Domyślnie 10:00 — tak jak harmonogram programu. Działa tylko, gdy przeglądarka jest uruchomiona.</div>
+  <div class="hint">Domyślnie 7:00. Jeśli o tej godzinie żaden komputer nie działa, sprawdzenie wykona pierwszy komputer, na którym po 7:00 zostanie uruchomiony Chrome z wtyczką.</div>
 
   <label class="check"><input type="checkbox" id="autoRun" checked> Uruchamiaj automatycznie codziennie</label>
   <label class="check"><input type="checkbox" id="backgroundWindow" checked> Sprawdzaj w osobnym oknie, bez przejmowania klawiatury i myszy</label>

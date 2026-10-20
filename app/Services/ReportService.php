@@ -133,11 +133,12 @@ final class ReportService
     /**
      * Bramka automatycznej wysyłki raportu dziennego. Czysta funkcja — testowalna
      * bez bazy. Zasady: raz dziennie, nie przed godziną wysyłki (poranny przebieg
-     * wtyczek startuje ~10:00), preferencyjnie po opróżnieniu kolejki wtyczek;
+     * wtyczek startuje o 7:00 albo po włączeniu pierwszego komputera z wtyczką;
+     * CRON serwera zleca zadania o 6:45), preferencyjnie po opróżnieniu kolejki wtyczek;
      * po godzinie granicznej wysyłamy MIMO niepustej kolejki — raport wtedy
      * uczciwie pokaże, kogo NIE udało się sprawdzić (np. wtyczka nie działa).
      */
-    public const DAILY_SEND_AFTER = '10:00';
+    public const DAILY_SEND_AFTER = '07:00';
     public const DAILY_SEND_FORCE_AFTER = '10:45';
 
     /**
@@ -185,8 +186,8 @@ final class ReportService
         if (!self::isPolishBusinessDay($today)) return false;
         if ($nowHi < self::DAILY_SEND_AFTER) return false;
         // „Pusta kolejka" wystarcza TYLKO gdy dzisiejszy przebieg wtyczek już coś
-        // dostarczył. O 10:00 kolejka bywa pusta, bo zadania jeszcze nie powstały
-        // (wtyczki startują od 10:00) — wysłany wtedy raport oceniał kompletność
+        // dostarczył. Rano kolejka bywa pusta, bo zadania jeszcze nie powstały
+        // (wtyczki startują od 7:00) — wysłany wtedy raport oceniał kompletność
         // sprzed doby i straszył „brak sprawdzenia z 24 h" tuż przed sweepem.
         if ($queueEmpty && $sweepDeliveredToday) return true;
         return $nowHi >= self::DAILY_SEND_FORCE_AFTER;

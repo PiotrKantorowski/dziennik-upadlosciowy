@@ -201,7 +201,7 @@ btn.addEventListener("click", function(){
         // Pierwsze sprawdzenie odpala się AUTOMATYCZNIE już przy dodaniu podmiotu:
         // KRS synchronicznie (od razu widoczny w karcie), a KRZ/MSiG trafiają do kolejki
         // i bumpują sweep_requested_at, więc wtyczka Chrome przetworzy je przy najbliższym
-        // pollu (co 3 min) — bez czekania na przebieg 10:00 ani ręczne "Sprawdź teraz".
+        // pollu (co 3 min) — bez czekania na poranny przebieg 7:00 ani ręczne "Sprawdź teraz".
         // Błąd samego sprawdzenia NIE może wyglądać jak błąd zapisu — podmiot jest już zapisany.
         try { $s = $this->repo->findSubject($id); if ($s) $this->check->checkSubject($s); } catch(\Throwable $e) { /* sprawdzenie można ponowić przyciskiem albo CRON-em */ }
         Http::redirect('/subjects/'.$id);

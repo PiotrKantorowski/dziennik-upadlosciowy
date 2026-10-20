@@ -401,7 +401,7 @@ final class Repository
     // dzisiejsze zadania jeszcze nie powstały (raport szedł ze stanem sprzed doby).
     public function sweepDeliveredToday(): bool
     {
-        $st = $this->pdo->query("SELECT COUNT(*) FROM checks WHERE source IN ('KRZ','MSIG') AND status IN ('success','no_results','error') AND DATE(checked_at)=CURDATE()");
+        $st = $this->pdo->query("SELECT COUNT(*) FROM source_checks WHERE source IN ('KRZ','MSIG') AND status IN ('success','no_results','error') AND DATE(checked_at)=CURDATE()");
         return (int)$st->fetchColumn() > 0;
     }
 
