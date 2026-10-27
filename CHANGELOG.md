@@ -36,8 +36,19 @@
 - WERYFIKACJA na danych produkcyjnych: wszystkie 61 zapisanych przechwyceń KRZ
   (`raw_json.chunk`) przepuszczone ponownie przez `krzEventsFromText` — 60 trafia
   w istniejący wiersz, 0 utworzyłoby nowy (przed poprawką nagłówka: 1). Testy 140/140.
-- DO DECYZJI WŁAŚCICIELA: 18 starych kopii i dwa stare puste zdarzenia (#239, #1282)
-  nadal widać w kartach podmiotów — scalenie/usunięcie to osobna decyzja.
+- SCALENIE (na polecenie właściciela, 27.10 wieczorem): usunięte 18 kopii
+  duplikatów i dwa zdarzenia bez postępowania — #239 (sam wiersz-nagłówek tabeli
+  KRZ) i #1282 (tekst formularza i instrukcji wyszukiwarki KRZ; „wysoki" brało się
+  wyłącznie z nazwy „AD MARKET … W UPADŁOŚCI" w wierszu wyników). Zdarzeń KRZ:
+  39 → 19, każde postępowanie ma dokładnie jeden wiersz, zero zdarzeń bez
+  sygnatury. Poziom ryzyka NIE zmienił się dla żadnego z 12 podmiotów (realne
+  postępowania są zapisane osobno, z sygnaturami). Kopia stanu sprzed usunięcia:
+  `storage/backups/events_krz_pre_merge_20261027.json` (403 z sieci), każde
+  usunięcie odnotowane w `audit_log` jako `event.merged_duplicate` (20 wpisów).
+  Ponowny odczyt wszystkich zapisanych przechwyceń: 31 trafień, 0 nowych wierszy.
+- UWAGA: buforowane oceny LLM (`reports.type=assessment`) dla tych podmiotów
+  powstały na starym, zduplikowanym zestawie zdarzeń. Odświeżą się przy
+  NOWSZYM zdarzeniu albo od razu przyciskiem „🧠 Odśwież ocenę" na karcie.
 
 ## Infrastruktura 2026-10-27 — cron DUiR martwy od 23.10 (HTTP zamknięty, crontab nie zmieniony)
 
