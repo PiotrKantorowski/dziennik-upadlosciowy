@@ -6,8 +6,15 @@ final class Http
     public static function e(mixed $v): string { return htmlspecialchars((string)$v, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8'); }
     public static function json(array $payload, int $status = 200): never
     {
-        http_response_code($status);
-        header('Content-Type: application/json; charset=utf-8');
+        // Z CLI (cron konta) nagłówków nie ma gdzie wysłać, a cron.php wypisuje
+        // najpierw znacznik czasu do dziennika — PHP wpisywał więc do
+        // storage/logs/php-error.log trzy ostrzeżenia „headers already sent"
+        // przy KAŻDYM przebiegu. Zaszumiony dziennik to ostatnie miejsce, w
+        // którym chcemy szukać prawdziwej awarii.
+        if (PHP_SAPI !== 'cli') {
+            http_response_code($status);
+            header('Content-Type: application/json; charset=utf-8');
+        }
         echo json_encode($payload, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
         exit;
     }

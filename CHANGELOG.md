@@ -61,9 +61,9 @@
   Wynik przekierowany do `~/kopie-crm/duir.log`, żeby następna cicha awaria
   zostawiła ślad.
 - NADROBIENIE: `php85 cron.php` uruchomiony ręcznie 27.10 19:28 — 34 podmioty,
-  19,5 s, KRS 21 × success, CEIDG 13 × success, 34 zadania KRZ i 34 MSiG w kolejce;
-  `krz_sweep_requested_at`/`msig_sweep_requested_at` ustawione na „teraz", więc
-  wtyczka podjęła przebieg o 19:31.
+  19,5 s, KRS 21 × success, CEIDG 13 × success, 34 zadania KRZ i 34 MSiG w kolejce.
+  Wtyczka podjęła przebieg o 19:31 (pierwszy ping po zleceniu) i domknęła kolejkę
+  o 19:51: KRZ 33 × done + 1 × error, MSiG 34 × done.
 - SYNCHRONIZACJA REPO: produkcja miała od 23.10 trzy pliki, których NIE było w
   repozytorium (`cron.php`, `app/Controllers/CronController.php`,
   `app/Support/Client.php` — usunięte `curl_close()`, od PHP 8.5 Deprecated) oraz
@@ -73,10 +73,17 @@
   wersja go zgubiła) i ta wersja wgrana na serwer (kopia:
   `.htaccess.przed-knowledge-20261027`). Zweryfikowane: `/` 303, `/assets/app.css` 200,
   `/knowledge/` 403, `/.env` 403. Testy: 137/137.
-- DO OBSERWACJI: wtyczka zapisuje `lastRunDate` po KAŻDYM przebiegu, także gdy
-  kolejka była pusta (`dailyRunCompleted` nie patrzy na liczbę zadań). Jeśli cron
-  serwera spóźni się za 7:00, wtyczka „zużywa" dzień i zadania czekają do jutra —
-  dzisiaj trzeba było ręcznie ustawić sweep.
+- CICHY DZIENNIK: `cron.php` wypisuje znacznik czasu przed odpowiedzią, więc pod
+  CLI każde `header()`/`http_response_code()` kończyło się ostrzeżeniem „headers
+  already sent" — trzy wpisy do `storage/logs/php-error.log` na KAŻDY przebieg.
+  `Http::json()` i `cron.php` ustawiają nagłówki tylko poza CLI. Sprawdzone na
+  produkcji: przebieg z zajętą blokadą nie powiększył dziennika (7303 → 7303 B).
+- SPRAWDZONE, NIE JEST PROBLEMEM: wtyczka zapisuje `lastRunDate` po KAŻDYM
+  przebiegu, także gdy kolejka była pusta, więc `maybeCatchUp` nie ruszy drugi raz
+  tego samego dnia. Kolejka i tak nie stoi: `createKrzTask`/`createMsigTask` wołają
+  `requestKrzSweep()`/`requestMsigSweep()`, a `checkPendingSweep` działa przy każdym
+  pollu niezależnie od `lastRunDate`. Ręczne ustawienie sweep 27.10 o 19:29 było
+  zbędne — cron ustawił znacznik już o 19:28 i wtyczka ruszyłaby tak samo.
 
 ## Infrastruktura 2026-09-07 — cron DUiR zniknął z crontaba (nie wina kodu)
 

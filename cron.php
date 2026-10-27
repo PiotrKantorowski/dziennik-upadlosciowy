@@ -20,7 +20,7 @@ use Duir\{Database,Repository,Config};
 use Duir\Controllers\CronController;
 use Duir\Services\{CheckService,KrsClient,RiskAnalyzer,ReportService};
 
-header('X-Content-Type-Options: nosniff');
+if (PHP_SAPI !== 'cli') header('X-Content-Type-Options: nosniff');
 
 try {
     $repo = new Repository((new Database())->pdo());
@@ -30,7 +30,7 @@ try {
     $controller = new CronController($repo, new CheckService($repo, new KrsClient(), new RiskAnalyzer()), __DIR__, new ReportService($repo));
     $controller->run();
 } catch (Throwable $e) {
-    http_response_code(500);
+    if (PHP_SAPI !== 'cli') http_response_code(500);
     if (Config::bool('APP_DEBUG')) {
         echo json_encode(['ok'=>false,'error'=>$e->getMessage()], JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
     } else {
