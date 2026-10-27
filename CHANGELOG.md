@@ -46,9 +46,21 @@
   `storage/backups/events_krz_pre_merge_20261027.json` (403 z sieci), każde
   usunięcie odnotowane w `audit_log` jako `event.merged_duplicate` (20 wpisów).
   Ponowny odczyt wszystkich zapisanych przechwyceń: 31 trafień, 0 nowych wierszy.
-- UWAGA: buforowane oceny LLM (`reports.type=assessment`) dla tych podmiotów
-  powstały na starym, zduplikowanym zestawie zdarzeń. Odświeżą się przy
-  NOWSZYM zdarzeniu albo od razu przyciskiem „🧠 Odśwież ocenę" na karcie.
+- OCENY PRZELICZONE (na polecenie właściciela): wszystkie 12 buforów
+  `reports.type=assessment` odświeżone tą samą ścieżką co przycisk „🧠 Odśwież
+  ocenę" (`~/duir-diag/odswiez_oceny.php`), 12/12 bez błędu, 1,8–3,6 s na podmiot.
+  Poziom ryzyka w pierwszej linii każdej oceny zgadza się z `maxRiskForSubject`
+  policzonym po scaleniu — żadna ocena nie przeskoczyła poziomu.
+- BRAKUJĄCA BAZA WIEDZY (znalezione przy okazji): `ReportService::loadAssessmentKnowledge()`
+  czyta `knowledge/*.md` z katalogu projektu, a tego katalogu NIGDY nie było na
+  produkcji — `is_dir()` zwracało false, funkcja pusty string i każda ocena od lipca
+  powstawała BEZ red flags, matrycy ryzyka i reguł IF–THEN kancelarii. Pięć plików
+  wgrane (31 375 B, po obcięciu frontmatteru i limicie wchodzi 28 000 znaków do
+  promptu), katalog blokowany przez `.htaccess` — zweryfikowane 403 na katalogu i na
+  pliku. Oceny przeliczone JUŻ z bazą wiedzy (widać w treści odwołania do reguł
+  postępowania dla danego poziomu ryzyka).
+  WNIOSEK WDROŻENIOWY: wgranie samego `app/` nie wystarcza — `knowledge/` też jest
+  częścią aplikacji.
 
 ## Infrastruktura 2026-10-27 — cron DUiR martwy od 23.10 (HTTP zamknięty, crontab nie zmieniony)
 
