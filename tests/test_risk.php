@@ -103,3 +103,47 @@ function test_krz_discontinued_enforcement_is_named_and_high(): void {
     $up = $r->riskFromText('postępowanie upadłościowe umorzone, egzekucyjne zabezpieczenie zniesione');
     assert_true($up['status'] !== 'enforcement_discontinued', 'upadłość ma pierwszeństwo przed egzekucją');
 }
+
+// To samo obwieszczenie KRZ przechwycone dwa razy z różnym wycinkiem strony
+// (portal renderuje wyniki w ramkach, więc raz łapie się nagłówek z danymi
+// podmiotu, raz sama tabela postępowań — patrz zdarzenia 1955/1956 z 27.10.2026).
+// Klucz deduplikacji musi być TEN SAM, inaczej każdy przebieg dokłada do bazy
+// kolejną kopię tej samej sprawy, z własnym poziomem ryzyka.
+function test_krz_same_proceeding_dedupes_across_different_captures(): void {
+    $r = new RiskAnalyzer();
+    $subject = ['id'=>7,'name'=>'Jan Przykładowy','pesel'=>'80010112345'];
+    $bogaty = 'h prowadzących działalność gospodarczą Imię Jan Nazwisko Przykładowy Firma Jan Przykładowy "Warsztat" Miejsce zamieszkania Kraków PESEL 80010112345 Inny identyfikator Zwiń postępowania '
+        .'Postępowania restrukturyzacyjne Lista wyszukanych postępowań Rodzaj postępowania postępowanie o zatwierdzenie układu Sygnatura KR1S/GRz-nu/18/2023 Data rejestracji 01.02.2023 Data zakończenia Status w toku';
+    $ubogi = 'nia Postępowania restrukturyzacyjne Lista wyszukanych postępowań Rodzaj postępowania postępowanie o zatwierdzenie układu Sygnatura KR1S/GRz-nu/18/2023 Data rejestracji 01.02.2023 Data zakończenia Status w toku [Kryterium wyszukiwania: 80010112345]';
+
+    $a = $r->krzEventsFromText($bogaty, $subject);
+    $b = $r->krzEventsFromText($ubogi, $subject);
+    assert_true(count($a) >= 1 && count($b) >= 1, 'oba przechwycenia dają zdarzenie KRZ');
+    assert_eq($a[0]['signature'], 'KR1S/GRz-nu/18/2023', 'sygnatura z bogatszego przechwycenia');
+    assert_eq($b[0]['signature'], 'KR1S/GRz-nu/18/2023', 'sygnatura z uboższego przechwycenia');
+    assert_true(isset($a[0]['dedupe_hash']) && isset($b[0]['dedupe_hash']), 'zdarzenie z sygnaturą niesie własny klucz deduplikacji');
+    assert_eq($a[0]['dedupe_hash'], $b[0]['dedupe_hash'], 'ten sam klucz mimo innej treści — inaczej powstaje duplikat');
+    assert_true($a[0]['description'] !== $b[0]['description'], 'test byłby pusty, gdyby opisy były identyczne');
+}
+
+// Klucz nie może sklejać różnych podmiotów ani różnych spraw.
+function test_krz_dedupe_key_separates_subjects_and_signatures(): void {
+    $wspolny = RiskAnalyzer::krzDedupeHash(7, 'KR1S/GRz-nu/18/2023', '2023-02-01');
+    assert_true($wspolny !== RiskAnalyzer::krzDedupeHash(8, 'KR1S/GRz-nu/18/2023', '2023-02-01'), 'inny podmiot = inny klucz');
+    assert_true($wspolny !== RiskAnalyzer::krzDedupeHash(7, 'KR1S/GRz-nu/19/2023', '2023-02-01'), 'inna sygnatura = inny klucz');
+    assert_true($wspolny !== RiskAnalyzer::krzDedupeHash(7, 'KR1S/GRz-nu/18/2023', '2024-01-04'), 'inna data obwieszczenia = inny klucz');
+    assert_eq($wspolny, RiskAnalyzer::krzDedupeHash(7, ' kr1s/grz-nu/18/2023 ', '2023-02-01'), 'spacje i wielkość liter nie tworzą duplikatu');
+}
+
+// Sam wiersz-nagłówek tabeli KRZ (same etykiety kolumn, zero danych) nie jest
+// postępowaniem. Luźny wzorzec „Sygnatura …" brał z niego „Data rejestracji
+// Data zakończenia Status" jako sygnaturę i tworzył zdarzenie z niczego
+// (zdarzenie #239 w bazie produkcyjnej, lipiec 2026).
+function test_krz_table_header_is_not_a_proceeding(): void {
+    $r = new RiskAnalyzer();
+    $events = $r->krzEventsFromText('Rodzaj postępowania Sygnatura Data rejestracji Data zakończenia Status', ['id'=>12,'name'=>'Jan Przykładowy','pesel'=>'80010112345']);
+    foreach ($events as $e) {
+        assert_true(!isset($e['signature']) || $e['signature'] === null || preg_match('/\d/', (string)$e['signature']) === 1,
+            'etykiety kolumn nie mogą trafić do pola sygnatury');
+    }
+}

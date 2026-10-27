@@ -1,5 +1,44 @@
 # Changelog
 
+## KRZ 2026-10-27 — to samo postępowanie wpadało do bazy jako nowe zdarzenie
+
+- OBJAW (feedback: „wyszukiwanie, w szczególności w KRZ, wychodzi gorzej"):
+  39 zdarzeń KRZ w bazie, z czego 18 to kopie tych samych 19 postępowań —
+  po 2, 3, a nawet 4 wiersze na jedną sygnaturę, część powstała w jednym
+  przebiegu. Raport dzienny pokazywał te same sprawy jako nowe, a poziom
+  ryzyka potrafił się przy tym zmienić (ARS ZG1E/GRz-nu/5/2022: `found_active`
+  → `found_closed_positive_or_neutral`; AD MARKET GD1G/GRz-nu/85/2025 →
+  `found_bankruptcy_closed`).
+- PRZYCZYNA: zdarzenia KRZ nie niosły własnego klucza, więc `Repository::addEvent`
+  liczyło `eventHash()` — sha256 z m.in. tytułu i PIERWSZYCH 180 ZNAKÓW OPISU.
+  Moduły KRZ renderują się w ramkach i wtyczka za każdym razem przechwytuje inny
+  wycinek strony: raz nagłówek z danymi podmiotu, raz samą tabelę postępowań
+  (zdarzenia 1955/1956 zaczynają się odpowiednio od „h prowadzących działalność…"
+  i „nia Postępowania restrukturyzacyjne…"). Inny początek opisu = inny skrót =
+  nowy wiersz. Gałąź KRS nie miała tego problemu, bo ma `proceedingKey()`, który
+  celowo pomija treść.
+- FIX: `RiskAnalyzer::krzDedupeHash(subject_id, sygnatura, data obwieszczenia)` —
+  klucz bez treści, dokładana do zdarzenia w `eventFromKrzChunk()` (tylko gdy jest
+  sygnatura i id podmiotu; inaczej zostaje stara ścieżka). Rodzaju postępowania
+  świadomie NIE ma w kluczu: wynika z treści, więc bogatszy odczyt potrafi go
+  zmienić i duplikat wróciłby tylnymi drzwiami. `ON DUPLICATE KEY UPDATE` w
+  `addEvent` odświeża teraz treść i ryzyko istniejącego wiersza zamiast dokładać
+  nowy.
+- PRZY OKAZJI: luźny wzorzec „Sygnatura …" brał z pustego wiersza-nagłówka tabeli
+  sygnaturę „Data rejestracji Data zakończenia Status" i robił zdarzenie z niczego
+  (zdarzenie #239 z lipca). Sygnatura bez ani jednej cyfry jest odrzucana.
+- MIGRACJA (nic nie usunięta): w każdej grupie duplikatów nowy klucz dostał
+  NAJSTARSZY wiersz — zachowuje datę pierwszego wykrycia, od której zależy sekcja
+  „nowe wpisy" w raporcie — a jego treść/ryzyko wzięte z najnowszego, najbogatszego
+  przechwycenia. 19 wierszy przeklonowanych, 18 starych kopii ZOSTAŁO w bazie;
+  przestaną się tylko mnożyć. Kopia wszystkich zdarzeń KRZ sprzed zmiany:
+  `storage/backups/events_krz_pre_dedupe_20261027.json` (z sieci 403).
+- WERYFIKACJA na danych produkcyjnych: wszystkie 61 zapisanych przechwyceń KRZ
+  (`raw_json.chunk`) przepuszczone ponownie przez `krzEventsFromText` — 60 trafia
+  w istniejący wiersz, 0 utworzyłoby nowy (przed poprawką nagłówka: 1). Testy 140/140.
+- DO DECYZJI WŁAŚCICIELA: 18 starych kopii i dwa stare puste zdarzenia (#239, #1282)
+  nadal widać w kartach podmiotów — scalenie/usunięcie to osobna decyzja.
+
 ## Infrastruktura 2026-10-27 — cron DUiR martwy od 23.10 (HTTP zamknięty, crontab nie zmieniony)
 
 - OBJAW (raport dzienny 26.10): wszystkie 33 podmioty i wszystkie źródła

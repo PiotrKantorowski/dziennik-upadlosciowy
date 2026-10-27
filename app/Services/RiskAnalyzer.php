@@ -307,18 +307,50 @@ final class RiskAnalyzer
         // sądowego SIG_RE — wtyczka podaje je jako „Sygnatura: …;" (tabela) albo
         // „Sygnatura Km 396/25 Data ujawnienia …" (układ kartowy portalu).
         if (!$signature && preg_match('/Sygnatura(?:[^:;\n]{0,20}:)?\s+(.{3,80}?)(?=\s*(?:;|\n|Data ujawnienia|Data umorzenia|$))/u', $chunk, $ms)) $signature = trim($ms[1]);
+        // Pusty wiersz-nagłówek tabeli („Rodzaj postępowania Sygnatura Data
+        // rejestracji Data zakończenia Status") wpadał w powyższy wzorzec i dawał
+        // sygnaturę „Data rejestracji Data zakończenia Status" — czyli zdarzenie
+        // z niczego. Każda prawdziwa sygnatura (KR1S/GRz-nu/18/2023, Km 396/25,
+        // 1425-SEE.7113…) zawiera cyfrę; etykiety kolumn nie.
+        if ($signature !== null && !preg_match('/\d/', $signature)) $signature = null;
         if (!$signature && !preg_match('/post[eę]powan|restrukturyzac|upad[łl]o|umorzen|oddalen|zako[ńn]czon|uk[łl]ad/ui', $chunk)) return null;
         // Tytuł niesie RODZAJ postępowania (a nie tylko sygnaturę) — dzięki temu
         // i karta, i ocena LLM mówią WPROST, jakie to postępowanie.
         $kind = $this->krzProceedingKind($chunk);
         $title = 'KRZ: '.($kind ?: 'postępowanie').($signature ? ' ('.$signature.')' : '');
-        return [
+        $published = $this->firstDate($chunk);
+        $event = [
             'source'=>'KRZ','event_type'=>'postępowanie_krz','title'=>$title,'description'=>Normalize::text($chunk),'signature'=>$signature,
-            'publication_date'=>$this->firstDate($chunk),'proceeding_status'=>$risk['status'],'risk'=>$risk['risk'],'risk_reason'=>$risk['reason'],
+            'publication_date'=>$published,'proceeding_status'=>$risk['status'],'risk'=>$risk['risk'],'risk_reason'=>$risk['reason'],
             // RODO: nie osadzamy całego $subject (PESEL/NIP/KRS/REGON) w raw_json — event ma subject_id (FK)
             // i jest łączony JOIN-em z tabelą subjects tam, gdzie dane podmiotu są potrzebne.
             'source_url'=>$url,'raw_json'=>['chunk'=>$chunk],
         ];
+        // Bez id podmiotu klucz byłby wspólny dla wszystkich podmiotów, a bez
+        // sygnatury nie ma stabilnego identyfikatora sprawy — w obu wypadkach
+        // zostaje domyślny Repository::eventHash().
+        $subjectId = (int)($subject['id'] ?? 0);
+        if ($subjectId > 0 && $signature !== null && trim($signature) !== '') {
+            $event['dedupe_hash'] = self::krzDedupeHash($subjectId, $signature, $published);
+        }
+        return $event;
+    }
+
+    /**
+     * Klucz deduplikacji obwieszczenia KRZ: podmiot + sygnatura + data obwieszczenia.
+     * CELOWO bez treści. Domyślny Repository::eventHash() liczy skrót m.in. z tytułu
+     * i pierwszych 180 znaków opisu, a wtyczka za każdym razem przechwytuje nieco
+     * inną porcję tekstu (raz sam wiersz wyników, raz rozwinięte szczegóły, raz
+     * tabelę egzekucji) — to samo postępowanie wpadało więc do bazy jako NOWE
+     * zdarzenie przy każdym przebiegu, czasem dwa razy w jednym przebiegu, i z
+     * różnym poziomem ryzyka (27.10.2026: 18 z 39 wpisów KRZ to były duplikaty).
+     * Ta sama zasada co przy KRS, gdzie proceedingKey() od początku pomija treść.
+     * Rodzaju postępowania NIE wkładamy do klucza: wynika z treści, więc bogatszy
+     * odczyt potrafi go zmienić i duplikat wróciłby tylnymi drzwiami.
+     */
+    public static function krzDedupeHash(int $subjectId, string $signature, ?string $publicationDate): string
+    {
+        return hash('sha256', $subjectId.'|KRZ|'.Normalize::fold(trim($signature)).'|'.((string)$publicationDate));
     }
 
     // Klucz deduplikacji postępowania: nagłówek sekcji działu 6 + sygnatura akt
