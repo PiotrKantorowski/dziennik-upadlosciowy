@@ -2,7 +2,6 @@
 namespace Duir\Controllers;
 
 use Duir\Config;
-use Duir\Bootstrap;
 use Duir\Repository;
 use Duir\Services\CheckService;
 use Duir\Services\ReportService;
@@ -14,20 +13,10 @@ final class CronController
 
     public function run(): void
     {
-        $token = (string)($_GET['token'] ?? ($_POST['token'] ?? ''));
-        if ($token === '') {
-            $token = $this->tokenFromCli();
-        }
-        $expected = (string)Config::get('CRON_TOKEN', '');
-        if (Bootstrap::isWeakCronToken() && Config::get('APP_ENV', 'production') === 'production') {
-            http_response_code(503);
-            Http::json(['ok'=>false, 'error'=>'CRON_TOKEN nie jest bezpiecznie skonfigurowany. Ustaw losowy token 32+ znaki.']);
-            return;
-        }
-        if ($expected === '' || !hash_equals($expected, $token)) {
-            http_response_code(403);
-            Http::json(['ok'=>false, 'error'=>'Nieprawidłowy CRON_TOKEN.']);
-            return;
+        // Tylko CLI (cron konta: php cron.php). Zamyka też trasę /cron/run w index.php.
+        // Token w adresie URL wyciekł 23.10.2026, więc HTTP nie uruchamia przebiegu wcale.
+        if (PHP_SAPI !== 'cli') {
+            Http::json(['ok'=>false, 'error'=>'CRON uruchamiany wyłącznie z CLI.'], 403);
         }
 
         $lockPath = $this->root.'/storage/cron.lock';
@@ -64,15 +53,5 @@ final class CronController
         ];
         if ($lock) { flock($lock, LOCK_UN); fclose($lock); }
         Http::json($out);
-    }
-
-    private function tokenFromCli(): string
-    {
-        global $argv;
-        if (!is_array($argv)) return '';
-        foreach ($argv as $arg) {
-            if (str_starts_with($arg, '--token=')) return substr($arg, 8);
-        }
-        return '';
     }
 }

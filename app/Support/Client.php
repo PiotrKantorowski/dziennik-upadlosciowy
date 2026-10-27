@@ -52,7 +52,7 @@ final class Client
             $errno = curl_errno($ch);
             $error = curl_error($ch);
             $status = (int)curl_getinfo($ch, CURLINFO_HTTP_CODE);
-            curl_close($ch);
+            // curl_close() usunięte: od PHP 8.0 nic nie robi, a od 8.5 zgłasza Deprecated (uchwyt zwalnia się sam).
 
             // CURLE_UNSUPPORTED_PROTOCOL(1)/CURLE_URL_MALFORMAT(3) to wada samego adresu
             // (literówka w konfiguracji, zły schemat) — kolejna próba da identyczny wynik.

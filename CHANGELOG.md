@@ -1,5 +1,67 @@
 # Changelog
 
+## Infrastruktura 2026-10-27 — cron DUiR martwy od 23.10 (HTTP zamknięty, crontab nie zmieniony)
+
+- OBJAW (raport dzienny 26.10): wszystkie 33 podmioty i wszystkie źródła
+  „brak świeżego sprawdzenia", ostatnie wpisy KRS/CEIDG z 23.10 06:45,
+  KRZ/MSiG z 23.10 ~07:2x–07:4x. `cron_last_run_at` = `2026-10-23T06:45:35`.
+  Wtyczka cały czas pingowała (raport: „Wtyczki są aktywne (1 komp.)"), tylko
+  kolejka była pusta — nie miała czego wykonać.
+- PRZYCZYNA: 23.10 o 13:36 `cron.php` i `CronController::run()` zostały
+  zamknięte na wywołania HTTP (`PHP_SAPI !== 'cli'` → 403) po tym, jak token
+  w adresie URL wyciekł. Wpis w crontabie konta g4326 został BEZ ZMIAN:
+  `45 6 * * * wget -q -O - 'https://duir.../cron.php?token=...' >> /dev/null 2>&1`.
+  Od 24.10 cron codziennie dostawał 403 i kończył się cicho — `>> /dev/null 2>&1`
+  i `MAILTO=""` sprawiały, że nie było po tym żadnego śladu.
+- FIX: wpis w crontabie zamieniony na wywołanie z wiersza poleceń
+  `45 6 * * * cd /home/g4326/domains/kantorowskiglab.pl/public_html/duir && /usr/local/bin/php85 cron.php >> /home/g4326/kopie-crm/duir.log 2>&1`
+  (php85, bo `.htaccess` ustawia dla tego katalogu `x-httpd-php85`; token nie jest
+  już potrzebny — bramką jest sam SAPI CLI, a przy okazji sekret znika z crontaba).
+  Metoda zmiany: `crontab -l` do pliku `~/kopie-crontab/crontab-20261027-przed-duir-cli.txt`,
+  edycja pliku, `crontab plik` — nigdy potokiem (65 linii przed i po, różnica w 1 linii).
+  Wynik przekierowany do `~/kopie-crm/duir.log`, żeby następna cicha awaria
+  zostawiła ślad.
+- NADROBIENIE: `php85 cron.php` uruchomiony ręcznie 27.10 19:28 — 34 podmioty,
+  19,5 s, KRS 21 × success, CEIDG 13 × success, 34 zadania KRZ i 34 MSiG w kolejce;
+  `krz_sweep_requested_at`/`msig_sweep_requested_at` ustawione na „teraz", więc
+  wtyczka podjęła przebieg o 19:31.
+- SYNCHRONIZACJA REPO: produkcja miała od 23.10 trzy pliki, których NIE było w
+  repozytorium (`cron.php`, `app/Controllers/CronController.php`,
+  `app/Support/Client.php` — usunięte `curl_close()`, od PHP 8.5 Deprecated) oraz
+  `.htaccess` (handler `x-httpd-php85` zamiast `x-lsphp82`). Pełne wgranie folderu
+  z repozytorium COFNĘŁOBY zamknięcie crona na HTTP. Pliki wciągnięte do repo;
+  w `.htaccess` przywrócony katalog `knowledge` na liście blokowanych (serwerowa
+  wersja go zgubiła) i ta wersja wgrana na serwer (kopia:
+  `.htaccess.przed-knowledge-20261027`). Zweryfikowane: `/` 303, `/assets/app.css` 200,
+  `/knowledge/` 403, `/.env` 403. Testy: 137/137.
+- DO OBSERWACJI: wtyczka zapisuje `lastRunDate` po KAŻDYM przebiegu, także gdy
+  kolejka była pusta (`dailyRunCompleted` nie patrzy na liczbę zadań). Jeśli cron
+  serwera spóźni się za 7:00, wtyczka „zużywa" dzień i zadania czekają do jutra —
+  dzisiaj trzeba było ręcznie ustawić sweep.
+
+## Infrastruktura 2026-09-07 — cron DUiR zniknął z crontaba (nie wina kodu)
+
+- OBJAW (raport 07.09): każdy podmiot i każde źródło (KRS/KRZ/MSiG) pokazywał
+  „brak świeżego sprawdzenia" — `cron_last_run_at` w bazie utknęło na
+  `2026-09-04 09:50:07`, zero aktywności w `source_checks` od tego momentu.
+- DIAGNOZA: ręczne uruchomienie `cron.php` zadziałało poprawnie (10,4 s,
+  9/9 podmiotów, HTTP 200) — kod jest sprawny. `crontab -l` na koncie g4326
+  pokazywał WYŁĄCZNIE wpis monitoringu KSeF (`crm/scripts/monitoruj-ksef.php`,
+  7:10); wpis DUiR (`cron.php?token=...`, 09:50) zniknął całkowicie. Plik
+  crontaba i skrypt KSeF miały bardzo świeże znaczniki czasu modyfikacji —
+  wygląda na to, że przy dodawaniu zadania CRON dla KSeF crontab został
+  NADPISANY w całości (nie dopisany), co skasowało wpis DUiR.
+- FIX: przywrócono wpis `50 9 * * * wget -q -O - 'https://duir.kantorowskiglab.pl/
+  cron.php?token=...' >> /dev/null 2>&1` metodą DOPISANIA do istniejącej
+  zawartości (nie nadpisania) — wpis KSeF zachowany. Backup poprzedniej
+  zawartości crontaba: `/tmp/crontab_backup_20260907.txt` na serwerze (uwaga:
+  `/tmp` może być czyszczony przez system, to tylko dodatkowa siatka
+  bezpieczeństwa, treść jest też w tym wpisie CHANGELOG).
+- LEKCJA: crontab na tym koncie jest współdzielony między projektami DUiR i
+  CRM/KSeF — każda przyszła zmiana crontaba na koncie g4326 (dowolny projekt)
+  MUSI dopisywać do istniejącej zawartości (`crontab -l` → dopisz → `crontab -`),
+  nigdy nie nadpisywać pliku bez wcześniejszego odczytania go.
+
 ## Dane 2026-09-02 — scalenie zduplikowanego podmiotu SŁAWOMIR KAŹMIERCZAK
 
 - W bazie istniały dwa rekordy tego samego podmiotu (NIP 6581003887): id=18
