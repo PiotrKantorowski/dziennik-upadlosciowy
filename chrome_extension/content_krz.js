@@ -923,7 +923,12 @@
     const queryDigits = query.replace(/\D/g, "");
     if (queryDigits.length >= 6) {
       const ids = text.match(/(?<!\d)\d[\d\s-]{4,18}\d(?!\d)/g) || [];
-      return ids.some((value) => value.replace(/\D/g, "") === queryDigits);
+      // portal KRZ może wyświetlać KRS bez zer wiodących (888175 zamiast 0000888175)
+      const stripped = queryDigits.replace(/^0+/, "");
+      return ids.some((value) => {
+        const v = value.replace(/\D/g, "");
+        return v === queryDigits || (stripped.length >= 6 && v === stripped);
+      });
     }
     return norm(text).includes(norm(query));
   }
