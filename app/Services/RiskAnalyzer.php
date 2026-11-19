@@ -35,20 +35,25 @@ final class RiskAnalyzer
         // „zbudować" KRS/NIP z dat, sygnatur i numerów obcego wyniku. Uznajemy
         // tylko samodzielny token o długości właściwej dla KRS/NIP/REGON/PESEL.
         $tokens = [];
-        if (preg_match_all('/(?<!\d)\d[\d\s-]{7,18}\d(?!\d)/u', $text, $matches)) {
+        if (preg_match_all('/(?<!\d)\d[\d\s-]{4,18}\d(?!\d)/u', $text, $matches)) {
             foreach ($matches[0] as $token) {
                 $digits = Normalize::digits($token);
                 if (in_array(strlen($digits), [9, 10, 11, 14], true)) $tokens[$digits] = true;
+                // Portal KRZ pokazuje KRS także bez zer wiodących (888175 zamiast 0000888175),
+                // jak w content_krz.js; dopełniamy tylko numer z co najmniej 6 cyframi znaczącymi.
+                if (strlen(ltrim($digits, '0')) >= 6 && strlen($digits) <= 10) $tokens['krs:'.Normalize::krs($digits)] = true;
             }
         }
-        foreach (SearchPlan::identifiers($subject) as $id) {
+        foreach (SearchPlan::identifiers($subject) as $field => $id) {
             if (in_array(strlen($id), [9, 10, 11, 14], true) && isset($tokens[$id])) return true;
+            if ($field === 'krs' && isset($tokens['krs:'.$id])) return true;
         }
-        if (SearchPlan::nameMatches((string)($subject['name'] ?? ''), $text)) return true;
+        $type = (string)($subject['type'] ?? 'unknown');
+        if (SearchPlan::nameMatches((string)($subject['name'] ?? ''), $text, $type)) return true;
         // Pełna nazwa rejestrowa bywa zapisana jako alias, podczas gdy użytkownik
         // podał na karcie skrót. Alias jest równie dobrym potwierdzeniem tożsamości.
         foreach (preg_split('/[\r\n;]+/u', (string)($subject['aliases'] ?? '')) ?: [] as $alias) {
-            if (SearchPlan::nameMatches(trim($alias), $text)) return true;
+            if (SearchPlan::nameMatches(trim($alias), $text, $type)) return true;
         }
         return false;
     }
