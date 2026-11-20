@@ -1,0 +1,1197 @@
+# Dokumenty wydawane w postępowaniach KRZ (sąd, sędzia-komisarz, syndyk/doradca): kod wzoru i tytuł.
+# Źródło: Zestawienie wzorów wniosków i dokumentów dostępnych w KRZ od 06.05.2025. Sufiks kodu: OB obwieszczenie, PO postanowienie, ZA/ZP zarządzenie, UZ uzasadnienie, ZW zarządzenie wykonawcze.
+kod	tytul
+11171ZA	Zarządzenie syndyka o zwrocie zgłoszenia wierzytelności
+11172ZA	Zarządzenie syndyka o wezwaniu do uzupełnienia braków formalnych zgłoszenia wierzytelności
+11174ZA	Zarządzenie syndyka o pozostawieniu zgłoszenia bez rozpoznania (art. 491 14 ust. 6 p.u.)
+17000ZD	Zarządzenie o otwarcie postępowania o zatwierdzenie układu
+17005ZA	Zarządzenie o obwieszczeniu o ustaleniu dnia układowego
+17006ZA	Zarządzenie nadzorcy układu o odmowie dokonania obwieszczenia o ustaleniu dnia układowego
+17008ZA	Zarządzenie nadzorcy układu o zwołaniu zgromadzenia wierzycieli w celu głosowania nad układem
+17010ZA	Zarządzenie nadzorcy sądowego o zwołaniu zgromadzenia wierzycieli w postępowaniu o zawarcie układu osoby fizycznej nieprowadzącej działalności gospodarczej na zgromadzeniu wierzycieli
+17011ZP	Wniosek do US o informacje dotyczące upadłego w trybie art. 491(8) ust. 1 p.u.
+17012ZP	Wniosek do CI KRS o informacje dotyczące upadłego w trybie art. 491(8) ust. 1 p.u.
+17013ZP	Zawiadomienie wierzycieli o otwarciu postępowania restrukturyzacyjnego (pierwsze doręczenie)
+17014ZP	Zawiadomienie o terminie zgromadzenia wierzycieli w celu głosowania nad układem (art. 105 ust. 5 p.r.)
+17015ZP	Zawiadomienie o terminie zgromadzenia wierzycieli w celu głosowania nad układem (art. 264 p.r., art. 282 p.r., art. 322 p.r.)
+17016ZP	Zawiadomienie o terminie zgromadzenia wierzycieli (spornych) w celu głosowania nad układem (art. 264 p.r., art. 282 p.r., art. 322 p.r.)
+17017ZP	Pismo dowolne
+17018ZP	Zawiadomienie o posiedzeniu rady wierzycieli
+17019ZP	Zawiadomienie o posiedzeniu rady wierzycieli
+17020PW	Zarządzenie wykonawcze zarządzenia doradcy restrukturyzacyjnego o przekazaniu skargi do Sądu
+17020ZA	Zarządzenie doradcy restrukturyzacyjnego o przekazaniu skargi do Sądu
+17030ZP	Projekt planu spłaty organu pozasądowego
+60040DZ	Zarządzenie przekazania wskazanego dokumentu z Akt do doręczenia
+60041ZA	Zarządzenie wyłączenia pisma z Akt i dołączenia do innych Akt
+60042ZA	Zarządzenie wyłączenia pisma z Akt i przekazania go do dekretacji w bieżącym wydziale
+60060ZP	Zarządzenie dowolne pozasądowego organu
+61062ZP	Zarządzenie dowolne w postępowaniu doradcy restrukturyzacyjnego - dezaktywacja uczestnika w postępowaniu
+61066DZ	Zmiana/Wygaszanie doradcy restrukturyzacyjnego w postępowaniu doradcy restrukturyzacyjnego
+61067ZP	Zarządzenie dowolne w postępowaniu doradcy restrukturyzacyjnego - dodanie uczestników w postępowaniu na podstawie wniosku
+10001PO	Postanowienie Sądu o odrzuceniu wniosku restrukturyzacyjnego
+10002PO	Postanowienie Sądu o umorzeniu postępowania w przedmiocie rozpoznania wniosku restrukturyzacyjnego
+10003PO	Postanowienie Sądu o oddaleniu wniosku restrukturyzacyjnego
+10004PO	Postanowienie Sądu o otwarciu postępowania sanacyjnego
+10005PO	Postanowienie Sądu o otwarciu przyspieszonego postępowania układowego
+10006PO	Postanowienie Sądu o otwarciu postępowania układowego
+10007PO	Postanowienie Sądu o odmowie otwarcia postępowania restrukturyzacyjnego (art. 8 ust 1 p.r.)
+10008PO	Postanowienie Sądu o odmowie otwarcia postępowania restrukturyzacyjnego (sanacyjnego i układowego) - art. 8 ust. 2 p.r.
+10009PO	Postanowienie Sądu o uchyleniu postanowienia o otwarciu postępowania restrukturyzacyjnego przez sąd II instancji do ponownego rozpoznania
+10010PO	Postanowienie Sądu o uchyleniu postanowienia o otwarciu postępowania restrukturyzacyjnego przez sąd II instancji i odrzuceniu wniosku
+10011PO	Postanowienie Sądu o uchyleniu postanowienia o otwarciu postępowania restrukturyzacyjnego przez sąd II instancji i umorzeniu postępowania w przedmiocie wniosku restrukturyzacyjnego
+10012PO	Postanowienie Sądu o uchyleniu postanowienia o otwarciu postępowania restrukturyzacyjnego przez sąd II instancji i oddaleniu wniosku o otwarcie postępowania
+100151PO	Postanowienie Sądu o ustanowieniu kuratora dla dłużnika (art. 68 p.r.)
+100152PO	Postanowienie sędziego-komisarza o ustanowieniu kuratora dla dłużnika (art. 68 p.r.)
+10016PO	Postanowienie sędziego-komisarza o ustanowieniu kuratora dla spadkobierców dłużnika (art. 72 p.r.)
+10017PO	Postanowienie sędziego-komisarza o ustanowieniu kuratora dla wierzyciela dłużnika (art. 75 p.r.)
+100181PO	Postanowienie Sądu o ustaleniu wynagrodzenia kuratora
+100182PO	Postanowienie sędziego-komisarza o ustaleniu wynagrodzenia kuratora
+10019PO	Postanowienie Sądu o uchyleniu zarządu własnego dłużnika i ustanowieniu zarządcy (art. 239 p.r.)
+10020PO	Postanowienie Sądu o cofnięciu dłużnikowi zezwolenia na wykonywanie zarządu nad całością lub częścią majątku
+10021PO	Postanowienie sędziego-komisarza o tym, aby ustalenia składu masy układowej dokonał dłużnik pod nadzorem nadzorcy sądowego (art. 274 ust. 2 p.r.)
+10022PO	Postanowienie Sądu o powołaniu zastępcy sędziego-komisarza
+10023PO	Postanowienie sędziego-komisarza o oznaczeniu czynności, których nadzorcy sądowemu albo zarządcy nie wolno wykonywać bez jego zezwolenia albo bez zgody rady wierzycieli
+10024PO	Postanowienie sędziego-komisarza o zwróceniu uwagi na uchybienie popełnione przez nadzorcę sądowego albo zarządcę
+10025PO	Postanowienie Sądu o ustaleniu wynagrodzenia ostatecznego nadzorcy sądowego
+10026PO	Postanowienie Sądu o ustaleniu wynagrodzenia ostatecznego zarządcy
+10027PO	Postanowienie Sądu o ustaleniu wynagrodzenia ostatecznego nadzorcy sądowego w kwocie pobranych zaliczek
+10028PO	Postanowienie Sądu o ustaleniu wynagrodzenia ostatecznego zarządcy w kwocie pobranych zaliczek
+10029PO	Postanowienie Sądu o ustaleniu wynagrodzenia ostatecznego zarządcy w wysokości 30 procent podstaw (art. 59 ust. 2 p.r.)
+10030PO	Postanowienie Sądu o ustaleniu wynagrodzenia ostatecznego nadzorcy sądowego w wysokości 40 procent podstaw (art. 46 ust. 1 p.r.)
+10031PO	Postanowienie Sądu o oddaleniu wniosku o ustalenie wynagrodzenia ostatecznego zarządcy/nadzorcy sądowego
+100321PO	Postanowienie sędziego-komisarza o dalszych zaliczkach na wynagrodzenie zarządcy/nadzorcy sądowego
+10034PO	Postanowienie sędziego-komisarza o rozstrzygnięciu sporu co do wysokości zaliczki
+10035PO	Postanowienie Sądu o przywróceniu zarządcy/nadzorcy sądowemu terminu do złożenia wniosku o przyznanie wynagrodzenia ostatecznego
+10036PO	Postanowienie Sądu o ustaleniu wynagrodzenia wstępnego zarządcy
+10037PO	Postanowienie sędziego-komisarza o zatwierdzeniu sprawozdania rachunkowego
+10038PO	Postanowienie sędziego-komisarza o odmowie określonego wydatku
+10040PO	Postanowienie Sądu o zatwierdzeniu sprawozdania końcowego
+10041PO	Postanowienie Sądu o odmowie zatwierdzenia sprawozdania końcowego
+10042PO	Postanowienie sędziego-komisarza o upomnieniu nadzorcy sądowego albo zarządcy
+10043PO	Postanowienie sędziego-komisarza nakładające grzywnę na nadzorcę sądowego albo zarządcę
+100441PO	Postanowienie Sądu o odwołaniu nadzorcy sądowego
+100442PO	Postanowienie Sądu o odwołaniu zarządcy
+100451PO	Postanowienie Sądu o wyznaczeniu nadzorcy sądowego po uprawomocnieniu się postanowienia o odwołaniu nadzorcy sądowego
+100452PO	Postanowienie Sądu o wyznaczeniu zarządcy po uprawomocnieniu się postanowienia o odwołaniu zarządcy
+10046PO	Postanowienie Sądu o zawieszeniu nadzorcy sądowego w wykonywaniu czynności
+100471PO	Postanowienie Sądu o stwierdzeniu wygaśnięcia funkcji nadzorcy sądowego (art. 29 ust. 1 pkt 2 i 3 p.r.)
+100481PO	Postanowienie Sądu o stwierdzeniu wygaśnięcia funkcji zarządcy (art. 29 ust. 1 pkt 2 i 3 p.r.)
+100501PO	Postanowienie Sądu o zmianie zarządcy
+100511PO	Postanowienie Sądu o zmianie nadzorcy sądowego
+10055PO	Postanowienie Sądu o odmowie zmiany zarządcy/nadzorcy sądowego
+10057PO	Postanowienie sędziego-komisarza o dopuszczeniu wierzyciela do udziału w sprawie
+10058PO	Postanowienie sędziego-komisarza o zwołaniu zgromadzenia wierzycieli w celu głosowania nad układem
+10059PO	Postanowienie sędziego-komisarza o zwołaniu zgromadzenia wierzycieli na skutek uchwały rady wierzycieli
+10060PO	Postanowienie sędziego-komisarza o zwołaniu zgromadzenia wierzycieli w przypadku, gdy sędzia- komisarz uzna to za potrzebne
+10061PO	Postanowienie sędziego-komisarza o dopuszczeniu wierzyciela do udziału w zgromadzeniu wierzycieli
+10062PO	Postanowienie sędziego-komisarza o stwierdzeniu przyjęcia układu przez zgromadzenie wierzycieli
+10063PO	Postanowienie sędziego-komisarza o stwierdzeniu nieprzyjęcia układu przez zgromadzenie wierzycieli
+10064PO	Postanowienie sędziego-komisarza o stwierdzeniu przyjęcia uchwały zgromadzenia wierzycieli
+10065UZ	Uzasadnienie postanowienia sędziego-komisarza o stwierdzeniu przyjęcia uchwały zgromadzenia wierzycieli
+10066PO	Postanowienie sędziego-komisarza o stwierdzeniu nieprzyjęcia uchwały
+10067UZ	Uzasadnienie postanowienia sędziego-komisarza o stwierdzeniu nieprzyjęcia uchwały zgromadzenia wierzycieli
+10068PO	Postanowienie sędziego-komisarza o przyjęciu uchwały i uchyleniu uchwały zgromadzenia wierzycieli
+10069UZ	Uzasadnienie postanowienia sędziego-komisarza o przyjęciu uchwały i uchyleniu uchwały zgromadzenia wierzycieli
+10070PO	Postanowienie Sądu o oddaleniu zażalenia na postanowienie o stwierdzeniu przyjęcia uchwały zgromadzenia wierzycieli
+10071PO	Postanowienie Sądu o uchyleniu postanowienia o stwierdzeniu przyjęcia uchwały zgromadzenia wierzycieli i przekazaniu sprawy
+10072PO	Postanowienie Sądu o zmianie postanowienia sędziego-komisarza - stwierdzić przyjęcie, nie przyjęcie uchwały, uchylić uchwałę
+10073PO	Postanowienie Sądu o zatwierdzeniu układu (art. 164 ust. p.r.)
+10073UZ	Uzasadnienie postanowienia Sądu o zatwierdzeniu układu (art. 164 ust. p.r.)
+10074UZ	Uzasadnienie postanowienia Sądu o zatwierdzeniu układu (art. 164 ust. p.r.)
+10075PO	Postanowienie Sądu o odmowie zatwierdzenia układu (art. 165 ust. 1 lub 2 p.r.)
+10075UZ	Uzasadnienie postanowienia Sądu o odmowie zatwierdzenia układu (art. 165 ust. 1 lub 2 p.r.)
+10076UZ	Uzasadnienie postanowienia Sądu o odmowie zatwierdzenia układu (art. 165 ust. 1 lub 2 p.r.)
+10077PO	Postanowienie Sądu o odmowie zatwierdzenia układu (art. 165 ust. 3 p.r.)
+10077UZ	Uzasadnienie postanowienia Sądu o odmowie zatwierdzenia układu (art. 165 ust. 3 p.r.)
+10078UZ	Uzasadnienie postanowienia Sądu o odmowie zatwierdzenia układu (art. 165 ust. 3 p.r.)
+10079PO	Postanowienie Sądu o umorzeniu postępowania restrukturyzacyjnego (art. 165 ust. 5 p.r.)
+10079UZ	Uzasadnienie postanowienia Sądu o umorzeniu postępowania restrukturyzacyjnego (art. 165 ust. 5 p.r.)
+10080UZ	Uzasadnienie postanowienia Sądu o umorzeniu postępowania restrukturyzacyjnego (art. 165 ust. 5 p.r.)
+10081PO	Postanowienie SO o oddaleniu zażalenia na postanowienie w przedmiocie zatwierdzenia układu lub odmowy zatwierdzenia układu
+10082PO	Postanowienie SO o uchyleniu postanowienia Sądu Rejonowego w przedmiocie zatwierdzenia układu i przekazaniu sprawy do ponownego rozpoznania
+10083PO	Postanowienie SO o zmianie postanowienia SR i zatwierdzeniu układu lub umorzeniu postępowania restrukturyzacyjnego
+10084PO	Postanowienie Sądu o zatwierdzeniu układu częściowego
+10084UZ	Uzasadnienie postanowienia Sądu o zatwierdzeniu układu częściowego
+10085UZ	Uzasadnienie postanowienia Sądu o zatwierdzeniu układu częściowego
+10086PO	Postanowienie Sądu o odmowie zatwierdzenia układu częściowego (art. 182 ust. 2 p.r.)
+10086UZ	Uzasadnienie postanowienia Sądu o odmowie zatwierdzenia układu częściowego (art. 182 ust. 2 p.r.)
+10087UZ	Uzasadnienie postanowienia Sądu o odmowie zatwierdzenia układu częściowego (art. 182 ust. 2 p.r.)
+10088PO	Postanowienie Sądu o umorzeniu postępowania (art. 182 ust. 5 p.r.)
+10089PO	Postanowienie Sądu o wykonaniu układu w postępowaniu restrukturyzacyjnym
+100901PO	Postanowienie Sądu o otwarciu postępowania o zmianę układu (art. 173 ust. 1 p.r.)
+100911PO	Postanowienie Sądu o oddaleniu wniosku o otwarcie postępowania o zmianę układu
+10093PO	Postanowienie Sądu o uchyleniu układu w postępowaniu restrukturyzacyjnym
+10094PO	Postanowienie Sądu o oddaleniu wniosku o uchyleniu układu w postępowaniu restrukturyzacyjnym
+100951PO	Postanowienie sędziego-komisarza o ustanowieniu rady wierzycieli i powołaniu jej członków (art. 121 ust. 1 p.r.)
+10097PO	Postanowienie sędziego-komisarza o odwołaniu członków Rady Wierzycieli lub ich zastępców na ich wniosek i powołaniu innych (art. 125 ust. 2 p.r.)
+10098PO	Postanowienie sędziego-komisarza o odwołaniu członków rady wierzycieli albo ich zastępców, którzy nie pełnią należycie swoich obowiązków i powołaniu innych (art. 125 ust. 1 p.r.)
+10099PO	Postanowienie sędziego-komisarza o powołaniu członka rady wierzycieli w trybie (art. 123 ust. 1 p.r.)
+10100PO	Postanowienie sędziego-komisarza o oddaleniu wniosku o powołanie członka rady wierzycieli w trybie (art. 123 ust. 1 p.r.)
+10101PO	Postanowienie sędziego-komisarza o oddaleniu wniosku o powołanie członka rady wierzycieli w trybie (art. 123 ust. 3 p.r.)
+10102PO	Postanowienie sędziego-komisarza o zmianie składu rady wierzycieli w trybie (art. 126 ust. 1 p.r.)
+10103PO	Postanowienie sędziego-komisarza o oddaleniu wniosku o zmianę składu rady wierzycieli w trybie (art. 126 ust. 1 p.r.)
+10104PO	Postanowienie sędziego-komisarza o oddaleniu wniosku o powołanie członka rady wierzycieli w trybie (art. 126 ust. 3 p.r.)
+10105PO	Postanowienie Sądu o zmianie nadzorcy sądowego na skutek uchwały rady wierzycieli i o powołaniu do tej funkcji osoby wskazanej przez radę wierzycieli (art. 133 ust. 2 p.r.)
+10106PO	Postanowienie Sądu o odmowie powołania do pełnienia funkcji nadzorcy sądowego osoby wskazanej przez radę wierzycieli (art. 133 ust. 2 p.r.)
+10107PO	Postanowienie Sądu o zezwoleniu dłużnikowi na wykonywanie zarządu w zakresie nieprzekraczającym zakresu zwykłego zarządu (art. 133 ust. 1 p.r.)
+10108ZA	Zarządzenie sędziego-komisarza o zwołaniu posiedzenia rady wierzycieli (art. 134 ust. 3 p.r.)
+10109PO	Postanowienie sędziego-komisarza o pozostawieniu zarzutów bez rozpoznania (art. 136 ust. 2 p.r.)
+10110PO	Postanowienie sędziego-komisarza o uchyleniu uchwały rady wierzycieli sprzecznej z prawem lub naruszającej interes wierzycieli (art. 136 ust. 4 p.r.)
+10111PO	Postanowienie sędziego-komisarza o uchyleniu uchwały rady wierzycieli sprzecznej z prawem lub naruszającej interes wierzycieli z urzędu (art. 136 ust. 4 p.r.)
+10112PO	Postanowienie o wstrzymaniu wykonania uchwały rady wierzycieli (art. 136 ust. 5 p.r.)
+10113PO	Postanowienie sędziego-komisarza o przyznaniu członkowi rady zwrotu wydatków koniecznych oraz o przyznaniu wynagrodzenia (art. 137 ust. 1 p.r.)
+10114PO	Postanowienie Sądu II instancji o uchyleniu postanowienia sędziego-komisarza w przedmiocie zarzutów od uchwały rady wierzycieli
+10115PO	Postanowienie Sądu II instancji o oddaleniu zażalenia na postanowienie sędziego-komisarza w przedmiocie zarzutów od uchwały rady wierzyciel
+10116PO	Postanowienie Sądu II instancji o zmianie postanowienia sędziego-komisarza w przedmiocie zarzutów od uchwały rady wierzycieli
+10117PO	Postanowienie sędziego-komisarza o wyrażeniu zgody na odstąpienie od umowy wzajemnej (sanacyjne)
+10118PO	Postanowienie sędziego-komisarza o oddaleniu wniosku o wyrażeniu zgody na odstąpienie od umowy wzajemnej (sanacyjne)
+10119PO	Postanowienie sędziego-komisarza o wyrażeniu zgody na zbycie składników majątku dłużnika (sanacyjne)
+10120PO	Postanowienie sędziego-komisarza o oddaleniu wniosku o wyrażeniu zgody na zbycie składników majątku dłużnika (sanacyjne)
+10121PO	Postanowienie sędziego-komisarza o stwierdzeniu zawieszenia postępowania egzekucyjnego
+10122PO	Postanowienie sędziego-komisarza o oddaleniu wniosku o stwierdzeniu zawieszenia postępowania egzekucyjnego
+10123PO	Postanowienie sędziego-komisarza o uchyleniu zajęć
+10124PO	Postanowienie sędziego-komisarza o oddaleniu wniosku o uchyleniu zajęć
+10125PO	Postanowienie sędziego-komisarza o uznaniu, że określona część wynagrodzenia reprezentanta dłużnika jest bezskuteczna wobec masy (art. 305 p.r.)
+10126PO	Postanowienie sędziego-komisarza o oddaleniu wniosku o uznaniu, że określona część wynagrodzenia reprezentanta dłużnika jest bezskuteczna wobec masy (art. 305 p.r.)
+10127PO	Postanowienie sędziego-komisarza o wyrażeniu zgody na zwolnienie drugiej strony bezskutecznej czynności prawnej dłużnika z obowiązku przekazania do masy sanacyjnej
+10128PO	Postanowienie sędziego-komisarza o oddaleniu wniosku o wyrażeniu zgody na zwolnienie drugiej strony bezskutecznej czynności prawnej dłużnika z obowiązku przekazania do masy sanacyjnej
+10129PO	Postanowienie sędziego-komisarza o wskazaniu osoby obowiązanej do przekazania do majątku dłużnika, tego co wskutek czynności bezskutecznej ubyło z tego majątku i określenie zakresu jej obowiązku
+10130PO	Postanowienie sędziego-komisarza o wyrażeniu zgody na zlecenie sporządzenia planu restrukturyzacyjnego osobom trzecim
+10131PO	Postanowienie sędziego-komisarza o oddaleniu wniosku o wyrażeniu zgody na zlecenie sporządzenia planu restrukturyzacyjnego osobom trzecim
+10132PO	Postanowienie sędziego-komisarza o zatwierdzenie planu restrukturyzacyjnego
+10133PO	Postanowienie sędziego-komisarza o odmowie zatwierdzenia planu restrukturyzacyjnego
+10134PO	Postanowienie sędziego-komisarza o zakazie wdrażania niektórych działań przewidzianych w planie restrukturyzacyjnym
+10135PO	Postanowienie Sądu w postępowaniu o zatwierdzenie układu po wpłynięciu wniosku o zatwierdzenie układu
+101361PO	Wezwanie do uzupełnienia braków formalnych lub fiskalnych sprzeciwu co do umieszczenia lub pominięcia w spisie wierzytelności
+10141PO	Postanowienie o odrzuceniu sprzeciwu z powodu nieuzupełnienia braków formalnych i fiskalnych
+10142PO	Postanowienie sędziego-komisarza o uwzględnieniu sprzeciwu wierzyciela co do pominięcia jego wierzytelności w spisie wierzytelności
+10143PO	Postanowienie sędziego-komisarza o oddaleniu sprzeciwu co do pominięcia w spisie wierzytelności
+10144PO	Postanowienie sędziego-komisarza o rozpoznaniu sprzeciwu co do umieszczenia w spisie wierzytelności
+10145PO	Postanowienie sędziego-komisarza o oddaleniu sprzeciwu co do umieszczenia w spisie wierzytelności
+10146PO	Postanowienie sędziego-komisarza o umorzeniu postępowania w przedmiocie sprzeciwu
+10147PO	Postanowienie sędziego-komisarza o odrzuceniu sprzeciwu
+10148PO	Postanowienie Sądu II instancji o oddaleniu zażalenia na sprzeciw co do spisu wierzytelności
+10149PO	Postanowienie Sądu II instancji o uchyleniu postanowienia o rozpoznaniu sprzeciwu i przekazaniu sprawy do ponownego rozpoznania
+10150PO	Postanowienie Sądu II instancji o zmianie postanowienia sędziego-komisarza w przedmiocie sprzeciwu co do listy wierzytelności
+101511PO	Postanowienie sędziego-komisarza o zatwierdzeniu spisu wierzytelności
+101521PO	Postanowienie sędziego-komisarza o odmowie zatwierdzenia spisu wierzytelności
+10155PO	Postanowienie sędziego-komisarza o wykreśleniu z urzędu wierzytelności ze spisu wierzytelności
+10156PO	Postanowienie sędziego-komisarza o zmianie spisu wierzytelności (art. 101 ust. 1 p.r.)
+10157PO	Postanowienie sędziego-komisarza o zmianie spisu wierzytelności (art. 96 p.r.)
+10158PO	Postanowienie sędziego-komisarza o zmianie spisu wierzytelności w przyspieszonym postępowaniu układowym (art. 90 ust. 2 p.r.)
+10159PO	Postanowienie sędziego-komisarza o uwzględnieniu zarzutów wobec planu podziału (art. 323 ust. 4 p.r.)
+10160PO	Postanowienie sędziego-komisarza o oddaleniu zarzutów wobec planu podziału
+10161PO	Postanowienie sędziego-komisarza o sprostowaniu odrębnego planu podziału
+10162PO	Postanowienie sędziego-komisarza o zatwierdzeniu planu podziału
+10163PO	Postanowienie Sądu nakazujące przymusowe odebranie majątku od zarządcy
+10164PO	Postanowienie Sądu o zasądzeniu kosztów przechowania ksiąg, korespondencji i dokumentów dłużnika
+10165PO	Postanowienie Sądu o zarządzeniu likwidacji majątku dłużnika i określeniu sposobu likwidacji
+10166PO	Postanowienie Sądu o umorzeniu postępowania restrukturyzacyjnego obligatoryjnie (art. 325 ust. 1 p.r.)
+10167PO	Postanowienie Sądu o umorzeniu postępowania restrukturyzacyjnego fakultatywnie (art. 325 ust. 2 i 3 p.r.)
+10168PO	Postanowienie Sądu o umorzeniu postępowania sanacyjnego (art. 326 ust. 3 p.r.)
+10169PO	Postanowienie Sądu o umorzeniu postępowania restrukturyzacyjnego (art. 326 ust. 2 p.r.)
+10170PO	Postanowienie Sądu o umorzeniu przyspieszonego postępowania układowego (art. 326 ust. 1 p.r.)
+10171PO	Postanowienie Sądu o oddaleniu wniosku o umorzenie postępowania restrukturyzacyjnego
+10172PO	Postanowienie Sądu o pozbawieniu prawa prowadzenia działalności gospodarczej
+10172UZ	Uzasadnienie postanowienia Sądu o pozbawieniu prawa prowadzenia działalności gospodarczej
+10173UZ	Uzasadnienie postanowienia Sądu o pozbawieniu prawa prowadzenia działalności gospodarczej
+10174PO	Postanowienie Sądu o oddaleniu wniosku o pozbawienie prawa prowadzenia działalności gospodarczej
+10174UZ	Uzasadnienie postanowienia Sądu o oddaleniu wniosku o pozbawienie prawa prowadzenia działalności gospodarczej
+10175UZ	Uzasadnienie postanowienia Sądu o oddaleniu wniosku o pozbawienie prawa prowadzenia działalności gospodarczej
+10176PO	Postanowienie Sądu o odrzuceniu wniosku o pozbawienie prawa prowadzenia działalności gospodarczej
+10177PO	Postanowienie Sądu o umorzeniu postępowania o pozbawienie prawa prowadzenia działalności gospodarczej
+101781ZA	Zarządzenie przewodniczącego o wezwaniu do uzupełnienia braków formalnych lub fiskalnych wniosku o orzeczenie zakazu prowadzenia działalności gospodarczej
+10178ZA	Zarządzenie przewodniczącego o wezwaniu do uzupełnienia braków formalnych wniosku o orzeczenie zakazu prowadzenia działalności gospodarczej
+10180ZA	Zarządzenie przewodniczącego o zwrocie wniosku o orzeczenie zakazu prowadzenia działalności gospodarczej na skutek nieuzupełnienia braków formalnych
+10181ZA	Zarządzenie przewodniczącego o wezwaniu do uzupełnienia braków formalnych i fiskalnych apelacji
+10182PO	Postanowienie Sądu o odrzuceniu apelacji z powodu nieuzupełnienia braków fiskalnych oraz formalnych
+10183PO	Postanowienie Sądu II instancji o oddaleniu apelacji
+10184PO	Postanowienie Sądu II instancji o uwzględnieniu apelacji
+10185PO	Postanowienie Sądu II instancji o uchyleniu zaskarżonego postanowienia i przekazaniu sprawy do ponownego rozpoznania
+10186PO	Postanowienie Sądu II instancji o odrzuceniu apelacji
+10187PO	Postanowienie Sądu o ogłoszeniu upadłości konsumenckiej - prowadzonej przez sąd
+10190ZA	Zarządzenie o wezwaniu do uzupełnienia braków wniosku o ogłoszenie upadłości konsumenckiej - w sprawie z wniosku dłużnika
+10191ZA	Zarządzenie o wezwaniu do uzupełnienia braków wniosku o ogłoszenie upadłości konsumenckiej - w sprawie z wniosku wierzyciela
+10192ZA	Zarządzenie przewodniczącego o zobowiązaniu dłużnika do przedstawienia informacji o których mowa w art. 491 (2) ust. 4 p.u.
+10195PO	Postanowienie Sądu o umorzeniu zobowiązań bez ustalania planu spłaty
+10196PO	Postanowienie Sądu o ustaleniu planu spłaty
+10197PO	Postanowienie sędziego-komisarza o wyrażeniu zgody na prowadzenie przedsięwzięcia deweloperskiego
+10198PO	Postanowienie sędziego-komisarza o wyrażeniu zgody na odstąpienie od dalszego prowadzenia przedsięwzięcia deweloperskiego
+10199PO	Postanowienie sędziego-komisarza o udzieleniu zgody na zaprzestanie dalszego prowadzenia przedsięwzięcia deweloperskiego
+10200PO	Postanowienie sędziego-komisarza o wyrażeniu zgody na sprzedaż nieruchomości, na której prowadzone jest przedsięwzięcie deweloperskie
+10201PO	Postanowienie sędziego-komisarza o przedłużeniu nabywcom terminu do wpłacenia dopłat
+10202PO	Postanowienie sędziego-komisarza o wpłaceniu dopłat i wyznaczenie zgromadzenia wierzycieli
+10204ZA	Zarządzenie Przewodniczącego o wezwaniu do uzupełnienia braków fiskalnych wniosku o orzeczenie zakazu prowadzenia działalności gospodarczej
+10205ZA	Zarządzenie Przewodniczącego o zwrocie wniosku o orzeczenie zakazu prowadzenia działalności gospodarczej z powodu nie uzupełnienia braków fiskalnych
+10206ZA	Zarządzenie Przewodniczącego o wezwaniu do uzupełnienia braków fiskalnych
+10207PO	Postanowienie Sądu o zabezpieczeniu
+10208PO	Postanowienie Sądu o uznaniu orzeczenia o wszczęciu zagranicznego postępowania upadłościowego
+10209PO	Postanowienie Sądu o uchyleniu postanowienia o uznaniu orzeczenia o wszczęciu zagranicznego postępowania upadłościowego
+10210PO	Postanowienie Sądu o zmianie postanowienia o uznaniu orzeczenia o wszczęciu zagranicznego postępowania upadłościowego
+10211PO	Postanowienie Sądu o zezwoleniu zarządcy zagranicznemu na likwidację majątku znajdującego się w Polsce
+10215ZA	Zarządzenie o obwieszczeniu o zmianie zarządcy zagranicznego
+10216ZA	Zarządzenie sędziego-komisarza o obwieszczeniu o dacie złożenia spisu wierzytelności i/lub spisu wierzytelności spornych
+10217PO	Postanowienie sędziego-komisarza o sprostowaniu spisu wierzytelności
+10218ZA	Zarządzenie obwieszczenia informacji o wygaśnięciu układu z mocy prawa
+10219ZA	Zarządzenie o zakończeniu lub umorzeniu głównego zagranicznego postępowania upadłościowego
+10230PO	Postanowienie Sądu o uchyleniu układu w wyniku wspólnego rozpoznania wniosku o uchylenie układu i wniosku o zmianę układu
+10231PO	Postanowienie Sądu o otwarciu postępowania o zmianę układu w wyniku wspólnego rozpoznania wniosku o uchylenie układu i wniosku o zmianę układu
+10232PO	Postanowienie Sądu o otwarciu postępowania o zmianę układu w wyniku wspólnego rozpoznania wniosku o uchylenie układu i wniosku o zmianę układu
+10233PO	Postanowienie Sądu o otwarciu postępowania o zmianę układu w wyniku wspólnego rozpoznania wniosku o uchylenie układu i wniosku o zmianę układu osoby fizycznej nieprowadzącej działalności gospodarczej
+10234PO	Postanowienie o uchyleniu układu rozpatrywanego wraz z wnioskiem o ogłoszenie upadłości
+10296PO	Postanowienie Sądu o ustaleniu planu spłaty - import z modułu PS
+103001PO	Postanowienie o połączeniu postępowań - dla SO
+10300PO	Postanowienie o połączeniu postępowań
+10302OT	Projekt treści obwieszczenia postanowienia o rozłączeniu postępowań
+10302PO	Postanowienie o rozłączeniu postępowań
+11001PO	Postanowienie Sądu o wstrzymaniu rozpoznania wniosku o ogłoszenie upadłości do czasu rozpoznania wniosku restrukturyzacyjnego (art. 9b ust. 2 p.u.)
+11002PO	Postanowienie Sądu o przejęciu sprawy restrukturyzacyjnej do wspólnego rozpoznania i rozstrzygnięcia przez sąd upadłościowy (art. 9b ust. 3 p.u.)
+110091ZA	Zarządzenie przewodniczącego o wezwaniu do uzupełnienia braków formalnych lub fiskalnych wniosku o ogłoszenie upadłości - w sprawie z wniosku dłużnika
+110092ZA	Zarządzenie przewodniczącego o wezwaniu do uzupełnienia braków formalnych lub fiskalnych wniosku o ogłoszenie upadłości - w sprawie z wniosku wierzyciela lub innego wnioskodawcy
+110093ZA	Zarządzenie przewodniczącego o wezwaniu do uzupełnienia braków formalnych lub fiskalnych wniosku o ogłoszenie upadłości - w sprawie z wniosku wierzyciela lub innego wnioskodawcy - bez podstawy prawnej
+110101ZA	Zarządzenie o zwrocie wniosku o ogłoszenie upadłości na skutek nieuzupełnienia braków formalnych oraz fiskalnych
+11012ZA	Zarządzenie o zwrocie wniosku o ogłoszenie upadłości –nieuiszczenie zaliczki (art. 22a p.u.)
+11015ZA	Zarządzenie o zwrocie wniosku o ogłoszenie upadłości z powodu niemożności nadania sprawie dalszego biegu wskutek niewykonania innych zarządzeń
+11017ZA	Zarządzenie o zwrocie wniosku bez wezwania do jego uzupełnienia w razie niezłożenia oświadczenia o prawdziwości danych zawartych we wniosku
+11018PO	Postanowienie Sądu o ustanowieniu kuratora dla dłużnika, który nie ma zdolności procesowej i nie działa za niego przedstawiciel ustawowy oraz w składzie organów którego zachodzą braki uniemożliwiające jego działanie
+11019PO	Postanowienie Sądu o ustanowieniu kuratora w przypadku śmierci dłużnika (art. 261 ust. 4 p.u.)
+11020PO	Postanowienie Sądu o ustaleniu wynagrodzenia kuratora (art. 261 ust. 3 p.u.)
+110211ZW	Zarządzenie finalizujące przekazanie postępowania do innego sądu - upadłość
+11021PO	Postanowienie Sądu o przekazaniu sprawy według właściwości do innego sądu - upadłość
+11022PO	Postanowienie Sądu o zobowiązaniu wnioskodawcy do złożenia dalszej zaliczki na wydatki w postępowaniu w przedmiocie ogłoszenia upadłości, w kwocie przewyższającej sumę określoną w art. 22a p.u.
+11023PO	Postanowienie Sądu o odrzuceniu wniosku o ogłoszenie upadłości - nieuiszczenie zaliczki
+11024PO	Postanowienie Sądu o zabezpieczeniu majątku dłużnika przez ustanowienie tymczasowego nadzorcy sądowego
+11025PO	Postanowienie Sądu o oddaleniu wniosku o ustanowienie tns
+110261PO	Postanowienie Sądu o zmianie osoby tymczasowego nadzorcy sądowego - na wniosek tns lub z powodu cofnięcia lub zawieszenia licencji doradcy restrukturyzacyjnego (art. 38 ust. 1a p.u.)
+11028PO	Postanowienie Sądu o odwołaniu tymczasowego nadzorcy sądowego z powodu nienależytego pełnienia obowiązków i powołaniu do pełnienia tej funkcji innej osoby (art. 38 ust. 1 w zw. z art. 170 ust. 1 p.u.)
+11029PO	Postanowienie Sądu o uchyleniu zabezpieczenia poprzez odwołanie tymczasowego nadzorcy sądowego (art. 38 ust. 1 a p.u.)
+11030PO	Postanowienie Sądu o ustaleniu wynagrodzenia tymczasowego nadzorcy sądowego (art. 38 ust. 1b -1d p.u.)
+11031PO	Postanowienie Sądu o zwrocie wydatków koniecznych poniesionych w związku z pełnieniem funkcji tymczasowego nadzorcy sądowego (art. 38 ust. 2 p.u.)
+11032PO	Postanowienie Sądu o powołaniu zastępcy tymczasowego nadzorcy sądowego (art. 38 ust. 1 w zw. z art. 159 ust. 1 p.u.)
+11033PO	Postanowienie Sądu o stwierdzeniu wygaśnięcia funkcji tymczasowego nadzorcy sądowego z powodu śmierci
+11034PO	Postanowienie Sądu o przyznaniu tymczasowemu nadzorcy sądowemu zaliczki na poczet wydatków koniecznych (art. 38 ust. 2 p.u.)
+11035PO	Postanowienie Sądu o zabezpieczeniu majątku dłużnika przez ustanowienie zarządu przymusowego nad majątkiem dłużnika oraz określeniu zakresu i sposobu wykonywania zarządu (art. 40 ust. 1 i 2 p.u.)
+11036PO	Postanowienie Sądu o oddaleniu wniosku o ustanowienie zarządu przymusowego
+110371PO	Postanowienie Sądu o zmianie zarządcy przymusowego z powodu cofnięcia/zawieszenia licencji doradcy restrukturyzacyjnego lub na wniosek zarządcy przymusowego
+11039PO	Postanowienie Sądu o uchyleniu zabezpieczenia poprzez odwołanie zarządcy przymusowego (art. 38 ust. 1a w zw. z art. 40 ust. 4)
+11041PO	Postanowienie Sądu o ustaleniu wynagrodzenia zarządcy przymusowego (art. 40 ust. 4 w zw. z art. 38 ust. 1b-1d p.u.)
+11042PO	Postanowienie Sądu o zwrocie wydatków koniecznych poniesionych w związku z pełnieniem funkcji zarządcy przymusowego (art. 40 ust. 4 w zw. z art. 38 ust. 2)
+11043PO	Postanowienie Sądu o przyznaniu zarządcy przymusowemu zaliczki na poczet wydatków koniecznych (art. 40 ust. 4 w zw. z art. 38 ust. 2 p.u.)
+11044PO	Postanowienie Sądu o upomnieniu zarządcy przymusowego (art. 40 ust. 4  w zw. z art. 169 a ust. 1 p.u.)
+11045PO	Postanowienie Sądu nakładające grzywnę na zarządcę przymusowego (art. 40 ust. 4 w zw. z art. 169 a ust. 2 p.u.)
+11046PO	Postanowienie Sądu o odwołaniu zarządcy przymusowego z powodu nienależytego pełnienia obowiązków i powołaniu do pełnienia tej funkcji innej osoby (art. 40 ust. 4 w zw. z art. 170 ust. 1 p.u.)
+11047PO	Postanowienie Sądu o wygaśnięciu funkcji zarządcy przymusowego z powodu śmierci i powołaniu zarządcy przymusowego
+11048PO	Postanowienie Sądu o zawieszeniu postępowania egzekucyjnego (art. 39 ust. 1 p.u.)
+11049PO	Postanowienie Sądu o zawieszeniu postępowania egzekucyjnego i uchyleniu zajęć rachunku bankowego oraz ustanowieniu tymczasowego nadzorcy sądowego (art. 39 ust. 1 p.u.)
+11050PO	Postanowienie Sądu o oddaleniu wniosku o zawieszenie postępowania egzekucyjnego i uchyleniu zajęcia rachunku bankowego
+11051PO	Postanowienie Sądu o ogłoszeniu upadłości z wniosku wierzyciela albo dłużnika - spółka, osoba prawna (art. 51 ust. 1 i 2a p.u.)
+11052PO	Postanowienie Sądu o ogłoszeniu upadłości z wniosku wierzyciela/dłużnika – osoba fizyczna (art. 51 ust. 1 i 2a p.u.)
+11054PO	Postanowienie Sądu o umorzeniu postępowania w przedmiocie ogłoszenia upadłości na skutek wydania postanowienia o zatwierdzeniu układu albo postanowienia o otwarciu postępowania restrukturyzacyjnego (art. 54 ust. 4 p.u.)
+11055PO	Postanowienie Sądu o dopuszczeniu dowodu z opinii biegłego z zakresu szacowania nieruchomości i wyceny przedsiębiorstw. (art. 56 b p.u.)
+11056PO	Postanowienie Sądu o ogłoszeniu upadłości na skutek uwzględnienia wniosku o zatwierdzenie warunków sprzedaży - spółka, osoba prawna (art. 56d p.u.)
+11057PO	Postanowienie Sądu o uchyleniu postanowienia zatwierdzającego warunki sprzedaży na wniosek syndyka (art. 56h ust. 1 p.u.)
+110581PO	Postanowienie Sądu o oddaleniu wniosku o zmianę postanowienia o zatwierdzeniu warunków sprzedaży
+110582PO	Postanowienie Sądu o oddaleniu wniosku o uchylenie postanowienia o zatwierdzeniu warunków sprzedaży
+11059PO	Postanowienie Sądu o oddaleniu wniosku o ogłoszenie upadłości (art. 13 ust 1 p.u.)
+11060PO	Postanowienie Sądu II instancji o uchyleniu postanowienia o ogłoszeniu upadłości i przekazaniu sprawy do ponownego rozpoznania
+11061PO	Postanowienie Sądu II instancji o uchyleniu postanowienia o ogłoszeniu upadłości i oddaleniu wniosku o ogłoszenie upadłości
+11062ZA	Zarządzenie przewodniczącego zobowiązujące upadłego do złożenia sędziemu-komisarzowi oświadczenia o wykonaniu obowiązku wskazania i wydania syndykowi całego jego majątku (art. 57 ust 1 p.u.)
+11063PO	Postanowienie sędziego-komisarza o zakazaniu upadłemu, będącemu osobą fizyczną opuszczania Rzeczypospolitej Polskiej bez jego zezwolenia (art. 57 ust. 3 p.u.)
+11064PO	Postanowienie sędziego-komisarza o zakazaniu członkom organu zarządzającego upadłego niebędącego osobą fizyczną opuszczania terytorium Rzeczypospolitej Polskiej bez jego zezwolenia (art. 57 ust. 4 w zw. z ust. 3 p.u.)
+11065PO	Postanowienie sędziego-komisarza o zastosowaniu środków przymusu określonych w Kodeksie postępowania cywilnego wobec upadłego, który ukrywa swój majątek (art. 58 ust. 1 p.u.)
+11066PO	Postanowienie sędziego-komisarza o zastosowaniu środków przymusu wobec upadłego, który uchybia swoim obowiązkom albo w jakikolwiek sposób utrudnia ustalenie składu masy upadłości (art. 58 ust. 2 p.u.)
+11067PO	Postanowienie sędziego-komisarza o uchyleniu środków przymusu (art. 58 ust. 3 p.u.)
+110681PO	Postanowienie sędziego-komisarza o uchyleniu wobec upadłego lub członków organu zarządzającego upadłego zakazu opuszczania kraju
+11070PO	Postanowienie sędziego-komisarza o oznaczeniu mienia przeznaczonego na pomoc dla pracowników upadłego i ich rodzin (art. 64 ust. 1 p.u.)
+110711PO	Postanowienie sędziego-komisarza o wyłączeniu z masy upadłości
+11074WY	Wyrok uwzględniający powództwo o wyłączenie mienia z masy upadłości
+11075WY	Wyrok oddalający powództwo o wyłączenie mienia z masy upadłości
+11076PO	Postanowienie Sądu o zabezpieczeniu powództwa o wyłączenie mienia z masy upadłości (art. 74 ust. 4 p.u.)
+11077PO	Postanowienie sędziego-komisarza o określeniu zakresu korzystania z mieszkania przez upadłego lub osoby mu bliskie, którzy w dacie ogłoszenia upadłości zamieszkiwali w tym mieszkaniu (art. 75 ust. 2 p.u.)
+11078PO	Postanowienie sędziego-komisarza stwierdzające niedopuszczalność wpisu w księdze wieczystej dokonanego z naruszeniem art. 81 ust. 1 p.u. (art. 82 p.u.)
+11079PO	Postanowienie sędziego-komisarza stwierdzające niedopuszczalność wpisu zastawów skarbowych do Rejestru Zastawów Skarbowych dokonanego z naruszeniem art. 81 ust. 1 p.u. (art. 82 p.u.)
+11080PO	Postanowienie sędziego-komisarza o wyrażeniu zgody na wykonanie przez syndyka zobowiązania upadłego i zażądania od drugiej strony spełnienia świadczenia wzajemnego (art. 98 ust. 1 p.u.)
+11081PO	Postanowienie sędziego-komisarza o wyrażeniu zgody na odstąpienie przez syndyka od umowy wzajemnej (art. 98 ust. 1 p.u.)
+11082PO	Postanowienie sędziego-komisarza o wyrażeniu zgody na odstąpienie przez syndyka od umowy innej, niż wzajemna (art. 98 ust. 1c p.u.)
+110831PO	Postanowienie sędziego-komisarza o zezwoleniu syndykowi na wypowiedzenie umowy najmu lub dzierżawy nieruchomości upadłego (art. 109 ust. 1 p.u.)
+110851PO	Postanowienie sędziego-komisarza o zezwoleniu syndykowi na wypowiedzenie umowy najmu lub dzierżawy przedsiębiorstwa lub jego zorganizowanej części (art. 109 ust. 3 p.u.)
+11087PO	Postanowienie sędziego-komisarza o zezwoleniu syndykowi na wypowiedzenie umowy najmu lub dzierżawy (art. 110 ust. 4 p.u.)
+110881PO	Postanowienie sędziego-komisarza o wyłączeniu spadku z masy upadłości (art. 121 ust. 1 i 2 p.u.)
+11091PO	Postanowienie Sądu o ustanowieniu więcej, niż jednego zastępcy sędziego-komisarza (art. 151 ust. 3 p.u.)
+110921PO	Postanowienie sędziego-komisarza o oznaczeniu czynności, których syndykowi nie wolno wykonać bez zezwolenia sędziego-komisarza/rady wierzycieli (art. 152 ust. 1 p.u.)
+110941PO	Postanowienie sędziego-komisarza uwzględniające lub oddalające skargę syndyka na czynności komornika (art. 153 p.u.)
+11096PO	Postanowienie sędziego-komisarza o zwróceniu syndykowi / zastępcy syndyka /  syndykowi tymczasowemu uwagi na popełnione uchybienia (art. 152 ust. 1 p.u.)
+110981PO	Postanowienie sędziego-komisarza o powołaniu zastępcy syndyka z urzędu lub na jego wniosek oraz określeniu zakresu jego czynności (art. 159 ust. 1 p.u.)
+11100PO	Postanowienie Sądu o ustaleniu wynagrodzenia wstępnego syndyka (art. 163 ust. 1 p.u.)
+11101PO	Postanowienie Sądu o ustaleniu wynagrodzenia ostatecznego syndyka (art. 165 ust. 1 p.u.)
+11102PO	Postanowienie Sądu o ustaleniu wynagrodzenia ostatecznego syndyka w wysokości dotychczas pobranych zaliczek (art. 165 ust. 1 p.u.)
+11103ZA	Zarządzenie o doręczeniu odpisów wniosku syndyka o przyznanie wynagrodzenia ostatecznego upadłemu i członkom rady wierzycieli wraz z pouczeniem, iż w terminie tygodnia mogą zająć stanowisko w sprawie (art. 166 ust. 1)
+11107PO	Postanowienie sędziego-komisarza o zatwierdzeniu sprawozdania ostatecznego (art. 168 ust. 5 p.u.)
+11108PO	Postanowienie sędziego-komisarza o odmowie zatwierdzenia sprawozdania ostatecznego (art. 168 ust. 5c p.u.)
+11109PO	Postanowienie sędziego-komisarza o upomnieniu syndyka (art. 169 a ust. 1 p.u.)
+11110PO	Postanowienie sędziego-komisarza o upomnieniu syndyka – za niezłożenie w terminie sprawozdania (art. 169 a ust. 1 p.u.)
+11111PO	Postanowienie sędziego-komisarza o nałożeniu grzywny na syndyka (art. 169 ust. 2 p.u.)
+111121PO	Postanowienie Sądu o odwołaniu syndyka (art. 170 ust. 1 p.u.)
+11115PO	Postanowienie Sądu o zawieszeniu syndyka w wykonywaniu jego czynności i ustanowieniu tymczasowego syndyka (art. 170 ust. 2 p.u.)
+11116ZA	Zarządzenie zobowiązujące syndyka do przedłożenia umowy ubezpieczenia (art. 156 ust. 4 p.u.)
+11117PO	Postanowienie Sądu o zmianie syndyka na jego wniosek (art. 170 ust. 3 p.u.)
+11118PO	Postanowienie Sądu o zmianie syndyka na podstawie uchwały rady wierzycieli podjętej w trybie określonym w art. 207a p.u. (art. 170 ust. 3 p.u.)
+11119PO	Postanowienie Sądu o stwierdzeniu wygaśnięcia funkcji syndyka na skutek jego śmierci (art. 170 ust. 4 p.u.)
+11120PO	Postanowienie Sądu o stwierdzeniu wygaśnięcia funkcji syndyka na skutek utraty przez niego pełnej zdolności do czynności prawnych (art. 170 ust. 4 p.u.)
+11121PO	Postanowienie Sądu o stwierdzeniu wygaśnięcia funkcji syndyka na skutek zaistnienia braków w składzie organów spółki będącej syndykiem uniemożliwiających jej działanie (art. 170 ust. 4 p.u.)
+111221PO	Postanowienie Sądu o zmianie syndyka w przypadku cofnięcia praw wynikających z licencji doradcy restrukturyzacyjnego (art. 170 ust. 5 p.u.)
+111231PO	Postanowienie Sądu o zmianie syndyka w przypadku zawieszenia praw wynikających z licencji doradcy restrukturyzacyjnego (art. 170 ust. 5 p.u.)
+11128PO	Postanowienie sędziego-komisarza w przedmiocie odwołania zastępcy syndyka (art. 171 ust. 1 p.u.)
+11129PO	Postanowienie sędziego-komisarza w przedmiocie odwołania zastępcy syndyka – jego dalszy udział w postępowaniu nie jest potrzebny (art. 171 ust. 1 i 3 p.u.)
+11130PO	Postanowienie sędziego-komisarza w przedmiocie zmiany zastępcy syndyka (art. 171 ust. 1 p.u.)
+11131PO	Postanowienie sędziego-komisarza o stwierdzeniu wygaśnięcia funkcji zastępcy syndyka (art. 170 ust. 4 p.u.)
+11133PO	Postanowienie sędziego-komisarza o ustaleniu wynagrodzenia kuratora (art. 187 ust. 4 p.u)
+111341PO	Postanowienie sędziego-komisarza o ustanowieniu kuratora dla dłużnika/spadkobiercy upadłego po jego śmierci/wierzyciela
+11136PO	Postanowienie sędziego-komisarza w przedmiocie wynagrodzenia kuratora wierzyciela (art. 190 ust. 3 p.u.)
+11137PO	Postanowienie sędziego-komisarza o zwołaniu zgromadzenia wierzycieli oraz wskazaniu terminu, miejsca, przedmiotu obrad i sposobu głosowania (art. 192 ust. 1 p.u.)
+111381PO	Postanowienie sędziego-komisarza o uchyleniu uchwały zgromadzenia wierzycieli sprzecznej z prawem albo naruszającej dobre obyczaje albo rażąco naruszającej interes wierzyciela (art. 200 p.u)
+111411PO	Postanowienie sędziego-komisarza o ustanowieniu rady wierzycieli i powołaniu jej członków
+11143PO	Postanowienie sędziego-komisarza o odwołaniu członków rady wierzycieli z powodu nienależytego pełnienia obowiązków (art.202 ust. 1 p.u.)
+11144PO	Postanowienie sędziego-komisarza o odwołaniu członka rady wierzycieli na jego wniosek (art. 202 ust. 1 a p.u.)
+11145PO	Postanowienie sędziego-komisarza o powołaniu członka rady wierzycieli w trybie (art. 202a ust. 1 p.u.)
+111461PO	Postanowienie sędziego-komisarza o oddaleniu wniosku o powołanie członka rady wierzycieli
+11147PO	Postanowienie sędziego-komisarza o  zmianie składu rady wierzycieli w trybie art. 203 ust. 1 p.u (art. 203 ust. 1 p.u.)
+11149PO	Postanowienie Sądu o zmianie syndyka na skutek uchwały rady wierzycieli podjętej zgodnie z wnioskiem upadłego i powołanie do pełnienia tej funkcji osoby wskazanej przez radę wierzycieli (art. 207a ust. 1 p.u.)
+11150PO	Postanowienie Sądu o odmowie powołania do pełnienia  funkcji syndyka osoby wskazanej przez radę wierzycieli (art. 207a ust. 1 p.u.)
+11151ZA	Zarządzenie sędziego-komisarza o zwołaniu posiedzenia rady wierzycieli (art. 208 ust. 2 p.u.)
+111521PO	Postanowienie sędziego-komisarza o uchyleniu uchwały rady wierzycieli sprzecznej  z prawem lub naruszającej interes wierzycieli
+11154PO	Postanowienie sędziego-komisarza o wstrzymaniu wykonania uchwały rady wierzycieli do czasu uprawomocnienia się postanowienia w przedmiocie rozpoznania zarzutów lub postanowienia o uchyleniu uchwały rady wierzycieli
+11155PO	Postanowienie sędziego-komisarza o zezwoleniu na dalsze prowadzenie przedsiębiorstwa przez syndyka, jeżeli ma trwać dłużej niż trzy miesiące od dnia ogłoszenia upadłości
+11156PO	Postanowienie sędziego-komisarza o zezwoleniu na odstąpienie od sprzedaży przedsiębiorstwa jako całości (art. 206 ust. 1 pkt. 2 w zw. z art. 213 ust. 1 p.u.)
+11157PO	Postanowienie sędziego-komisarza o zezwoleniu na sprzedaż z wolnej ręki mienia wchodzącego w skład masy upadłości (art. 206 ust. 1 pkt. 3 w zw. z art. 213 ust. 1 p.u.)
+11158PO	Postanowienie sędziego-komisarza o zezwoleniu na zaciągnie pożyczek lub kredytów (art. 206 ust. 1 pkt. 4 w zw. z art. 213 ust. 1 p.u.)
+11159PO	Postanowienie sędziego-komisarza o zezwoleniu na uznanie roszczeń spornych (art. 201 ust. 1 pkt. 6 w zw. z art. 213 ust. 1 p.u.)
+11160PO	Postanowienie sędziego-komisarza o zezwoleniu na zrzeczenie się roszczeń spornych (art. 206 ust. 1 pkt. 6 w zw. z art. 213 ust. 1 p.u.)
+11161PO	Postanowienie sędziego-komisarza o zezwoleniu na zawarcie ugody co do roszczeń spornych (art. 206 ust. 1 pkt. 6 w zw. z art. 213 ust. 1 p.u.)
+11162PO	Postanowienie sędziego-komisarza o zezwoleniu na poddanie sporu rozstrzygnięciu sądu polubownego (art. 206 ust. 1 pkt. 6 w zw. z art. 213 ust. 1 p.u.)
+11163PO	Postanowienie sędziego-komisarza o oddaleniu wniosków syndyka z art. 206 ust. 1 w zw. z art. 213 ust. 1 p.u.
+11166ZA	Zarządzenie sędziego-komisarza o wyznaczeniu rozprawy wraz z pouczeniem w trybie art. 218 a p.u
+11167ZA	Zarządzenie Przewodniczącego o wyznaczeniu rozprawy wraz z pouczeniem w trybie art. 218 a p.u.
+11175PO	Postanowienie sędziego-komisarza o zmianie wierzyciela na liście wierzytelności (art. 254 ust. 1 p.u.)
+11176ZA	Zarządzenie sędziego-komisarza o obwieszczeniu daty złożenia listy wierzytelności (art. 255 ust. 2 p.u.)
+111771ZA	Zarządzenie sędziego-komisarza wzywające do uzupełnienia braków formalnych lub fiskalnych sprzeciwu (art. 257 ust. 2 p.u.)
+11179PO	Postanowienie sędziego-komisarza o odrzuceniu sprzeciwu (art. 257 ust. 2 p.u.)
+11180ZA	Zarządzenie sędziego-komisarza o doręczeniu odpisu sprzeciwu (art. 258a p.u.)
+11181PO	Postanowienie sędziego-komisarza o zwrocie odpowiedzi na sprzeciw - po terminie, nie uzupełniono braków (art. 258a ust. 2)
+11182PO	Postanowienie sędziego-komisarza o uwzględnieniu sprzeciwu
+11183PO	Postanowienie sędziego-komisarza o oddaleniu sprzeciwu
+11184PO	Postanowienie sędziego-komisarza o umorzeniu postępowania w przedmiocie sprzeciwu
+11185PO	Postanowienie Sądu II instancji o uchyleniu postanowienia sędziego-komisarza w przedmiocie sprzeciwu i przekazaniu sprawy do ponownego rozpoznania (art. 259 ust. 3 p.u.)
+11186PO	Postanowienie sędziego-komisarza o dokonaniu zmian na liście wierzytelności na podstawie prawomocnych postanowień w przedmiocie sprzeciwu i zatwierdzeniu listy wierzytelności (art. 260 ust. 1 p.u.)
+111871PO	Postanowienie sędziego-komisarza o zatwierdzeniu lub częściowym zatwierdzeniu listy wierzytelności
+11189PO	Postanowienie sędziego-komisarza o dokonaniu z urzędu zmian na liście wierzytelności (art. 261 p.u.)
+11190PO	Postanowienie sędziego-komisarza o dokonaniu z urzędu zmian na liście wierzytelności - nie umieszczonej na liście z urzędu (art. 261 p.u.)
+11191PO	Postanowienie sędziego-komisarza o sprostowaniu listy wierzytelności stosownie do prawomocnych orzeczeń (art. 262 ust. 2 p.u)
+111921PO	Postanowienie sędziego-komisarza o wstrzymaniu likwidacji masy upadłości fakultatywne lub obligatoryjnie (art. 266b ust. 4 lub 5 p.u)
+111941PO	Postanowienie sędziego-komisarza o zwołaniu zgromadzenia wierzycieli w celu głosowania nad układem w postępowaniu upadłościowym
+11196PO	Postanowienie Sądu o zatwierdzeniu układu w upadłości
+11197PO	Postanowienie Sądu o odmowie zatwierdzenia układu w upadłości
+11198PO	Postanowienie Sądu o oddaleniu wniosku o uchylenie układu (art. 266f p.u. w zw. z art. 176 ust. 1 p.r.)
+11199PO	Postanowienie Sądu w przedmiocie uchylenia układu w postępowaniu upadłościowym
+11200PO	Postanowienie Sądu o zakończeniu postępowania po prawomocnym zatwierdzeniu układu w upadłości  (art. 266d p.u.)
+11201PO	Postanowienie sędziego-komisarza o wstrzymaniu likwidacji masy upadłości do czasu uprawomocnienia postanowienia o ogłoszeniu upadłości (art. 309 p.u.)
+11202PO	Postanowienie sędziego-komisarza o wyłączeniu z masy upadłości rzeczy ruchomych, nieruchomości, których nie można zbyć z zachowaniem przepisów ustawy (art. 315 ust. 1 p.u.)
+11205PO	Postanowienie sędziego-komisarza o zezwoleniu na zawarcie umowy dzierżawy przedsiębiorstwa (art. 316 ust. 2 p.u.)
+11206PO	Postanowienie sędziego-komisarza o oddaleniu zarzutów na opis i oszacowanie (art. 319 ust. 5 p.u.)
+11207PO	Postanowienie sędziego-komisarza o uwzględnieniu zarzutów na opis i oszacowanie (art. 319 ust. 5 p.u.)
+11208PO	Postanowienie sędziego-komisarza o wyznaczeniu biegłego do sporządzenia nowego opisu i oszacowania w trybie (art. 319 ust. 5 p.u.)
+11209PO	Postanowienie sędziego-komisarza o zatwierdzeniu warunków przetargu lub aukcji (art. 320 ust. 1 pkt. 1 p.u.)
+11210PO	Postanowienie sędziego-komisarza o zatwierdzeniu wyboru oferenta (art. 320 ust. 1 pkt. 5 p.u.)
+11211PO	Postanowienie sędziego-komisarza o odroczeniu zatwierdzenia wyboru oferenta (art. 320 ust. 1 pkt 7 p.u.)
+11213PO	Postanowienie sędziego-komisarza o wyznaczeniu terminu zastawnikowi do zaspokojenia się z przedmiotu zastawu (art. 327 ust. 2 p.u.)
+11214PO	Postanowienie sędziego-komisarza o zobowiązaniu zastawnika do wydania syndykowi przedmiotu zastawu (art. 327 p.u.)
+11215PO	Postanowienie sędziego-komisarza o wyznaczeniu terminu zastawnikowi do przejęcia na własność przedmiotu zastawu (art. 328 ust. p.u.)
+11216PO	Postanowienie sędziego-komisarza o wyłączeniu z masy upadłości wierzytelności i praw majątkowych upadłego (art. 334 ust. 1 w zw. z art. 315 p.u.)
+11217ZA	Zarządzenie sędziego-komisarza informujące o złożeniu planu podziału funduszy masy upadłości i możliwości wnoszenia zarzutów (art. 349 ust. 1 p.u.)
+11218ZA	Zarządzenie sędziego-komisarza informujące o złożeniu planu podziału sumy uzyskanej ze sprzedaży rzeczy zabezpieczonej prawami, o których mowa w (art. 345 i art. 346 p.u.)
+11220PO	Postanowienie sędziego-komisarza o odrzuceniu zarzutów jako wniesionych po terminie
+11221PO	Postanowienie sędziego-komisarza uwzględniające zarzuty przeciwko planowi podziału funduszy masy upadłości (art. 350 ust. 1 p.u.)
+11222PO	Postanowienie sędziego-komisarza oddalające zarzuty przeciwko planowi podziału funduszy masy upadłości (art. 350 ust. p.u.)
+11223PO	Postanowienie sędziego-komisarza uwzględniające zarzuty przeciwko planowi podziału sumy uzyskanej ze sprzedaży rzeczy zabezpieczonej prawami, o których mowa w art. 345 i art. 346 p.u. (art. 350 ust. 1 p.u.)
+11224PO	Postanowienie sędziego-komisarza oddalające zarzuty przeciwko planowi podziału sumy uzyskanej ze sprzedaży rzeczy zabezpieczonej prawami, o których mowa w art. 345 i art. 346 p.u. (art. 350 ust. 1 p.u.)
+112251PO	Postanowienie sędziego-komisarza o sprostowaniu częściowego lub ostatecznego planu podziału funduszów masy upadłości (art. 351 ust. 2 p.u.)
+112261PO	Postanowienie sędziego-komisarza o zatwierdzeniu częściowego lub ostatecznego planu podziału funduszy masy upadłości
+11229PO	Postanowienie sędziego-komisarza o sprostowaniu planu podziału sumy uzyskanej ze sprzedaży rzeczy zabezpieczonej prawami (art. 351 ust. 2 p.u.)
+11230PO	Postanowienie sędziego-komisarza o zatwierdzeniu planu podziału sumy uzyskanej ze sprzedaży rzeczy zabezpieczonej prawami
+11231PO	Postanowienie sędziego-komisarza o zezwoleniu na złożenie do depozytu sadowego (art. 359 ust. 1 p.u.)
+11232PO	Postanowienie sędziego-komisarza o zezwoleniu na wydanie kwot z depozytu sądowego (art. 359 ust. 2 p.u.)
+11233PO	Postanowienie Sądu o zezwoleniu na wydanie kwot z depozytu sądowego (art. 359 ust. 2 p.u.)
+112341PO	Postanowienie Sądu o umorzeniu postępowania upadłościowego (art. 361 ust. 1 p.u.)
+112342PO	Postanowienie Sądu o umorzeniu postępowania upadłościowego (art. 491 [10] ust. 1, 2, 2a p.u.)
+11237PO	Postanowienie Sądu oddalające wniosek o umorzenie postępowania upadłościowego (art. 361 ust. 1 pkt 1 p.u.)
+11238PO	Postanowienie Sądu oddalające wniosek o umorzenie postępowania upadłościowego (art. 361 ust. 1 pkt 3 p.u.)
+11239PO	Postanowienie Sądu nakazujące przymusowe odebranie majątku syndykowi po umorzeniu postępowania upadłościowego (art. 364 ust. 2 p.u.)
+11240PO	Postanowienie Sądu o stwierdzeniu zakończenia postępowania upadłościowego z uwagi na wykonanie ostatecznego planu podziału (art. 368 ust. 1 p.u.)
+11241PO	Postanowienie Sądu o stwierdzeniu zakończenia postępowania upadłościowego z uwagi na zaspokojenie wszystkich wierzycieli (art. 368 ust. 2 pkt. 2 p.u.)
+11242PO	Postanowienie Sądu o ustaleniu planu spłat wierzycieli upadłego i umorzeniu pozostałej części zobowiązań, niezaspokojonych w postępowaniu upadłościowym (art. 369 ust. 1 p.u.)
+11243PO	Postanowienie Sądu o oddaleniu wniosku o ustalenie planu spłat wierzycieli upadłego i umorzeniu pozostałej części zobowiązań, niezaspokojonych w postępowaniu upadłościowym (art. 369 ust. 3 pkt. 1- 5 p.u.)
+11244PO	Postanowienie Sądu o zmianie planu spłat (art. 370d ust. 1 p.u.)
+11245PO	Postanowienie Sądu o oddaleniu wniosku o uchylenie planu spłaty wierzycieli (art. 370e ust. 1 p.u.)
+11246PO	Postanowienie Sądu o stwierdzeniu wykonania planu spłaty i umorzeniu zobowiązań upadłego (art. 370 f ust. 1 p.u.)
+11247PO	Postanowienie Sądu o uchyleniu postępowania upadłościowego (art. 371 ust. 1 p.u.)
+112481ZA	Zarządzenie przewodniczącego o wezwaniu do uzupełnienia braków formalnych wniosku o zatwierdzenie układu (art. 219 p.r.)
+11251ZA	Zarządzenie przewodniczącego o wezwaniu nadzorcy układu do uzupełnienia sprawozdania (art. 221 p.r.)
+11252ZA	Zarządzenie przewodniczącego o poinformowaniu dłużnika o nieuzupełnieniu sprawozdania przez nadzorcę układu i wezwaniu dłużnika do złożenia uzupełnionego sprawozdania (art. 221 ust. 3 p.r.)
+11253ZA	Zarządzenie przewodniczącego o zwrocie wniosku o zatwierdzenie układu (art. 130 kpc w zw. z art. 221 ust. 1 p.r.)
+11254ZA	Zarządzenie przewodniczącego o zwrocie wniosku o zatwierdzenie układu (art. 221 ust. 3 p.r.)
+11255ZA	Zarządzenie przewodniczącego o wezwaniu dłużnika do uzupełnienia braków fiskalnych wniosku o zatwierdzenie układu,  o otwarcie postępowania układowego, o otwarcie postępowania sanacyjnego (art. 74 uk.sc.)
+11257PO	Postanowienie sądu o zawiadomienie organu założycielskiego lub ministra ds. Skarbu Państwa o złożeniu wniosku o zatwierdzenie układu (art. 222 ust. 1 p.r.)
+112611ZA	Zarządzenie przewodniczącego o wezwaniu dłużnika do uzupełnienia braków fiskalnych lub formalnych wniosku o otwarcie przyspieszonego postępowania układowego
+11262PO	Postanowienie Sądu o wezwaniu dłużnika do uiszczenia zaliczki na wydatki przyspieszonego postępowania układowego (art. 231 ust. 1 p.r.)
+112641ZA	Zarządzenie przewodniczącego o zwrocie wniosku z powodu nieuzupełnienia braków fiskalnych lub formalnych wniosku (art. 130 kpc oraz 230 p.r.)
+112651PO	Postanowienie Sądu o zawiadomieniu organu założycielskiego lub ministra ds. SP o złożeniu wniosku o otwarcie postępowania restrukturyzacyjnego
+112661ZA	Zarządzenie przewodniczącego o wezwaniu do uzupełnienia braków formalnych wniosku o otwarcie postępowania układowego
+112701ZA	Zarządzenie przewodniczącego o wezwaniu do uzupełnienia braków formalnych wniosku o otwarcie postępowania sanacyjnego (art. 284 p.r.)
+112731ZA	Zarządzenie przewodniczącego o wezwaniu wierzyciela do uzupełnienia braków formalnych wniosku o otwarcie postępowania sanacyjnego wobec dłużnika (art. 284 p.r.)
+112771ZW	Zarządzenie finalizujące przekazanie postępowania do innego sądu - restrukturyzacja
+11277PO	Postanowienie Sądu o przekazaniu sprawy według właściwości do innego sądu - restrukturyzacja
+112781PO	Postanowienie Sądu o zobowiązaniu wnioskodawcy do złożenia zaliczki na wydatki postępowania o otwarcie postępowania układowego/o otwarcie postępowania sanacyjnego
+112791PO	Postanowienie Sądu o zobowiązaniu wnioskodawcy do uiszczenia zaliczki na wydatki związane z wynagrodzeniem tymczasowego nadzorcy sądowego/tymczasowego zarządcy
+112801ZW	Zarządzenie finalizujące przekazanie postępowania do innego sądu - zakaz prowadzenia działalności gospodarczej
+11280PO	Postanowienie Sądu o przekazaniu sprawy według właściwości do innego sądu - zakaz prowadzenia działalności gospodarczej
+112821PO	Postanowienie Sądu o ustanowieniu tymczasowego nadzorcy sądowego w postępowaniu układowym lub sanacyjnym
+112831PO	Postanowienie Sądu o ustanowieniu tymczasowego zarządcy w postępowaniu sanacyjnym
+11284PO	Postanowienie Sądu o uchyleniu zabezpieczenia przez odwołanie tymczasowego nadzorcy sądowego
+11285PO	Postanowienie Sądu o odwołaniu tymczasowego nadzorcy sądowego z powodu niewłaściwego pełnienia obowiązków, braku poprawy mimo nałożonej grzywny, nie wykonania obowiązków z art. 24 i 25
+11287PO	Postanowienie Sądu o wygaśnięciu funkcji tymczasowego nadzorcy sądowego z powodu śmierci i powołanie tymczasowego nadzorcy sądowego
+11288PO	Postanowienie Sądu o zmianie sposobu zabezpieczenia przez odwołanie tymczasowego nadzorcy sądowego i ustanowienie zarządcy tymczasowego
+11289PO	Postanowienie Sądu o ustaleniu wynagrodzenia tymczasowego nadzorcy sądowego
+11292PO	Postanowienie Sądu o zmianie sposobu zabezpieczenia przez uchylenie zarządu tymczasowego
+11293PO	Postanowienie o upomnieniu tymczasowego nadzorcy sądowego lub zarządcy tymczasowego
+11294PO	Postanowienie Sądu o nałożeniu grzywny na tymczasowego nadzorcę sądowego lub tymczasowego zarządcę
+11295PO	Postanowienie Sądu o odwołaniu tymczasowego zarządcy z powodu niewłaściwego pełnienia obowiązków i powołania do pełnienia tej funkcji innej osoby
+11296PO	Postanowienie Sądu o zmianie tymczasowego nadzorcy sądowego
+11297PO	Postanowienie Sądu o wygaśnięciu funkcji tymczasowego nadzorcy sądowego z powodu śmierci i powołaniu tymczasowego nadzorcy sądowego
+112981PO	Postanowienie Sądu o wygaśnięciu funkcji tymczasowego zarządcy w postępowaniu sanacyjnym
+112991PO	Postanowienie Sądu o wygaśnięciu funkcji tymczasowego nadzorcy sądowego w postępowaniu układowym lub sanacyjnym
+11300PO	Postanowienie Sądu o ustaleniu wynagrodzenia tymczasowego zarządcy/tymczasowego nadzorcy sądowego
+11301PO	Postanowienie Sądu o zawieszeniu postępowania egzekucyjnego
+11302PO	Postanowienie Sądu o uchyleniu zajęcia rachunku bankowego
+11303PO	Postanowienie Sądu o zawieszeniu postępowań egzekucyjnych i zawieszeniu zajęć rachunków bankowych (art. 268 ust. 2 i 3)
+11304PO	Postanowienie sędziego-komisarza o zatwierdzeniu wyboru oferenta w sytuacji gdy odroczono zatwierdzenie wyboru oferenta (art. 320 ust. 1 pkt 7 p.u.)
+11305PO	Postanowienie Sądu o oddaleniu wniosku o ustalenie planu spłat wierzycieli upadłego i umorzeniu pozostałej części zobowiązań niezaspokojonych w postępowaniu (art. 369 ust. 1 p.u.)
+11307PO	Postanowienie Sądu o oddaleniu wniosku upadłego o zmianę planu spłat wierzycieli (art. 370d ust. 1 p.u.)
+11308PO	Postanowienie Sądu o oddaleniu wniosku wierzyciela o zmianę planu spłat (art. 370d ust. 2 p.u.)
+11310PO	Postanowienie Sądu o uchyleniu planu spłaty (art. 370e ust. 1 p.u.)
+11311PO	Postanowienie Sądu o uchyleniu planu spłaty wierzycieli (art. 370e ust. 2 pkt 1-4 p.u.)
+11314PO	Postanowienie Sądu o zmianie planu spłat (art. 370d ust. 2 p.u.)
+11316PO	Postanowienie Sądu o zmianie postanowienia zatwierdzającego warunki sprzedaży na wniosek syndyka
+11317PO	Postanowienie Sądu o ogłoszeniu upadłości na skutek uwzględnienia wniosku o zatwierdzenie warunków sprzedaży - osoba fizyczna (art. 56d p.u.)
+11318PO	Postanowienie Sądu o zawieszeniu zarządcy w wykonywaniu czynności
+11319PO	Postanowienie Sądu o stwierdzeniu wygaśnięcia funkcji nadzorcy sądowego z powodu śmierci
+11320PO	Postanowienie Sądu o stwierdzeniu wygaśnięcia funkcji zarządcy z powodu śmierci
+11321PO	Postanowienie Sądu o wygaśnięciu funkcji tymczasowego zarządcy z powodu śmierci i powołaniu tymczasowego zarządcy
+11322PO	Postanowienie Sądu o zmianie tymczasowego zarządcy
+11323PO	Postanowienie Sądu o uchyleniu skutków dokonania obwieszczenia (art. 226f p.r.)
+11324PO	Postanowienie Sądu o oddaleniu wniosku o ogłoszenie upadłości (art. 13 ust 2 p.u.)
+11325PO	Postanowienie Sądu wydane w wyniku rozpoznania skargi (art. 226b p.r.)
+11326PO	Postanowienie Sądu o odwołaniu tymczasowego nadzorcy sądowego z powodu niewłaściwego pełnienia obowiązków i powołania do pełnienia tej funkcji innej osoby
+11327PO	Postanowienie sędziego-komisarza o stwierdzeniu przyjęcia układu przez zgromadzenie wierzycieli w postępowaniu upadłościowym
+11328PO	Postanowienie sędziego-komisarza o stwierdzeniu nieprzyjęcia układu przez zgromadzenie wierzycieli w postępowaniu upadłościowym
+11329ZA	Zarządzenie sędziego-komisarza o obwieszczeniu informacji o przekazaniu sędziemu- komisarzowi opisu i oszacowania (art. 319 ust. 5 p.u.)
+11331PO	Postanowienie Sądu o zmianie zarządcy na skutek uchwały rady wierzycieli i o powołaniu do pełnienia funkcji osobę wskazaną przez radę wierzycieli (art. 133 ust. 2 p.r.)
+11332PO	Postanowienie Sądu o odmowie powołania do pełnienia funkcji zarządcy osoby wskazanej przez radę wierzycieli (art. 133 ust. 2 p.r.)
+11333PO	Postanowienie Sądu o ustanowieniu więcej, niż jednego referendarza w roli zastępcy sędziego- komisarza (art. 151 ust. 3 p.u.)
+11334ZA	Zarządzenie obwieszczenia informacji o upadku zabezpieczenia w postaci ustanowienia tymczasowego nadzorcy sądowego
+11335ZA	Zarządzenie obwieszczenia informacji o upadku zabezpieczenia w postaci ustanowienia zarządcy przymusowego
+11336ZA	Zarządzenie obwieszczenia informacji o upadku zabezpieczenia w postaci ustanowienia tymczasowego nadzorcy sądowego
+11337ZA	Zarządzenie obwieszczenia informacji o upadku zabezpieczenia w postaci ustanowienia tymczasowego zarządcy
+11338ZA	Zarządzenie o obwieszczeniu informacji o złożeniu wniosku o zatwierdzenie warunków sprzedaży
+11339ZA	Zarządzenie o obwieszczeniu informacji o złożeniu wniosku o zmianę postanowienia o zatwierdzeniu warunków sprzedaży
+11340ZA	Zarządzenie o obwieszczeniu informacji o złożeniu wniosku o uchylenie postanowienia o zatwierdzeniu warunków sprzedaży
+11341PO	Postanowienie Sądu  o odmowie ustalenia planu spłaty wierzycieli (art. 491 (14A) ust. 1 pkt. 1- 3 p.u.)
+11343PO	Postanowienie Sądu o warunkowym umorzeniu zobowiązań bez ustalania planu spłaty
+11345PO	Postanowienie Sądu o zatwierdzeniu układu w postępowaniu o zatwierdzenie układu
+11346PO	Postanowienie Sądu o odmowie zatwierdzenia układu w postępowaniu o zatwierdzenie układu (art. 165 ust. 1 lub 2 p.r.)
+11347PO	Postanowienie Sądu o odmowie zatwierdzenia układu w postępowaniu o zatwierdzenie układu (art. 165 ust. 3 p.r.)
+11348ZA	Zarządzenie Sądu o wyznaczeniu terminu rozprawy w celu rozpoznania układu w postępowaniu upadłościowym
+11349ZA	Zarządzenie Sądu o wyznaczeniu terminu rozprawy w celu rozpoznania układu w postępowaniu restrukturyzacyjnym
+11350PO	Postanowienie Sądu o zatwierdzeniu układu częściowego w postępowaniu o zatwierdzeniu układu
+11351PO	Postanowienie Sądu o odmowie zatwierdzenia układu częściowego w postępowaniu o zatwierdzenie układu
+11360PO	Postanowienie Sądu o stwierdzeniu wykonania planu spłaty wierzycieli i umorzeniu zobowiązań upadłego (art. 491 21 ust. 1 p.u.)
+11366PO	Postanowienie Sądu o umorzeniu zobowiązań bez ustalania planu spłaty
+11371PO	Postanowienie Sądu o zatwierdzeniu układu osoby fizycznej nieprowadzącej działalności gospodarczej
+11371UZ	Uzasadnienie postanowienia Sądu o zatwierdzeniu układu osoby fizycznej nieprowadzącej działalności gospodarczej
+11372PO	Postanowienie Sądu o odmowie zatwierdzenia układu osoby fizycznej nieprowadzącej działalności gospodarczej
+11372UZ	Uzasadnienie postanowienia Sądu o odmowie zatwierdzenia układu osoby fizycznej nieprowadzącej działalności gospodarczej
+11373PO	Postanowienie Sądu o wykonaniu układu w postępowaniu o zawarcie układu osoby fizycznej nieprowadzącej działalności gospodarczej
+11374PO	Postanowienie Sądu o wykonaniu układu w postępowaniu upadłościowym
+11375PO	Postanowienie Sądu o wykonaniu układu w postępowaniu upadłościowym osoby fizycznej nieprowadzącej działalności gospodarczej
+11376PO	Postanowienie Sądu o uchyleniu układu w postępowaniu o zawarcie układu osoby fizycznej nieprowadzącej działalności gospodarczej
+11377PO	Postanowienie Sądu o oddaleniu wniosku o uchylenie układu w postępowaniu o zawarcie układu osoby fizycznej nieprowadzącej działalności gospodarczej
+11378PO	Postanowienie Sądu o oddaleniu wniosku o otwarcie postępowania o zmianę układu osoby fizycznej nieprowadzącej działalności gospodarczej
+11379PO	Postanowienie Sądu o otwarciu postępowania o zmianę układu osoby fizycznej nieprowadzącej działalności gospodarczej
+11380PO	Postanowienie Sądu o otwarciu postępowania o zmianę układu w postępowaniu upadłościowym
+11381PO	Postanowienie Sądu o oddaleniu wniosku o otwarcie postępowania o zmianę układu w postępowaniu upadłościowym
+11382ZA	Zarządzenie przewodniczącego o wezwaniu do uzupełnienia braków fiskalnych lub formalnych
+11383ZA	Zarządzenie przewodniczącego o zwrocie wniosku z powodu nieuzupełnienia braków fiskalnych lub formalnych wniosku
+11384ZA	Zarządzenie Przewodniczącego o wezwaniu do uzupełnienia braków fiskalnych lub formalnych
+11385ZA	Zarządzenie przewodniczącego o zwrocie wniosku z powodu nieuzupełnienia braków fiskalnych lub formalnych wniosku
+11386ZA	Zarządzenie przewodniczącego o wezwaniu do uzupełnienia braków fiskalnych lub formalnych
+11387ZA	Zarządzenie przewodniczącego o zwrocie wniosku z powodu nieuzupełnienia braków fiskalnych lub formalnych
+11388PO	Postanowienie sędziego-komisarza o zmianie częściowego lub ostatecznego planu podziału funduszów masy upadłości (art. 351 ust. 3 p.u.)
+11389PO	Postanowienie sędziego-komisarza o zmianie planu podziału sumy uzyskanej ze sprzedaży rzeczy zabezpieczonej prawami (art. 351 ust. 3 p.u.)
+11390ZA	Zarządzenie obwieszczenia informacji o wygaśnięciu układu z mocy prawa ze wskazaniem postępowania o ogłoszenie upadłości
+11391PO	Postanowienie Sądu o zmianie sposobu zabezpieczenia przez odwołanie tymczasowego zarządcy i ustanowienie tymczasowego nadzorcy sądowego
+11395PO	Postanowienie Sądu o oddaleniu wniosku o ogłoszenie upadłości (art. 11 ust .6 p.u.)
+12073OT	Projekt treści obwieszczenia  postanowienia Sądu o umorzeniu postępowania w przedmiocie rozpoznania środka zaskarżenia
+12073PO	Postanowienie Sądu o umorzeniu postępowania w przedmiocie rozpoznania środka zaskarżenia
+12074OT	Projekt treści obwieszczenia postanowienia Sądu o uwzględnieniu środka zaskarżenia w części i uchyleniu do ponownego rozpoznania
+12074PO	Postanowienie Sądu o uwzględnieniu środka zaskarżenia w części i uchyleniu do ponownego rozpoznania
+12075OT	Projekt treści obwieszczenia postanowienia Sądu o uwzględnieniu środka zaskarżenia w całości i uchyleniu do ponownego rozpoznania
+12075PO	Postanowienie Sądu o uwzględnieniu środka zaskarżenia w całości i uchyleniu do ponownego rozpoznania
+12076OT	Projekt treści obwieszczenia postanowienia Sądu o uwzględnieniu środka zaskarżenia w części i zmianie orzeczenia I instancji
+12076PO	Postanowienie Sądu o uwzględnieniu środka zaskarżenia w części i zmianie orzeczenia I instancji
+12077OT	Projekt treści obwieszczenia postanowienia Sądu o uwzględnieniu środka zaskarżenia w całości i zmianie orzeczenia I instancji
+12077PO	Postanowienie Sądu o uwzględnieniu środka zaskarżenia w całości i zmianie orzeczenia I instancji
+12078OT	Projekt treści obwieszczenia postanowienia Sądu o oddaleniu środka zaskarżenia
+12078PO	Postanowienie Sądu o oddaleniu środka zaskarżenia
+12079OT	Projekt treści obwieszczenia postanowienia Sądu o odrzuceniu środka zaskarżenia
+12079PO	Postanowienie Sądu o odrzuceniu środka zaskarżenia
+14001PO	Postanowienie Sądu o ogłoszeniu upadłości konsumenckiej - prowadzonej przez syndyka
+14002PO	Postanowienie Sądu o przyznaniu syndykowi zaliczki na pokrycie kosztów postępowania
+14003PO	Postanowienie Sądu o ustaleniu wynagrodzenia syndyka
+14004PO	Postanowienie Sądu o odrzuceniu wniosku o ogłoszenie upadłości
+14005ZA	Zarządzenie o zwrocie wniosku o ogłoszenie upadłości konsumenckiej na skutek nieuzupełnienia braków formalnych lub fiskalnych
+14007ZA	Zarządzenie o zwrocie wniosku o ogłoszenie upadłości konsumenckiej z powodu niemożności nadania sprawie dalszego biegu wskutek niewykonania innych zarządzeń
+14008ZA	Zarządzenie o zwrocie wniosku o ogłoszenie upadłości konsumenckiej – nieuiszczenie zaliczki art. 22a p.u.
+14009PO	Postanowienie Sądu o ogłoszeniu upadłości konsumenckiej na skutek uwzględnienia wniosku o zatwierdzenie warunków sprzedaży składników majątku o znacznej wartości (art. 56d p.u.) prowadzonej przez sąd
+14013PO	Postanowienie Sądu o ogłoszeniu upadłości konsumenckiej na skutek uwzględnienia wniosku o zatwierdzenie warunków sprzedaży składników majątku o znacznej wartości (art. 56d p.u.) prowadzonej przez Syndyka
+14090PO	Postanowienie Sądu o zmianie trybu prowadzenia postępowania na wtórne postępowanie upadłościowe
+14091PO	Postanowienie Sądu o zmianie trybu prowadzenia postępowania na wtórne postępowanie upadłościowe
+14092PO	Postanowienie Sądu o otwarciu wtórnego postępowania upadłościowego
+14098PO	Postanowienie Sądu o zmianie trybu prowadzenia postępowania na upadłość konsumencką prowadzoną przez sędziego-komisarza
+14099PO	Postanowienie Sądu o zmianie trybu prowadzenia postępowania na upadłość konsumencką prowadzoną przez syndyka
+14100PO	Postanowienie Sądu o otwarciu postępowania o zawarcie układu na zgromadzeniu wierzycieli
+14101ZA	Zarządzenie o wezwaniu do uzupełnienia braków wniosku o zawarcie układu na zgromadzeniu wierzycieli
+14102ZA	Zarządzenie o zwrocie wniosku o zawarcie układu na zgromadzeniu wierzycieli na skutek nieuzupełnienia braków formalnych lub fiskalnych
+14103ZA	Zarządzenie o zwrocie wniosku o zawarcie układu na zgromadzeniu wierzycieli, z powodu niemożności nadania sprawie dalszego biegu wskutek niewykonania innych zarządzeń.
+14104ZA	Zarządzenie o zwrocie wniosku o zawarcie układu na zgromadzeniu wierzycieli – nieuiszczenie zaliczki (491^26 ust. 1 p. u.)
+14105ZA	Zarządzenie Sądu o wyznaczeniu terminu rozprawy w celu rozpoznania układu konsumenckiego
+14106PO	Postanowienie Sądu o zmianie sposobu zabezpieczenia przez odwołanie tymczasowego nadzorcy sądowego i ustanowienie zarządcy przymusowego
+14107PO	Postanowienie Sądu o zmianie sposobu zabezpieczenia przez odwołanie zarządcy przymusowego i ustanowienie tymczasowego nadzorcy sądowego
+15001PO	Postanowienie Sądu o nadaniu klauzuli wykonalności
+15002PO	Postanowienie Sądu o wydaniu dalszego tytułu wykonawczego
+15005PO	Postanowienie Sądu o uchyleniu klauzuli wykonalności
+15006ZA	Zarządzenie o uchyleniu klauzuli wykonalności w związku z uchyleniem tytułu egzekucyjnego
+15030PO	Postanowienie Sądu o zawieszeniu doradcy restrukturyzacyjnego w postępowaniu restrukturyzacyjnym
+15031PO	Postanowienie Sądu o odwołaniu doradcy restrukturyzacyjnego w postępowaniu restrukturyzacyjnym
+15032PO	Postanowienie Sądu o wygaszeniu doradcy restrukturyzacyjnego w postępowaniu restrukturyzacyjnym
+15033PO	Postanowienie Sądu o zmianie doradcy restrukturyzacyjnego w postępowaniu restrukturyzacyjnym
+15034ZA	Zarządzenie przywracające Nadzorcę układu/Nadzorcę sądowego/Zarządcę do postępowania restrukturyzacyjnego, po uchyleniu Postanowienia o odwołaniu przez Sąd Okręgowy
+15034ZW	Zarządzenie wykonawcze do zarządzenia przywracajęcego Nadzorcę układu/Nadzorcę sądowego/Zarządcę do postępowania restrukturyzacyjnego, po uchyleniu Postanowienia o odwołaniu przez Sąd Okręgowy
+15035PO	Postanowienie Sądu o powołaniu doradcy w postępowaniu restrukturyzacyjnym po uprawomocnieniu się postanowienia o odwołaniu
+15035ZW	Zarządzenie wykonawcze do postanowienia Sądu o powołaniu doradcy w postępowaniu restrukturyzacyjnym po uprawomocnieniu się postanowienia o odwołaniu
+15036PO	Postanowienie Sądu o odwieszeniu doradcy restrukturyzacyjnego w postępowaniu restrukturyzacyjnym
+15037ZA	Zarządzenie przywracające prowadzącego postępowanie upadłościowe doradcę, po uchyleniu Postanowienia o odwołaniu przez Sąd Okręgowy
+15037ZW	Zarządzenie wykonawcze do zarządzenia przywracającego prowadzącego postępowanie upadłościowe postępowanie doradcy, po uchyleniu Postanowienia o odwołaniu przez Sąd Okręgowy
+15038PO	Postanowienie Sądu o zmianie doradcy w postępowaniu upadłościowym
+15039PO	Postanowienie Sądu o powołaniu doradcy po uprawomocnieniu się postanowienia o odwołaniu w postępowaniu upadłościowym
+15039ZW	Zarządzenie wykonawcze do postanowienia Sądu o powołaniu doradcy po uprawomocnieniu się postanowienia o odwołaniu w postępowaniu upadłościowym
+15040PO	Postanowienie Sądu o odwołaniu doradcy restrukturyzacyjnego w postępowaniu upadłościowym
+15041PO	Postanowienie Sądu o zawieszeniu doradcy restrukturyzacyjnego w postępowaniu upadłościowym
+15042PO	Postanowienie Sądu o odwieszeniu doradcy restrukturyzacyjnego w postępowaniu upadłościowym
+15043PO	Postanowienie Sądu o wygaszeniu doradcy restrukturyzacyjnego w postępowaniu upadłościowym
+60000ZD	Zarządzenie dowolne dekretacyjne zamykające procedurę dekretacyjną
+60000ZW	Zarządzenie wykonawcze dowolne
+600011WY	Wyrok Sądu - dowolny - dla SO
+60001WY	Wyrok Sądu - dowolny
+60003UZ	Uzasadnienie Sądu dowolne
+60010PO	Postanowienie Sądu dowolne - sprawy o otwarcie postępowania
+60011ZA	Zarządzenie dowolne - sprawy o otwarcie postępowania
+600301DZ	Zarządzenie przekazania wskazanego dokumentu z Akt do doręczenia - dla SO
+60030DZ	Zarządzenie przekazania wskazanego dokumentu z Akt do doręczenia
+60031ZA	Zarządzenie wyłączenia pisma z Akt i dołączenia do innych Akt
+60032ZA	Zarządzenie wyłączenia pisma z Akt i przekazania go do dekretacji w bieżącym wydziale
+60033ZA	Zarządzenie wyłączenia pisma z Akt i przekazania go do dekretacji w innym wydziale/sądzie
+60034ZA	Zarządzenie przekazania dokumentów
+60036ZA	Zarządzenie przekazania środka zaskarżenia do Sądu Okręgowego
+60037ZA	Zarządzenie przekazania orzeczenia drugiej instancji do Sądu Rejonowego
+60050PO	Postanowienie Sądu dowolne - sprawy po otwarciu postępowania
+60051ZA	Zarządzenie dowolne - sprawy po otwarciu postępowania
+60052PO	Postanowienie dowolne - sprawy po otwarciu postępowania
+60055ZA	Zarządzenie o nadaniu lub ograniczeniu dostępu do akt postępowania
+60057ZA	Zarządzenie o utajnieniu lub odtajnieniu dokumentów w aktach postępowania
+600601ZA	Zarządzenie dowolne w postępowaniu - dla SO
+600601ZW	Zarządzenie wykonawcze dowolne - dla SO
+60060ZA	Zarządzenie dowolne w postępowaniu
+60060ZW	Zarządzenie wykonawcze dowolne
+60061DZ	Przypisanie pracownika do postępowania
+60062ZA	Zarządzenie dowolne w postępowaniu - dezaktywacja uczestnika w postępowaniu
+60063DZ	Przypisanie prowadzącego do postępowania
+60066DZ	Zmiana/Wygaszanie doradcy restrukturyzacyjnego w postępowaniu
+60066ZW	Zarządzenie wykonawcze do zmiany/wygaszania doradcy restrukturyzacyjnego w postępowaniu
+60067ZA	Zarządzenie dowolne w postępowaniu - dodanie uczestników w postępowaniu na podstawie wniosku
+600701PO	Postanowienie Sądu dowolne w postępowaniu - dla SO
+60070PO	Postanowienie Sądu dowolne w postępowaniu
+600711PO	Postanowienie dowolne w postępowaniu - dla SO
+60071PO	Postanowienie dowolne w postępowaniu
+60080ZA	Zarządzenie losowania w SLPS
+60081ZA	Zarządzenie losowania w SLPS - postępowanie wskazane
+60085ZA	Wiązanie/odwiązywanie postępowań
+600861OT	Projekt treści obwieszczenia zarządzenia o sprostowaniu omyłki pisarskiej
+60086OT	Projekt treści obwieszczenia postanowienia o sprostowaniu omyłki pisarskiej
+60086PO	Postanowienie o sprostowaniu omyłki pisarskiej
+60086ZA	Zarządzenie o sprostowaniu omyłki pisarskiej
+60087OT	Projekt treści obwieszczenia postanowienia o sprostowaniu postanowienia o sprostowaniu omyłki pisarskiej Projekt treści obwieszczenia postanowiania bądź zarządzenia, tworzony w postępowaniu
+60087PO	Postanowienie o sprostowaniu postanowienia o sprostowaniu omyłki pisarskiej
+60087ZA	Zarządzenie o sprostowaniu zarządzenia o sprostowaniu omyłki pisarskiej
+60095ZA	Zarządzenie pobrania tytułu egzekucyjnego
+99950NO	Notatka
+99960ZA	Zarządzenie o stwierdzeniu prawomocności
+99961ZA	Zarządzenie o stwierdzeniu prawomocności (bez obwieszczenia)
+99967TJ	Tekst w brzmieniu po sprostowaniu
+100001OB	Obwieszczenie o wniesieniu środka odwoławczego
+10000OB	Obwieszczenie o wpisaniu wniosku do repertorium
+10001OB	Obwieszczenie postanowienia Sądu o odrzuceniu wniosku restrukturyzacyjnego
+10002OB	Obwieszczenie postanowienia Sądu o umorzeniu postępowania w przedmiocie rozpoznania wniosku restrukturyzacyjnego
+10003OB	Obwieszczenie postanowienia Sądu o oddaleniu wniosku restrukturyzacyjnego
+10004OB	Obwieszczenie postanowienia Sądu o otwarciu postępowania sanacyjnego
+10005OB	Obwieszczenie postanowienia Sądu o otwarciu przyspieszonego postępowania układowego
+10006OB	Obwieszczenie postanowienia Sądu o otwarciu postępowania układowego
+10007OB	Obwieszczenie postanowienia Sądu o odmowie otwarcia postępowania restrukturyzacyjnego (art. 8 ust 1 p.r.)
+10008OB	Obwieszczenie postanowienia Sądu o odmowie otwarcia postępowania restrukturyzacyjnego (sanacyjnego i układowego) - art. 8 ust. 2 p.r.
+10019OB	Obwieszczenie postanowienia Sądu o uchyleniu zarządu własnego dłużnika i ustanowieniu zarządcy (art. 239 p.r.)
+100441OB	Obwieszczenie postanowienia Sądu o odwołaniu nadzorcy sądowego
+100442OB	Obwieszczenie postanowienia Sądu o odwołaniu zarządcy
+100451OB	Obwieszczenie postanowienia Sądu o wyznaczeniu nadzorcy sądowego po uprawomocnieniu się postanowienia o odwołaniu nadzorcy sądowego
+100452OB	Obwieszczenie postanowienia Sądu o wyznaczeniu zarządcy po uprawomocnieniu się postanowienia o odwołaniu zarządcy
+10046OB	Obwieszczenie postanowienia Sądu o zawieszeniu nadzorcy sądowego w wykonywaniu czynności
+100471OB	Obwieszczenie postanowienia Sądu o stwierdzeniu wygaśnięcia funkcji nadzorcy sądowego (art. 29 ust. 1 pkt 2 i 3 p.r.)
+100481OB	Obwieszczenie postanowienia Sądu o stwierdzeniu wygaśnięcia funkcji zarządcy (art. 29 ust. 1 pkt 2 i 3 p.r.)
+100501OB	Obwieszczenie postanowienia Sądu o zmianie zarządcy
+100511OB	Obwieszczenie postanowienia Sądu o zmianie nadzorcy sądowego
+10058OB	Obwieszczenie postanowienia sędziego-komisarza o zwołaniu zgromadzenia wierzycieli w celu głosowania nad układem
+10059OB	Obwieszczenie postanowienia sędziego-komisarza o zwołaniu zgromadzenia wierzycieli na skutek uchwały rady wierzycieli
+10060OB	Obwieszczenie postanowienia sędziego-komisarza o zwołaniu zgromadzenia wierzycieli w przypadku, gdy sędzia-komisarz uzna to za potrzebne
+10062OB	Obwieszczenie postanowienia sędziego-komisarza o stwierdzeniu przyjęcia układu przez zgromadzenie wierzycieli.
+10073OB	Obwieszczenie postanowienia Sądu o zatwierdzeniu układu (art. 164 ust. p.r.)
+10075OB	Obwieszczenie postanowienia Sądu o odmowie zatwierdzenia układu (art. 165 ust. 1 lub 2 p.r.)
+10077OB	Obwieszczenie postanowienia Sądu o odmowie zatwierdzenia układu (art. 165 ust. 3 p.r.)
+10079OB	Obwieszczenie postanowienia Sądu o umorzeniu postępowania restrukturyzacyjnego (art. 165 ust. 5 p.r.)
+10081OB	Obwieszczenie postanowienia SO o oddaleniu zażalenia na postanowienie w przedmiocie zatwierdzenia układu lub odmowy zatwierdzenia układu
+10082OB	Obwieszczenie Postanowienia SO o uchyleniu postanowienia Sądu Rejonowego w przedmiocie zatwierdzenia układu i przekazaniu sprawy do ponownego rozpoznania
+10083OB	Obwieszczenie postanowienia SO o zmianie postanowienia SR i zatwierdzeniu układu lub umorzeniu postępowania restrukturyzacyjnego
+10084OB	Obwieszczenie postanowienia Sądu o zatwierdzeniu układu częściowego
+10086OB	Obwieszczenie postanowienia Sądu o odmowie zatwierdzenia układu częściowego (art. 182 ust. 2 p.r.)
+10088OB	Obwieszczenie postanowienia Sądu o umorzeniu postępowania (art. 182 ust. 5 p.r.)
+10089OB	Obwieszczenie postanowienia Sądu o wykonaniu układu w postępowaniu restrukturyzacyjnym
+100901OB	Obwieszczenie postanowienia Sądu o otwarciu postępowania o zmianę układu (art. 173 ust. 1 p.r.)
+10093OB	Obwieszczenie postanowienia Sądu o uchyleniu układu w postępowaniu restrukturyzacyjnym
+10094OB	Obwieszczenie postanowienia Sądu o oddaleniu wniosku o uchyleniu układu w postępowaniu restrukturyzacyjnym
+10105OB	Obwieszczenie postanowienia Sądu o zmianie nadzorcy sądowego na skutek uchwały rady wierzycieli i o powołaniu do pełnienia funkcji osobę wskazaną przez radę wierzycieli (art. 133 ust. 2 p.r.)
+101511OB	Obwieszczenie postanowienia sędziego-komisarza o zatwierdzeniu spisu wierzytelności
+10155OB	Obwieszczenie postanowienia sędziego-komisarza o wykreśleniu z urzędu wierzytelności ze spisu wierzytelności
+10156OB	Obwieszczenie postanowienia sędziego-komisarza o zmianie spisu wierzytelności (art. 101 ust. 1 p.r.)
+10157OB	Obwieszczenie postanowienia sędziego-komisarza o zmianie spisu wierzytelności (art. 96 p.r.)
+10158OB	Obwieszczenie postanowienia sędziego-komisarza o zmianie spisu wierzytelności w przyspieszonym postępowaniu układowym (art. 90 ust. 2 p.r.)
+10162OB	Obwieszczenie postanowienia sędziego-komisarza o zatwierdzeniu planu podziału
+10166OB	Obwieszczenie postanowienia Sądu o umorzeniu postępowania restrukturyzacyjnego obligatoryjnie (art. 325 ust. 1 p.r.)
+10167OB	Obwieszczenie postanowienia Sądu o umorzeniu postępowania restrukturyzacyjnego fakultatywnie (art. 325 ust. 2 i 3 p.r.)
+10168OB	Obwieszczenie postanowienia Sądu o umorzeniu postępowania sanacyjnego (art. 326 ust. 3 p.r.)
+10169OB	Obwieszczenie postanowienia Sądu o umorzeniu postępowania restrukturyzacyjnego (art. 326 ust. 2 p.r.)
+10170OB	Obwieszczenie postanowienia Sądu o umorzeniu przyspieszonego postępowania układowego (art. 326 ust. 1 p.r.)
+10172OB	Obwieszczenie postanowienia Sądu o pozbawieniu prawa prowadzenia działalności gospodarczej
+10187OB	Obwieszczenie postanowienia Sądu o ogłoszeniu upadłości konsumenckiej - prowadzonej przez sąd
+101931OB	Obwieszczenie postanowienia Sądu o oddaleniu wniosku o ogłoszenie upadłości konsumenckiej
+10195OB	Obwieszczenie postanowienia Sądu o umorzeniu zobowiązań bez ustalania planu spłaty
+10196OB	Obwieszczenie postanowienia Sądu o ustaleniu planu spłaty
+10200OB	Obwieszczenie postanowienia sędziego-komisarza o wyrażeniu zgody na sprzedaż nieruchomości, na której prowadzone jest przedsięwzięcie deweloperskie
+102018OB	Obwieszczenie testowanko modyfikowanko
+10202OB	Obwieszczenie postanowienia sędziego-komisarza o wpłaceniu dopłat i wyznaczenie zgromadzenia wierzycieli
+10207OB	Obwieszczenie postanowienia Sądu o zabezpieczeniu
+10208OB	Obwieszczenie postanowienia Sądu o uznaniu orzeczenia o wszczęciu zagranicznego postępowania upadłościowego
+10209OB	Obwieszczenie postanowienia Sądu o uchyleniu postanowienia o uznaniu orzeczenia o wszczęciu zagranicznego postępowania upadłościowego
+10210OB	Obwieszczenie postanowienia Sądu o zmianie postanowienia o uznaniu orzeczenia o wszczęciu zagranicznego postępowania upadłościowego
+10212OB	Obwieszczenie informacji o złożeniu przez nadzorcę wykonania układu sprawozdania o wykonywaniu planu restrukturyzacyjnego oraz wykonywaniu układu
+10213OB	Obwieszczenie o złożeniu odrębnego planu podziału i o możliwości wnoszenia zarzutów
+10214OB	Obwieszczenie postanowienia sędziego-komisarza o zmianie odrębnego planu podziału
+10215OB	Obwieszczenie zarządzenia o zmianie zarządcy zagranicznego
+10216OB	Obwieszczenie zarządzenia sędziego-komisarza o obwieszczeniu o dacie złożenia spisu wierzytelności i/lub spisu wierzytelności spornych
+10217OB	Obwieszczenie postanowienia sędziego-komisarza o sprostowaniu spisu wierzytelności
+10218OB	Obwieszczenie informacji o wygaśnięciu układu z mocy prawa
+10219OB	Obwieszczenie zarządzenia o zakończeniu lub umorzeniu głównego zagranicznego postępowania upadłościowego
+10230OB	Obwieszczenie postanowienia Sądu o uchyleniu układu w wyniku wspólnego rozpoznania wniosku o uchylenie układu i wniosku o zmianę układu
+10231OB	Obwieszczenie postanowienia Sądu o otwarciu postępowania o zmianę układu w wyniku wspólnego rozpoznania wniosku o uchylenie układu i wniosku o zmianę układu
+10232OB	Obwieszczenie postanowienia Sądu o zmianę układu w wyniku wspólnego rozpoznania wniosku o uchylenie układu i wniosku o zmianę układu
+10233OB	Obwieszczenie postanowienia Sądu o zmianę układu w wyniku wspólnego rozpoznania wniosku o uchylenie układu i wniosku o zmianę układu osoby fizycznej nieprowadzącej działalności gospodarczej
+102341OB	Obwieszczenie negatywnego rozstrzygnięcia w sprawie wniosku o ogłoszenie upadłości
+10234OB	Obwieszczenie postanowienia o uchyleniu układu rozpatrywanego wraz z wnioskiem o ogłoszenie upadłości
+10300OB	Obwieszczenie postanowienia o połączeniu postępowań
+10301OB	Obwieszczenie zarządzenia o połączeniu postępowań
+10302OB	Obwieszczenie postanowienia o rozłączeniu postępowań
+10303OB	Obwieszczenie zarządzenia o rozłaczeniu postępowań
+110101OB	Obwieszczenie zarządzenia o zwrocie wniosku o ogłoszenie upadłości na skutek nieuzupełnienia braków formalnych oraz fiskalnych
+11012OB	Obwieszczenie zarządzenia o zwrocie wniosku o ogłoszenie upadłości –nieuiszczenie zaliczki (art. 22a p.u.)
+11015OB	Obwieszczenie zarządzenia o zwrocie wniosku o ogłoszenie upadłości z powodu niemożności nadania sprawie dalszego biegu wskutek niewykonania innych zarządzeń
+11017OB	Obwieszczenie zarządzenia o zwrocie wniosku bez wezwania do jego uzupełnienia w razie niezłożenia oświadczenia o prawdziwości danych zawartych we wniosku
+11023OB	Obwieszczenie postanowienia Sądu o odrzuceniu wniosku o ogłoszenie upadłości - nieuiszczenie zaliczki
+11024OB	Obwieszczenie postanowienia Sądu o zabezpieczeniu majątku dłużnika przez ustanowienie tymczasowego nadzorcy sądowego
+110261OB	Obwieszczenie postanowienia Sądu o zmianie osoby tymczasowego nadzorcy sądowego - na wniosek tns lub z powodu cofnięcia lub zawieszenia licencji doradcy restrukturyzacyjnego (art. 38 ust. 1a p.u.)
+11028OB	Obwieszczenie postanowienia Sądu o odwołaniu tymczasowego nadzorcy sądowego z powodu nienależytego pełnienia obowiązków i powołaniu do pełnienia tej funkcji innej osoby (art. 38 ust. 1 w zw. z art. 170 ust. 1 p.u.)
+11029OB	Obwieszczenie postanowienia Sądu o uchyleniu zabezpieczenia poprzez odwołanie tymczasowego nadzorcy sądowego (art. 38 ust. 1 a p.u.)
+11032OB	Obwieszczenie postanowienia Sądu o powołaniu zastępcy tymczasowego nadzorcy sądowego (art. 38 ust. 1 w zw. z art. 159 ust. 1 p.u.)
+11033OB	Obwieszczenie postanowienia Sądu o stwierdzeniu wygaśnięcia funkcji tymczasowego nadzorcy sądowego z powodu śmierci
+11035OB	Obwieszczenie postanowienia Sądu o zabezpieczeniu majątku dłużnika przez ustanowienie zarządu przymusowego nad majątkiem dłużnika oraz określeniu zakresu i sposobu wykonywania zarządu (art. 40 ust. 1 i 2 p.u.)
+110371OB	Obwieszczenie postanowienia Sądu o zmianie zarządcy przymusowego z powodu cofnięcia/zawieszenia licencji doradcy restrukturyzacyjnego lub na wniosek zarządcy przymusowego
+11039OB	Obwieszczenie postanowienia Sądu o uchyleniu zabezpieczenia poprzez odwołanie zarządcy przymusowego (art. 38 ust. 1a w zw. z art. 40 ust. 4)
+11046OB	Obwieszczenie postanowienia Sądu o odwołaniu zarządcy przymusowego z powodu nienależytego pełnienia obowiązków i powołaniu do pełnienia tej funkcji innej osoby (art. 40 ust. 4 w zw. z art. 170 ust. 1 p.u.)
+11047OB	Obwieszczenie postanowienia Sądu o wygaśnięciu funkcji zarządcy przymusowego z powodu śmierci i powołaniu zarządcy przymusowego
+11049OB	Obwieszczenie postanowienia Sądu o zawieszeniu postępowania egzekucyjnego i uchyleniu zajęć rachunku bankowego oraz ustanowieniu tymczasowego nadzorcy sądowego (art. 39 ust. 1 p.u.)
+11051OB	Obwieszczenie postanowienia Sądu o ogłoszeniu upadłości z wniosku wierzyciela albo dłużnika - spółka, osoba prawna (art. 51 ust. 1 i 2a p.u.)
+11052OB	Obwieszczenie postanowienia Sądu o ogłoszeniu upadłości z wniosku wierzyciela/dłużnika – osoba fizyczna (art. 51 ust. 1 i 2a p.u.)
+11053OB	Obwieszczenie informacji o wniesieniu zażalenia na postanowienie o ogłoszeniu upadłości (art. 54 a ust. 2 p.u.)
+11054OB	Obwieszczenie postanowienia Sądu o umorzeniu postępowania w przedmiocie ogłoszenia upadłości na skutek wydania postanowienia o zatwierdzeniu układu albo postanowienia o otwarciu postępowania restrukturyzacyjnego (art. 54 ust. 4 p.u.)
+11056OB	Obwieszczenie postanowienia Sądu o ogłoszeniu upadłości na skutek uwzględnienia wniosku o zatwierdzenie warunków sprzedaży - spółka, osoba prawna (art. 56d p.u.)
+11057OB	Obwieszczenie postanowienia Sądu o uchyleniu postanowienia zatwierdzającego warunki sprzedaży na wniosek syndyka (art. 56h ust. 1 p.u.)
+110581OB	Obwieszczenie postanowienia Sądu o oddaleniu wniosku o zmianę postanowienia o zatwierdzeniu warunków sprzedaży
+110582OB	Obwieszczenie postanowienia Sądu o oddaleniu wniosku o uchylenie postanowienia o zatwierdzeniu warunków sprzedaży
+11058OB	Obwieszczenie postanowienia o oddaleniu wniosku o zmianę/uchylenie postanowienia o zatwierdzeniu warunków sprzedaży
+11059OB	Obwieszczenie postanowienia Sądu o oddaleniu wniosku o ogłoszenie upadłości (art. 13 ust 1 p.u.)
+110711OB	Obwieszczenie postanowienia sędziego-komisarza o wyłączeniu z masy upadłości
+11074OB	Obwieszczenie wyroku uwzględniającego powództwo o wyłączenie mienia z masy upadłości
+11075OB	Obwieszczenie wyroku oddalającego powództwo o wyłączenie mienia z masy upadłości
+11076OB	Obwieszczenie postanowienia Sądu o zabezpieczeniu powództwa o wyłączenie mienia z masy upadłości (art. 74 ust. 4 p.u.)
+11077OB	Obwieszczenie postanowienia sędziego-komisarza o określeniu zakresu korzystania z mieszkania przez upadłego lub osoby mu bliskie, którzy w dacie ogłoszenia upadłości zamieszkiwali w tym mieszkaniu (art. 75 ust. 2 p.u.)
+110881OB	Obwieszczenie postanowienia sędziego-komisarza o wyłączeniu spadku z masy upadłości (art. 121 ust. 1 i 2 p.u.)
+110981OB	Obwieszczenie postanowienia sędziego-komisarza o powołaniu zastępcy syndyka z urzędu lub na jego wniosek oraz określeniu zakresu jego czynności (art. 159 ust. 1 p.u.)
+111121OB	Obwieszczenie postanowienia Sądu o odwołaniu syndyka (art. 170 ust. 1 p.u.)
+11115OB	Obwieszczenie postanowienia Sądu o zawieszeniu syndyka w wykonywaniu jego czynności i ustanowieniu tymczasowego syndyka (art. 170 ust. 2 p.u.)
+11117OB	Obwieszczenie postanowienia Sądu o zmianie syndyka na jego wniosek (art. 170 ust. 3 p.u.)
+11118OB	Obwieszczenie postanowienia Sądu o zmianie syndyka na podstawie uchwały rady wierzycieli podjętej w trybie określonym w art. 207a p.u. (art. 170 ust. 3 p.u.)
+11119OB	Obwieszczenie postanowienia Sądu o stwierdzeniu wygaśnięcia funkcji syndyka na skutek jego śmierci (art. 170 ust. 4 p.u.)
+11120OB	Obwieszczenie postanowienia Sądu o stwierdzeniu wygaśnięcia funkcji syndyka na skutek utraty przez niego pełnej zdolności do czynności prawnych (art. 170 ust. 4 p.u.)
+11121OB	Obwieszczenie postanowienia Sądu o stwierdzeniu wygaśnięcia funkcji syndyka na skutek zaistnienia braków w składzie organów spółki będącej syndykiem uniemożliwiających jej działanie (art. 170 ust. 4 p.u.)
+111221OB	Obwieszczenie postanowienia Sądu o zmianie syndyka w przypadku cofnięcia praw wynikających z licencji doradcy restrukturyzacyjnego (art. 170 ust. 5 p.u.)
+11122OB	Obwieszczenie postanowienia Sądu o zmianie syndyka w przypadku cofnięcia praw wynikających z licencji doradcy restrukturyzacyjnego (art. 170 ust. 5 p.u.)
+111231OB	Obwieszczenie postanowienia Sądu o zmianie syndyka w przypadku zawieszenia praw wynikających z licencji doradcy restrukturyzacyjnego (art. 170 ust. 5 p.u.)
+11123OB	Obwieszczenie postanowienia sądu o zmianie syndyka w przypadku zawieszenia praw wynikających z licencji doradcy restrukturyzacyjnego (art. 170 ust. 5 p.u.)
+111281OB	Obwieszczenie postanowienia sędziego-komisarza o powołaniu tymczasowego zastępcy syndyka
+11128OB	Obwieszczenie postanowienia sędziego-komisarza w przedmiocie odwołania zastępcy syndyka (art. 171 ust. 1 p.u.)
+11129OB	Obwieszczenie postanowienia sędziego-komisarza w przedmiocie odwołania zastępcy syndyka – jego dalszy udział w postępowaniu nie jest potrzebny (art. 171 ust. 1 i 3 p.u.)
+11130OB	Obwieszczenie postanowienia sędziego-komisarza w przedmiocie zmiany zastępcy syndyka (art. 171 ust. 1 p.u.)
+11131OB	Obwieszczenie postanowienia sędziego-komisarza o stwierdzeniu wygaśnięcia funkcji zastępcy syndyka (art. 170 ust. 4 p.u.)
+11137OB	Obwieszczenie postanowienia sędziego-komisarza o zwołaniu zgromadzenia wierzycieli oraz wskazaniu terminu, miejsca, przedmiotu obrad i sposobu głosowania (art. 192 ust. 1 p.u.)
+11149OB	Obwieszczenie postanowienia Sądu o zmianie syndyka na skutek uchwały rady wierzycieli podjętej zgodnie z wnioskiem upadłego i powołanie do pełnienia tej funkcji osoby wskazanej przez radę wierzycieli (art. 207a ust. 1 p.u.)
+11156OB	Obwieszczenie postanowienia sędziego-komisarza o zezwoleniu na odstąpienie od sprzedaży przedsiębiorstwa jako całości (art. 206 ust. 1 pkt. 2 w zw. z art. 213 ust. 1 p.u.)
+11157OB	Obwieszczenie postanowienia sędziego-komisarza o zezwoleniu na sprzedaż z wolnej ręki mienia wchodzącego w skład masy upadłości (art. 206 ust. 1 pkt. 3 w zw. z art. 213 ust. 1 p.u.)
+11175OB	Obwieszczenie postanowienia sędziego-komisarza o zmianie wierzyciela na liście wierzytelności (art. 254 ust. 1 p.u.)
+11176OB	Obwieszczenie zarządzenia sędziego-komisarza o obwieszczeniu daty złożenia listy wierzytelności (art. 255 ust. 2 p.u.)
+11186OB	Obwieszczenie postanowienia sędziego-komisarza o dokonaniu zmian na liście wierzytelności na podstawie prawomocnych postanowień w przedmiocie sprzeciwu i zatwierdzeniu listy wierzytelności (art. 260 ust. 1 p.u.)
+111871OB	Obwieszczenie postanowienia sędziego-komisarza o zatwierdzeniu lub częściowym zatwierdzeniu listy wierzytelności
+11189OB	Obwieszczenie postanowienia sędziego-komisarza o dokonaniu z urzędu zmian na liście wierzytelności (art. 261 p.u.)
+11190OB	Obwieszczenie postanowienia sędziego-komisarza o dokonaniu z urzędu zmian na liście wierzytelności - nie umieszczonej na liście z urzędu (art. 261 p.u.)
+11191OB	Obwieszczenie postanowienia sędziego-komisarza o sprostowaniu listy wierzytelności stosownie do prawomocnych orzeczeń (art. 262 ust. 2 p.u)
+111941OB	Obwieszczenie postanowienia sędziego-komisarza o zwołaniu zgromadzenia wierzycieli w celu głosowania nad układem w postępowaniu upadłościowym
+11195OB	Obwieszczenie postanowienia sędziego-komisarza o zwołaniu zgromadzenia wierzycieli obligatoryjne (art. 266c ust. 2 p.u.)
+11196OB	Obwieszczenie postanowienia Sądu o zatwierdzeniu układu w upadłości
+11197OB	Obwieszczenie postanowienia Sądu o odmowie zatwierdzenia układu w upadłości
+11199OB	Obwieszczenie postanowienia Sądu w przedmiocie uchylenia układu w postępowaniu upadłościowym
+11200OB	Obwieszczenie postanowienia Sądu o zakończeniu postępowania po prawomocnym zatwierdzeniu układu w upadłości  (art. 266d p.u.)
+11202OB	Obwieszczenie postanowienia sędziego-komisarza o wyłączeniu z masy upadłości rzeczy ruchomych, nieruchomości, których nie można zbyć z zachowaniem przepisów ustawy (art. 315 p.u.)
+11205OB	Obwieszczenie postanowienia sędziego-komisarza o zezwoleniu na zawarcie umowy dzierżawy przedsiębiorstwa (art. 316 ust. 2 p.u.)
+11206OB	Obwieszczenie postanowienia sędziego-komisarza o oddaleniu zarzutów na opis i oszacowanie (art. 319 ust. 5 p.u.)
+11207OB	Obwieszczenie postanowienia sędziego-komisarza o uwzględnieniu zarzutów na opis i oszacowanie (art. 319 ust. 5 p.u.)
+11209OB	Obwieszczenie postanowienia sędziego-komisarza o zatwierdzeniu warunków przetargu lub aukcji (art. 320 ust. 1 pkt. 1 p.u.)
+11210OB	Obwieszczenie postanowienia sędziego-komisarza o zatwierdzeniu wyboru oferenta (art. 320 ust. 1 pkt. 5 p.u.)
+11211OB	Obwieszczenie postanowienia sędziego-komisarza o  odroczeniu zatwierdzenia wyboru oferenta (art. 320 ust. 1 pkt 7 p.u.)
+11213OB	Obwieszczenie postanowienia sędziego-komisarza o wyznaczeniu terminu zastawnikowi do zaspokojenia się z przedmiotu zastawu (art. 327 ust. 2 p.u.)
+11214OB	Obwieszczenie postanowienia sędziego-komisarza o zobowiązaniu zastawnika do wydania syndykowi przedmiotu zastawu (art. 327 p.u.)
+11215OB	Obwieszczenie postanowienia sędziego-komisarza o wyznaczeniu terminu zastawnikowi do przejęcia na własność przedmiotu zastawu (art. 328 ust. p.u.)
+11216OB	Obwieszczenie postanowienia sędziego-komisarza o wyłączeniu z masy upadłości wierzytelności i praw majątkowych upadłego (art. 334 ust. 1 w zw. z art. 315 p.u.)
+11217OB	Obwieszczenie zarządzenia sędziego-komisarza informujące o złożeniu planu podziału funduszy masy upadłości i możliwości wnoszenia zarzutów (art. 349 ust. 1 p.u.)
+11218OB	Obwieszczenie zarządzenia sędziego-komisarza informujące o złożeniu planu podziału sumy uzyskanej ze sprzedaży rzeczy zabezpieczonej prawami, o których mowa w (art. 345 i art. 346 p.u.)
+112251OB	Obwieszczenie postanowienia sędziego-komisarza o sprostowaniu częściowego lub ostatecznego planu podziału funduszów masy upadłości (art. 351 ust. 2 p.u.)
+11225OB	Obwieszczenie postanowienia o sprostowaniu częściowego planu podziału funduszy masy upadłości art. 351 ust. 2 pr.u.
+112261OB	Obwieszczenie postanowienia sędziego-komisarza o zatwierdzeniu częściowego lub ostatecznego planu podziału funduszy masy upadłości
+11226OB	Obwieszczenie postanowienia o zatwierdzeniu częściowego planu podziału funduszów masy upadłości (art. 351 ust. 1 p.u.)
+11227OB	Obwieszczenie postanowienia o sprostowaniu ostatecznego planu podziału funduszów masy upadłości (art. 351 ust. 2 p.u.)
+11228OB	Obwieszczenie postanowienia o zatwierdzeniu ostatecznego planu podziału funduszów masy upadłości (art. 351 ust. 1 p.u.)
+11229OB	Obwieszczenie postanowienia sędziego-komisarza o sprostowaniu planu podziału sumy uzyskanej ze sprzedaży rzeczy zabezpieczonej prawami (art. 351 ust. 2 p.u.)
+11230OB	Obwieszczenie postanowienia sędziego-komisarza o zatwierdzeniu planu podziału sumy uzyskanej ze sprzedaży rzeczy zabezpieczonej prawami
+112341OB	Obwieszczenie postanowienia Sądu o umorzeniu postępowania upadłościowego (art. 361 ust. 1 p.u.)
+112342OB	Obwieszczenie postanowienia Sądu o umorzeniu postępowania upadłościowego (art. 491 [10] ust. 1, 2, 2a p.u.)
+11240OB	Obwieszczenie postanowienia Sądu o stwierdzeniu zakończenia postępowania upadłościowego z uwagi na wykonanie ostatecznego planu podziału (art. 368 ust. 1 p.u.)
+11241OB	Obwieszczenie postanowienia Sądu o stwierdzeniu zakończenia postępowania upadłościowego z uwagi na zaspokojenie wszystkich wierzycieli (art. 368 ust. 2 pkt. 2 p.u.)
+11242OB	Obwieszczenie postanowienia Sądu o ustaleniu planu spłat wierzycieli upadłego i umorzeniu pozostałej części zobowiązań, niezaspokojonych w postępowaniu upadłościowym (art. 369 ust. 1 p.u.)
+11244OB	Obwieszczenie postanowienia Sądu o zmianie planu spłat (art. 370d ust. 1 p.u.)
+11246OB	Obwieszczenie postanowienia Sądu o stwierdzeniu wykonania planu spłaty i umorzeniu zobowiązań upadłego (art. 370 f ust. 1 p.u.)
+11247OB	Obwieszczenie postanowienia Sądu o uchyleniu postępowania upadłościowego (art. 371 ust. 1 p.u.)
+11253OB	Obwieszczenie zarządzenia przewodniczącego o zwrocie wniosku o zatwierdzenie układu (art. 130 kpc w zw. z art. 221 ust. 1 p.r.)
+11254OB	Obwieszczenie zarządzenia przewodniczącego o zwrocie wniosku o zatwierdzenie układu (art. 221 ust. 3 p.r.)
+112641OB	Obwieszczenie zarządzenia przewodniczącego o zwrocie wniosku z powodu nieuzupełnienia braków fiskalnych lub formalnych wniosku (art. 130 kpc oraz 230 p.r.)
+112821OB	Obwieszczenie postanowienia Sądu o ustanowieniu tymczasowego nadzorcy sądowego w postępowaniu układowym lub sanacyjnym
+112831OB	Obwieszczenie postanowienia Sądu o ustanowieniu tymczasowego zarządcy w postępowaniu sanacyjnym
+11284OB	Obwieszczenie postanowienia Sądu o uchyleniu zabezpieczenia przez odwołanie tymczasowego nadzorcy sądowego
+11285OB	Obwieszczenie postanowienia Sądu o odwołaniu tymczasowego nadzorcy sądowego z powodu niewłaściwego pełnienia obowiązków, braku poprawy mimo nałożonej grzywny, nie wykonania obowiązków z art. 24 i 25
+11287OB	Obwieszczenie postanowienia Sądu o wygaśnięciu funkcji tymczasowego nadzorcy sądowego z powodu śmierci i powołanie tymczasowego nadzorcy sądowego
+11288OB	Obwieszczenie postanowienia Sądu o zmianie sposobu zabezpieczenia przez odwołanie tymczasowego nadzorcy sądowego i ustanowienie zarządcy tymczasowego
+11292OB	Obwieszczenie postanowienia Sądu o zmianie sposobu zabezpieczenia przez uchylenie zarządu tymczasowego
+11295OB	Obwieszczenie postanowienia Sądu o odwołaniu tymczasowego zarządcy z powodu niewłaściwego pełnienia obowiązków i powołania do pełnienia tej funkcji innej osoby
+11296OB	Obwieszczenie postanowienia Sądu o zmianie tymczasowego nadzorcy sądowego
+11297OB	Obwieszczenie postanowienia Sądu o wygaśnięciu funkcji tymczasowego nadzorcy sądowego z powodu śmierci i powołaniu tymczasowego nadzorcy sądowego
+112981OB	Obwieszczenie postanowienia Sądu o wygaśnięciu funkcji tymczasowego zarządcy w postępowaniu sanacyjnym
+112991OB	Obwieszczenie postanowienia Sądu o wygaśnięciu funkcji tymczasowego nadzorcy sądowego w postępowaniu układowym lub sanacyjnym
+11302OB	Obwieszczenie postanowienia Sądu o uchyleniu zajęcia rachunku bankowego
+11303OB	Obwieszczenie postanowienia Sądu o zawieszeniu postępowań egzekucyjnych i zawieszeniu zajęć rachunków bankowych (art. 268 ust. 2 i 3)
+11304OB	Obwieszczenie postanowienia sędziego-komisarza o zatwierdzeniu wyboru oferenta w sytuacji gdy odroczono zatwierdzenie wyboru oferenta (art. 320 ust. 1 pkt 7 p.u.)
+11310OB	Obwieszczenie postanowienia Sądu o uchyleniu planu spłaty (art. 370e ust. 1 p.u.)
+11311OB	Obwieszczenie postanowienia Sądu o uchyleniu planu spłaty wierzycieli (art. 370e ust. 2 pkt 1-4 p.u.)
+11314OB	Obwieszczenie postanowienia Sądu o zmianie planu spłat (art. 370d ust. 2 p.u.)
+11316OB	Obwieszczenie postanowienia Sądu o zmianie postanowienia zatwierdzającego warunki sprzedaży na wniosek syndyka
+11317OB	Obwieszczenie postanowienia Sądu o ogłoszeniu upadłości na skutek uwzględnienia wniosku o zatwierdzenie warunków sprzedaży - osoba fizyczna (art. 56d p.u.)
+11318OB	Obwieszczenie postanowienia Sądu o zawieszeniu zarządcy w wykonywaniu czynności
+11319OB	Obwieszczenie postanowienia Sądu o stwierdzeniu wygaśnięcia funkcji nadzorcy sądowego z powodu śmierci
+11320OB	Obwieszczenie postanowienia Sądu o stwierdzeniu wygaśnięcia funkcji zarządcy z powodu śmierci
+11321OB	Obwieszczenie postanowienia Sądu o wygaśnięciu funkcji tymczasowego zarządcy z powodu śmierci i powołaniu tymczasowego zarządcy
+11322OB	Obwieszczenie postanowienia Sądu o zmianie tymczasowego zarządcy
+11323OB	Obwieszczenie postanowienie Sądu o uchyleniu skutków dokonania obwieszczenia (art. 226f p.r.)
+11324OB	Obwieszczenie postanowienia Sądu o oddaleniu wniosku o ogłoszenie upadłości (art. 13 ust 2 p.u.)
+11326OB	Obwieszczenie postanowienia Sądu o odwołaniu tymczasowego nadzorcy sądowego z powodu niewłaściwego pełnienia obowiązków i powołania do pełnienia tej funkcji innej osoby
+11327OB	Obwieszczenie postanowienia sędziego-komisarza o stwierdzeniu przyjęcia układu przez zgromadzenie wierzycieli w postępowaniu upadłościowym
+11329OB	Obwieszczenie informacji o przekazaniu sędziemu-komisarzowi opisu i oszacowania (art.319 ust. 5p.u.)
+11331OB	Obwieszczenie postanowienia Sądu o zmianie zarządcy na skutek uchwały rady wierzycieli i o powołaniu do pełnienia funkcji osobę wskazaną przez radę wierzycieli (art. 133 ust. 2 p.r.)
+11334OB	Obwieszczenie informacji o upadku zabezpieczenia w postaci ustanowienia tymczasowego nadzorcy sądowego
+11335OB	Obwieszczenie informacji o upadku zabezpieczenia w postaci ustanowienia tymczasowego nadzorcy sądowego - prawomocne oddalenie wniosku o ogłoszenie upadłości - do uzupełnienia
+11336OB	Obwieszczenie informacji o upadku zabezpieczenia w postaci ustanowienia tymczasowego nadzorcy sądowego
+11337OB	Obwieszczenie informacji o upadku zabezpieczenia w postaci ustanowienia tymczasowego zarządcy
+11338OB	Obwieszczenie informacji o złożeniu wniosku o zatwierdzenie warunków sprzedaży
+11339OB	Obwieszczenie informacji o złożeniu wniosku o zmianę postanowienia o zatwierdzeniu warunków sprzedaży
+11340OB	Obwieszczenie informacji o złożeniu wniosku o uchylenie postanowienia o zatwierdzeniu warunków sprzedaży
+11341OB	Obwieszczenie postanowienia Sądu o odmowie ustalenia planu spłaty wierzycieli  (art. 491 (14A) ust. 1 pkt. 1- 3 p.u.)
+11342OB	Obwieszczenie postanowienia Sądu o odmowie umorzenia zobowiązań upadłego bez ustalania planu spłaty
+11343OB	Obwieszczenie postanowienia Sądu o warunkowym umorzeniu zobowiązań bez ustalania planu spłaty
+11344OB	Obwieszczenie postanowienia o odmowie warunkowego umorzenia zobowiązań upadłego bez ustalania planu spłaty - DO UZUPEŁNIENIA
+11345OB	Obwieszczenie postanowienia Sądu o zatwierdzeniu układu w postępowaniu o zatwierdzenie układu
+11346OB	Obwieszczenie postanowienia Sądu o odmowie zatwierdzenia układu w postępowaniu o zatwierdzenie układu (art. 165 ust. 1 lub 2 p.r.)
+11347OB	Obwieszczenie postanowienia Sądu o odmowie zatwierdzenia układu w postępowaniu o zatwierdzenie układu (art. 165 ust. 3 p.r.)
+11348OB	Obwieszczenie zarządzenia Sądu o wyznaczeniu terminu rozprawy w celu rozpoznania układu w postępowaniu upadłościowym
+11349OB	Obwieszczenie zarządzenia Sądu o wyznaczeniu terminu rozprawy w celu rozpoznania układu w postępowaniu restrukturyzacyjnym
+11350OB	Obwieszczenie postanowienia Sądu o zatwierdzeniu układu częściowego w postępowaniu o zatwierdzeniu układu
+11351OB	Obwieszczenie postanowienia Sądu o odmowie zatwierdzenia układu częściowego w postępowaniu o zatwierdzenie układu
+11353OB	Obwieszczenie o wyznaczeniu terminu rozprawy w przedmiocie zmiany lub uchylenia planu spłaty
+11354OB	Obwieszczenie postanowienia Sądu o zmianie planu spłaty (art. 49119 ust. 1 p.u.)
+11355OB	Obwieszczenie postanowienia Sądu o zmianie planu spłaty (art. 49119 ust. 3 p.u.)
+11356OB	Obwieszczenie postanowienia Sądu o uchyleniu planu spłaty (art. 49120 ust. 1 p.u.)
+11357OB	Obwieszczenie postanowienia Sądu o uchyleniu planu spłaty (art. 49120 ust. 2 p.u.)
+11358OB	Obwieszczenie postanowienia Sądu o uchyleniu planu spłaty wierzycieli i umorzeniu niewykonanych zobowiązań, o których mowa w art. 369 ust. 1 p.u.
+11359OB	Obwieszczenie postanowienia Sądu o uchyleniu planu spłaty wierzycieli i umorzeniu niewykonanych zobowiązań, o których mowa w art. 49115 ust. 1-5 p.u.
+11360OB	Obwieszczenie postanowienia Sądu o stwierdzeniu wykonania planu spłaty wierzycieli i umorzeniu zobowiązań upadłego (art. 49121 ust. 1 p.u.)
+11361OB	Obwieszczenie postanowienia Sądu o uchyleniu postanowienia o warunkowym umorzeniu zobowiązań upadłego bez ustalenia planu spłaty wierzycieli (art. 369 ust. 2a p.u.)
+11362OB	Obwieszczenie postanowienia Sądu o uchyleniu postanowienia o warunkowym umorzeniu zobowiązań upadłego bez ustalenia planu spłaty wierzycieli (art. 369 ust. 2g pkt 1-4 p.u.)
+11363OB	Obwieszczenie postanowienia Sądu o uchyleniu postanowienia o warunkowym umorzeniu zobowiązań upadłego bez ustalenia planu spłaty wierzycieli (art. 49116 ust. 2b p.u.)
+11364OB	Obwieszczenie postanowienia Sądu o uchyleniu postanowienia o warunkowym umorzeniu zobowiązań upadłego bez ustalenia planu spłaty wierzycieli (art. 49116 ust. 2g pkt 1-4 p.u.)
+11365OB	Obwieszczenie postanowienia Sądu o odmowie ustalenia planu spłaty wierzycieli
+11366OB	Obwieszczenie postanowienia Sądu o umorzeniu zobowiązań bez ustalania planu spłaty
+11367OB	Obwieszczenie postanowienia Sądu o odmowie umorzenia zobowiązań upadłego bez ustalania planu spłaty
+11368OB	Obwieszczenie postanowienia Sądu o warunkowym umorzeniu zobowiązań bez ustalania planu spłaty
+11369OB	Obwieszczenie postanowienia Sądu o odmowie warunkowego umorzenia zobowiązań upadłego bez ustalania planu spłaty
+11370OB	Obwieszczenie o wyznaczeniu terminu rozprawy w przedmiocie ustalenia planu spłaty lub umorzenia zobowiązań bez ustalenia planu spłaty wierzycieli
+11371OB	Obwieszczenie postanowienia Sądu o zatwierdzeniu układu osoby fizycznej nieprowadzącej działalności gospodarczej
+11372OB	Obwieszczenie postanowienia Sądu o odmowie zatwierdzenia układu osoby fizycznej nieprowadzącej działalności gospodarczej
+11373OB	Obwieszczenie postanowienia Sądu o wykonaniu układu w postępowaniu o zawarcie układu osoby fizycznej nieprowadzącej działalności gospodarczej
+11374OB	Obwieszczenie postanowienia Sądu o wykonaniu układu w postępowaniu upadłościowym
+11375OB	Obwieszczenie postanowienia Sądu o wykonaniu układu w postępowaniu upadłościowym osoby fizycznej nieprowadzącej działalności gospodarczej
+11376OB	Obwieszczenie postanowienia Sądu o uchyleniu układu w postępowaniu o zawarcie układu osoby fizycznej nieprowadzącej działalności gospodarczej
+11379OB	Obwieszczenie postanowienia Sądu o otwarciu postępowania o zmianę układu osoby fizycznej nieprowadzącej działalności gospodarczej
+11380OB	Obwieszczenie postanowienia Sądu o otwarciu postępowania o zmianę układu w postępowaniu upadłościowym
+11388OB	Obwieszczenie postanowienia sędziego-komisarza o zmianie częściowego lub ostatecznego planu podziału funduszów masy upadłości (art. 351 ust. 3 p.u.)
+11389OB	Obwieszczenie postanowienia sędziego-komisarza o zmianie planu podziału sumy uzyskanej ze sprzedaży rzeczy zabezpieczonej prawami (art. 351 ust. 3 p.u.)
+11390OB	Obwieszczenie informacji o wygaśnięciu układu z mocy prawa ze wskazaniem postępowania o ogłoszenie upadłości
+11391OB	Obwieszczenie postanowienia o zmianie sposobu zabezpieczenia przez odwołanie tymczasowego zarządcy i ustanowienie tymczasowego nadzorcy sądowego
+11392OB	Obwieszczenie informacji o wygaśnięciu z mocy prawa układu w upadłości (wydawane w upadłości)
+11395OB	Obwieszczenie postanowienia Sądu o oddaleniu wniosku o ogłoszenie upadłości (art. 11 ust. 6 p.u.)
+12000OB	Obwieszczenie informacji o objęciu przez nadzorcę/zarządcę funkcji nadzorcy wykonania układu
+12001OB	Obwieszczenie informacji o objęciu przez nadzorcę sądowego funkcji nadzorcy wykonania układu
+12073OB	Obwieszczenie postanowienia Sądu o umorzeniu postępowania w przedmiocie rozpoznania środka zaskarżenia
+12074OB	Obwieszczenie postanowienia Sądu o uwzględnieniu środka zaskarżenia w części i uchyleniu do ponownego rozpoznania
+12075OB	Obwieszczenie postanowienia Sądu o uwzględnieniu środka zaskarżenia w całości i uchyleniu do ponownego rozpoznania
+12076OB	Obwieszczenie postanowienia Sądu o uwzględnieniu środka zaskarżenia w części i zmianie orzeczenia I instancji
+12077OB	Obwieszczenie postanowienia Sądu o uwzględnieniu środka zaskarżenia w całości i zmianie orzeczenia I instancji
+12078OB	Obwieszczenie postanowienia Sądu o oddaleniu środka zaskarżenia
+12079OB	Obwieszczenie postanowienia Sądu o odrzuceniu środka zaskarżenia
+12081OB	KOPIA 10081 : Obwieszczenie postanowienia SO o oddaleniu zażalenia na postanowienie w przedmiocie odmowy zatwierdzenia układu
+12082OB	Obwieszczenie Postanowienia SO o uchyleniu postanowienia Sądu Rejonowego w przedmiocie odmowy zatwierdzenia układu i przekazaniu sprawy do ponownego rozpoznania
+14001OB	Obwieszczenie postanowienia Sądu o ogłoszeniu upadłości konsumenckiej - prowadzonej przez syndyka
+14004OB	Obwieszczenie postanowienia Sądu o odrzuceniu wniosku o ogłoszenie upadłości
+14005OB	Obwieszczenie zarządzenia o zwrocie wniosku o ogłoszenie upadłości konsumenckiej na skutek nieuzupełnienia braków formalnych lub fiskalnych
+14006OB	WYCOFANY_Obwieszczenie zarządzenia o zwrocie wniosku o ogłoszenie upadłości konsumenckiej bez wezwania do jego uzupełnienia w razie niezłożenia oświadczenia o prawdziwości danych zawartych we wniosku
+14007OB	Obwieszczenie zarządzenia o zwrocie wniosku o ogłoszenie upadłości konsumenckiej z powodu niemożności nadania sprawie dalszego biegu wskutek niewykonania innych zarządzeń
+14008OB	Obwieszczenie zarządzenia o zwrocie wniosku o ogłoszenie upadłości konsumenckiej – nieuiszczenie zaliczki art. 22a p.u.
+14009OB	Obwieszczenie postanowienia Sądu o ogłoszeniu upadłości konsumenckiej na skutek uwzględnienia wniosku o zatwierdzenie warunków sprzedaży składników majątku o znacznej wartości (art. 56d p.u.) prowadzonej przez sąd
+14010OB	Obwieszczenie postanowienia o zakazie dokonania likwidacji składnika masy upadłości
+14011OB	Obwieszczenie postanowienia o wstrzymaniu dokonania likwidacji składnika masy upadłości
+14012OB	Obwieszczenie o zawiadomieniu sądu o sposobie likwidacji składnika masy upadłości
+14013OB	Obwieszczenie  postanowienia Sądu o ogłoszeniu upadłości konsumenckiej na skutek uwzględnienia wniosku o zatwierdzenie warunków sprzedaży składników majątku o znacznej wartości (art. 56d p.u.) prowadzonej przez Syndyka
+14090OB	Obwieszczenie postanowienia Sądu o zmianie trybu prowadzenia postępowania na wtórne postępowanie upadłościowe
+14091OB	Obwieszczenie postanowienia Sądu o zmianie trybu prowadzenia postępowania na wtórne postępowanie upadłościowe
+14092OB	Obwieszczenie postanowienia Sądu o otwarciu wtórnego postępowania upadłościowego
+14098OB	Obwieszczenie postanowienia Sądu o zmianie trybu prowadzenia postępowania na upadłość konsumencką prowadzoną przez sędziego-komisarza
+14099OB	Obwieszczenie postanowienia Sądu o zmianie trybu prowadzenia postępowania na upadłość konsumencką prowadzoną przez syndyka
+14100OB	Obwieszczenie postanowienia Sądu o otwarciu postępowania o zawarcie układu na zgromadzeniu wierzycieli
+14102OB	Obwieszczenie zarządzenia o zwrocie wniosku o zawarcie układu na zgromadzeniu wierzycieli na skutek nieuzupełnienia braków formalnych lub fiskalnych
+14103OB	Obwieszczenie zarządzenia o zwrocie wniosku o zawarcie układu na zgromadzeniu wierzycieli, z powodu niemożności nadania sprawie dalszego biegu wskutek niewykonania innych zarządzeń
+14104OB	Obwieszczenie zarządzenia o zwrocie wniosku o zawarcie układu na zgromadzeniu wierzycieli – nieuiszczenie zaliczki (491^26 ust. 1 p. u.)
+14105OB	Obwieszczenie zarządzenia Sądu o wyznaczeniu terminu rozprawy w celu rozpoznania układu konsumenckiego
+14106OB	Obwieszczenie postanowienia o zmianie sposobu zabezpieczenia przez odwołanie tymczasowego nadzorcy sądowego i ustanowienie zarządcy przymusowego
+14107OB	Obwieszczenie postanowienia o zmianie sposobu zabezpieczenia przez odwołanie zarządcy przymusowego i ustanowienie tymczasowego nadzorcy sądowego
+15030OB	Obwieszczenie postanowienia Sądu o zawieszeniu doradcy restrukturyzacyjnego w postępowaniu restrukturyzacyjnym
+150311OB	Obwieszczenie postanowienia sądu o powołaniu tymczasowego doradcy restrukturyzacyjnego
+15031OB	Obwieszczenie postanowienia Sądu o odwołaniu doradcy restrukturyzacyjnego w postępowaniu restrukturyzacyjnym
+15032OB	Obwieszczenie postanowienia Sądu o wygaszeniu doradcy restrukturyzacyjnego w postępowaniu restrukturyzacyjnym
+15033OB	Obwieszczenie postanowienia Sądu o zmianie doradcy restrukturyzacyjnego w postępowaniu restrukturyzacyjnym
+15034OB	Obwieszczenie zarządzenia przywracającego Nadzorcę układu/Nadzorcę sądowego/Zarządcę do postępowania restrukturyzacyjnego, po uchyleniu Postanowienia o odwołaniu przez Sąd Okręgowy
+15035OB	Obwieszczenie postanowienia Sądu o powołaniu doradcy w postępowaniu restrukturyzacyjnym po uprawomocnieniu się postanowienia o odwołaniu
+15036OB	Obwieszczenie postanowienia Sądu o odwieszeniu doradcy restrukturyzacyjnego w postępowaniu restrukturyzacyjnym
+15037OB	Obwieszczenie zarządzenia przywracającego postępowanie upadłościowe prowadzącego postępowanie doradcy, po uchyleniu Postanowienia o odwołaniu przez Sąd Okręgowy
+15038OB	Obwieszczenie postanowienia Sądu o zmianie doradcy w postępowaniu upadłościowym
+15039OB	Obwieszczenie postanowienia Sądu o powołaniu doradcy po uprawomocnieniu się postanowienia o odwołaniu w postępowaniu upadłościowym
+150401OB	Obwieszczenie postanowienia Sądu o powołaniu tymczasowego doradcy
+15040OB	Obwieszczenie postanowienia Sądu o odwołaniu doradcy restrukturyzacyjnego w postępowaniu upadłościowym
+15041OB	Obwieszczenie postanowienia Sądu o zawieszeniu doradcy restrukturyzacyjnego w postępowaniu upadłościowym
+15042OB	Obwieszczenie postanowienia Sądu o odwieszeniu doradcy restrukturyzacyjnego w postępowaniu upadłościowym
+15043OB	Obwieszczenie postanowienia Sądu o wygaszeniu doradcy restrukturyzacyjnego w postępowaniu upadłościowym
+17005OB	Obwieszczenie o ustaleniu dnia układowego
+17008OB	Obwieszczenie zarządzenie nadzorcy układu o zwołaniu zgromadzenia wierzycieli w celu głosowania nad układem
+17009OB	Obwieszczenie informacji o złożeniu przez syndyka do akt opisu i oszacowania
+17010OB	Obwieszczenie zarządzenia nadzorcy sądowego o zwołaniu zgromadzenia wierzycieli w postępowaniu o zawarcie układu osoby fizycznej nieprowadzącej działalności gospodarczej na zgromadzeniu wierzycieli
+50001OB	Obwieszczenie postanowienia o oddaleniu wniosku o ogłoszenie upadłości
+50002OB	Obwieszczenie postanowienia o umorzeniu postępowania w przedmiocie ogłoszenia upadłości
+50003OB	Obwieszczenie postanowienia o oddaleniu wniosku o ogłoszenie upadłości art. 13 ust. 1 i 2 PU
+50004OB	Obwieszczenie postanowienia o ogłoszeniu upadłości  i oddaleniu wniosku o zatwierdzenie warunków sprzedaży
+50005OB	Obwieszczenie o wpisaniu do repertorium pozwu o wyłączenie mienia z masy upadłości
+50006OB	Obwieszczenie zarządzenia o zwrocie pozwu o wyłączenie mienia z masy upadłości
+50007OB	Obwieszczenie o dacie złożenia uzupełnienia listy wierzytelności
+50008OB	Obwieszczenie postanowienia sędziego komisarza o zatwierdzeniu uzupełnienia listy wierzytelności (art. 260 ust. 2 p.u)
+50009OB	Obwieszczenie postanowienia sędziego komisarza o częściowym zatwierdzeniu uzupełnienia listy wierzytelności (art. 260 ust. 3 p.u.)
+50010OB	Obwieszczenie postanowienia sędziego komisarza o dokonaniu zmian na liście wierzytelności na podstawie prawomocnych postanowień w przedmiocie sprzeciwu i zatwierdzeniu uzupełnienia listy wierzytelności (art. 260 ust. 1 p.u. )
+50011OB	Obwieszczenie postanowienia o oddaleniu pozwu o wyłączenie mienia z masy upadłości
+50012OB	Obwieszczenie postanowienia o odrzuceniu pozwu o wyłączenie mienia z masy upadłości
+50013OB	Obwieszczenie postanowienia o umorzeniu postępowania w przedmiocie rozpoznania pozwu
+50014OB	Obwieszczenie postanowienia dotyczącego masy upadłości
+50015OB	Obwieszczenie informacji o wniesieniu zażalenia na postanowienie o zatwierdzeniu układu w postępowaniu o zatwierdzenie układu w części dotyczącej jurysdykcji polskiej
+50016OB	Obwieszczenie informacji o dacie złożenia spisu wierzytelności i spisu wierzytelności spornych
+50017OB	Obwieszczenie o wpisaniu do repertorium wniosku dotyczącego masy upadłości
+50018OB	Obwieszczenie prawomocnego postanowienia o sprostowaniu spisu wierzytelności
+50019OB	Obwieszczenie informacji o dacie złożenia uzupełnienia spisu wierzytelności
+50020OB	Obwieszczenie postanowienia sędziego-komisarza o zatwierdzeniu uzupełnienia spisu wierzytelności
+50021OB	Obwieszczenie postanowienia o przeprowadzeniu głosowania wyłącznie za pośrednictwem systemu teleinformatycznego obsługującego postępowanie sądowe z uwagi na znaczną liczbę wierzycieli
+50022OB	Obwieszczenie postanowienia sędziego-komisarza o zmianie częściowego lub ostatecznego planu podziału funduszów masy upadłości (art. 351 ust. 3 p.u.)
+50023OB	Obwieszczenie postanowienia sędziego-komisarza o zmianie planu podziału sumy uzyskanej ze sprzedaży rzeczy zabezpieczonej prawami, o których mowa w art. 345 i 346 p.u. (art. 351 ust. 3 p.u.)
+50024OB	Obwieszczenie zarządzenia o zwrocie wniosku dotyczącego masy upadłości
+50025OB	Obwieszczenie postanowienia o oddaleniu wniosku dotyczącego masy upadłości
+50026OB	Obwieszczenie postanowienia o odrzuceniu wniosku dotyczącego masy upadłości
+50027OB	Obwieszczenie informacji o zakończeniu postępowania restrukturyzacyjnego
+50028OB	Obwieszczenie postanowienia o umorzeniu postępowania w przedmiocie rozpoznania wniosku dotyczącego masy upadłości
+50029OB	Obwieszczenie informacji o wygaśnięciu układu z mocy prawa
+50030OB	Obwieszczenie informacji o upadku zabezpieczenia w postaci ustanowienia tymczasowego nadzorcy sądowego - ogłoszenie upadłości
+50031OB	Obwieszczenie informacji
+50032OB	Obwieszczenie informacji
+50033OB	Obwieszczenie informacji
+50034OB	Obwieszczenie informacji o upadku zabezpieczenia w postaci ustanowienia zarządcy przymusowego - ogłoszenie upadłości
+50035OB	Obwieszczenie informacji o upadku zabezpieczenia w postaci ustanowienia zarządcy przymusowego - prawomocne oddalenie wniosku o ogłoszenie upadłości
+50036OB	Obwieszczenie informacji o upadku zabezpieczenia w postaci ustanowienia zarządcy przymusowego - prawomocne odrzucenie wniosku o ogłoszenie upadłości
+50037OB	Obwieszczenie informacji o upadku zabezpieczenia w postaci ustanowienia zarządcy przymusowego - prawomocne umorzenie postępowania w przedmiocie rozpoznania wniosku o ogłoszenie upadłości
+50038OB	Obwieszczenie postanowienia sądu o powołaniu zastępcy zarządcy przymusowego (art. 38 ust. 1 w zw. z art. 159 ust. 1 p.u.)
+50039OB	Obwieszczenie informacji o upadku zabezpieczenia w postaci ustanowienia tymczasowego nadzorcy sądowego - otwarcie postępowania układowego/sanacyjnego
+50040OB	Obwieszczenie informacji o upadku zabezpieczenia w postaci ustanowienia tymczasowego nadzorcy sądowego - prawomocne oddalenie wniosku o otwarcie postępowania układowego/sanacyjnego
+50041OB	Obwieszczenie informacji o upadku zabezpieczenia w postaci ustanowienia tymczasowego nadzorcy sądowego - prawomocne odrzucenie wniosku o otwarcie postępowania układowego/sanacyjnego
+50042OB	Obwieszczenie informacji o upadku zabezpieczenia w postaci ustanowienia tymczasowego nadzorcy sądowego - prawomocne umorzenie postępowania w przedmiocie rozpoznania wniosku o otwarcie postępowania układowego/sanacyjnego
+50043OB	Obwieszczenie informacji o upadku zabezpieczenia w postaci ustanowienia tymczasowego nadzorcy sądowego - prawomocny zwrot wniosku o otwarcie postępowania układowego/sanacyjnego
+50044OB	Obwieszczenie o dacie wydania postanowienia o zmianie listy wierzytelności
+50045OB	Obwieszczenie postanowienia sądu o zakończeniu postępowania upadłościowego
+50046OB	Obwieszczenie zarządzenia o zwrocie wniosku o otwarcie postępowania o zawarcie układu na zgromadzeniu wierzycieli
+50047OB	Obwieszczenie postanowienia sądu o oddaleniu wniosku o otwarcie postępowania o zawarcie układu na zgromadzeniu wierzycieli
+50048OB	Obwieszczenie postanowienie sądu o odrzuceniu wniosku o otwarcie postępowania o zawarcie układu na zgromadzeniu wierzycieli
+50049OB	Obwieszczenie postanowienia o umorzeniu postępowania w przedmiocie rozpoznania wniosku o otwarcie postępowania o zawarcie układu na zgromadzeniu wierzycieli
+50050OB	Obwieszczenie postanowienia o odmowie otwarcia postępowania o zawarcie układu na zgromadzeniu wierzycieli
+50051OB	Obwieszczenie o terminie rozprawy wyznaczonej w celu rozpoznania układu
+50053OB	Obwieszczenie postanowienia o zmianie sposobu zabezpieczenia przez odwołanie zarządcy przymusowego i ustanowienie tns
+50054OB	Obwieszczenie postanowienia o zmianie sposobu zabezpieczenia przez odwołanie tns i ustanowienie zarządcy przymusowego
+50055OB	Obwieszczenie postanowienia o uchyleniu zabezpieczenia przez odwołanie tymczasowego zarządcy
+50056OB	Obwieszczenie informacji o upadku zabezpieczenia w postaci ustanowienia tymczasowego zarządcy - otwarcie postępowania sanacyjnego
+50057OB	Obwieszczenie informacji o upadku zabezpieczenia w postaci ustanowienia tymczasowego zarządcy - prawomocne oddalenie wniosku o otwarcie postępowania sanacyjnego
+50058OB	Obwieszczenie informacji o upadku zabezpieczenia w postaci ustanowienia tymczasowego zarządcy - prawomocne odrzucenie wniosku o otwarcie postępowania sanacyjnego
+50059OB	Obwieszczenie informacji o upadku zabezpieczenia w postaci ustanowienia tymczasowego zarządcy - prawomocne umorzenie postępowania w przedmiocie rozpoznania wniosku o otwarcie postępowania sanacyjnego
+50060OB	Obwieszczenie informacji o upadku zabezpieczenia w postaci ustanowienia tymczasowego zarządcy - prawomocny zwrot wniosku o otwarcie postępowania sanacyjnego
+50061OB	Obwieszczenie postanowienia o zmianie sposobu zabezpieczenia przez odwołanie tymczasowego zarządcy i ustanowienie tymczasowego nadzorcy sądowego
+50062OB	Obwieszczenie zarządzenia syndyka o zwołaniu zgromadzenia wierzycieli
+50063OB	Obwieszczenie zarządzenia syndyka dotyczącego masy upadłości
+50064OB	Obwieszczenie o dokumencie dotyczącym masy upadłości
+50065OB	Obwieszczenie informacji o wygaśnięciu układu z mocy prawa
+50066OB	Obwieszczenie informacji o wniesieniu zażalenia na postanowienie o wtórnego postępowania w części dotyczącej jurysdykcji polskiej
+50067OB	Obwieszczenie informacji o wniesieniu zażalenia na postanowienie o uznaniu orzeczenia o wszczęciu zagranicznego postępowania upadłościowego
+50068OB	Obwieszczenie informacji o wniesieniu zażalenia na postanowienie o otwarciu przyspieszonego postępowania układowego, w części dotyczącej jurysdykcji polskiej
+50069OB	Obwieszczenie informacji o wniesieniu zażalenia na postanowienie o otwarciu postępowania układowego, w części dotyczącej jurysdykcji polskiej
+50070OB	Obwieszczenie informacji o wniesieniu zażalenia na postanowienie o otwarciu postępowania sanacyjnego, w części dotyczącej jurysdykcji polskiej
+50071OB	Obwieszczenie informacji o wniesieniu zażalenia na postanowienie o otwarciu postępowania o zawarcie układu na zgromadzeniu wierzycieli w części dotyczącej jurysdykcji polskiej
+50072OB	Obwieszczenie postanowienia sądu o umorzeniu postępowania o zawarcie układu na zgromadzeniu wierzycieli
+50073OB	Obwieszczenie informacji o zakończeniu postępowania o zawarcie układu na zgromadzeniu wierzycieli
+50074OB	Obwieszczenie postanowienia o odwołaniu nadzorcy sądowego
+50075OB	Obwieszczenie postanowienia o wyznaczeniu nadzorcy sądowego po uprawomocnieniu się postanowienia o odwołaniu nadzorcy sądowego
+50076OB	Obwieszczenie postanowienia sądu o zawieszeniu nadzorcy sądowego w wykonywaniu czynności
+50077OB	Obwieszczenie postanowienia sądu o stwierdzeniu wygaśnięcia funkcji nadzorcy sądowego
+50078OB	Obwieszczenie postanowienia o zmianie nadzorcy sądowego
+50079OB	Obwieszczenie postanowienia sądu o stwierdzeniu wygaśnięcia funkcji nadzorcy sądowego z powodu śmierci
+50080OB	Obwieszczenie sprostowania postanowienia o ogłoszeniu upadłości
+50081OB	Obwieszczenie sprostowania postanowienia o otwarciu postępowania restrukturyzacyjnego
+50082OB	Obwieszczenie uchylenia postanowienia
+50083OB	Obwieszczenie uchylenia zarządzenia
+50084OB	Obwieszczenie uchylenia stwierdzenia prawomocności
+50085OB	Obwieszczenie informacji o złożeniu sprawozdania z wykonywania układu
+50086OB	Obwieszczenie uchylenia postanowienia
+50087OB	Obwieszczenie uchylenia zarządzenia
+50088OB	Obwieszczenie uchylenia stwierdzenia prawomocności
+50089OB	Obwieszczenie uchylenia postanowienia
+50090OB	Obwieszczenie uchylenia zarządzenia
+50091OB	Obwieszczenie uchylenia stwierdzenia prawomocności
+50092OB	Obwieszczenie zarządzenia o zwrocie wniosku o uznanie orzeczenia o wszczęciu zagranicznego postępowania upadłościowego
+50093OB	Obwieszczenie postanowienia sądu o oddaleniu wniosku o uznanie orzeczenia o wszczęciu zagranicznego postępowania upadłościowego
+50094OB	Obwieszczenie postanowienie sądu o odrzuceniu wniosku o uznanie orzeczenia o wszczęciu zagranicznego postępowania upadłościowego
+50095OB	Obwieszczenie postanowienia o umorzeniu postępowania w przedmiocie rozpoznania wniosku o uznanie orzeczenia o wszczęciu zagranicznego postępowania upadłościowego
+50096OB	Obwieszczenie informacji o danych wnioskującego zarządcy zagranicznego
+50097OB	Obwieszczenia postanowienia Sądu o zmianie osoby tymczasowego nadzorcy sądowego
+50098OB	Obwieszczenie postanowienia o odwołaniu tymczasowego nadzorcy sądowego i powołaniu do pełnienia tej funkcji innej osoby
+50099OB	Obwieszczenie postanowienia o stwierdzeniu wygaśnięcia funkcji tymczasowego nadzorcy sądowego
+50100OB	Obwieszczenie informacji o upadku zabezpieczenia majątku dłużnika przez ustanowienie tymczasowego nadzorcy sądowego
+50101OB	Obwieszczenie informacji o umorzeniu głównego zagranicznego postępowania upadłościowego
+50102OB	Obwieszczenie informacji o zakończeniu głównego zagranicznego postępowania upadłościowego
+50103OB	Obwieszczenie informacji o ustanowieniu zarządcy zagranicznego
+50104OB	Obwieszczenie informacji o zmianie zarządcy zagranicznego
+50105OB	Obwieszczenie postanowienia Sądu o odmowie wydania zezwolenia zarządcy zagranicznemu na likwidację majątku znajdującego się w Polsce
+50106OB	Obwieszczenie informacji o sporządzeniu spisu inwentarza
+50107OB	Obwieszczenie informacji o przekazaniu sędziemu-komisarzowi opisu i oszacowania
+50108OB	Obwieszczenie o złożeniu planu podziału funduszów masy upadłości i możliwości wnoszenia zarzutów
+50109OB	Obwieszczenie postanowienia o zatwierdzeniu częściowego lub ostatecznego planu podziału funduszów masy upadłości
+50110OB	Obwieszczenie postanowienia o sprostowaniu częściowego lub ostatecznego planu podziału funduszów masy upadłości
+50111OB	Obwieszczenie postanowienia o zmianie częściowego lub ostatecznego planu podziału funduszów masy upadłości
+50112OB	Obwieszczenie o złożeniu planu podziału sumy uzyskanej ze sprzedaży rzeczy zabezpieczonej i o możliwości wnoszenia zarzutów
+50113OB	Obwieszczenie postanowienia o zatwierdzeniu planu podziału sumy uzyskanej ze sprzedaży rzeczy zabezpieczonej
+50114OB	Obwieszczenie postanowienia o sprostowaniu planu podziału sumy uzyskanej ze sprzedaży rzeczy zabezpieczonej
+50115OB	Obwieszczenie postanowienia o zmianie planu podziału sumy uzyskanej ze sprzedaży rzeczy zabezpieczonej
+50116OB	Obwieszczenie postanowienia o umorzeniu postępowania po uznaniu orzeczenia o wszczęciu zagranicznego postępowania upadłościowego
+50117OB	Obwieszczenie postanowienia o zakończeniu postępowania po uznaniu orzeczenia o wszczęciu zagranicznego postępowania upadłościowego
+50118OB	Obwieszczenie sprostowania postanowienia
+50119OB	Obwieszczenie sprostowania zarządzenia
+50120OB	Obwieszczenie sprostowania stwierdzenia prawomocności
+60070OB	Obwieszczenie dowolne
+600861OB	Obwieszczenie o sprostowaniu omyłki pisarskiej
+600862OB	Obwieszczenie o sprostowaniu omyłki pisarskiej w wyroku
+60086OB	Obwieszczenie o sprostowaniu omyłki pisarskiej
+600871OB	Obwieszczenie dokumentu prostującego sprostowanie omyłki pisarskiej w wyroku
+60087OB	Obwieszczenie o sprostowaniu postanowienia o sprostowaniu omyłki pisarskiej
+65001OB	Obwieszczenie postanowienia Sądu Okręgowego o uchyleniu postanowienia o zatwierdzeniu układu konsumenckiego i przekazaniu sprawy do ponownego rozpoznania
+65002OB	Obwieszczenie postanowienia Sądu Okręgowego o oddaleniu zażalenia na postanowienie o zatwierdzeniu układu konsumenckiego
+65003OB	Obwieszczenie postanowienia Sądu Okręgowego o zmianie postanowienia o zatwierdzeniu układu konsumenckiego
+65004OB	Obwieszczenie postanowienia Sądu Okręgowego o uchyleniu postanowienia o odmowie zatwierdzenia układu konsumenckiego i przekazaniu sprawy do ponownego rozpoznania
+65005OB	Obwieszczenie postanowienia Sądu Okręgowego o oddaleniu zażalenia na postanowienie o odmowie zatwierdzenia układu konsumenckiego
+65006OB	Obwieszczenie postanowienia Sądu Okręgowego o zmianie postanowienia o odmowie zatwierdzenia układu konsumenckiego
+65007OB	Obwieszczenie postanowienia Sądu Okręgowego o uchyleniu postanowienia o umorzeniu postępowania restrukturyzacyjnego i przekazaniu sprawy do ponownego rozpoznania
+65008OB	Obwieszczenie postanowienia Sądu Okręgowego o zmianie postanowienia o umorzeniu postępowania restrukturyzacyjnego
+65009OB	Obwieszczenie postanowienia Sądu Okręgowego o oddaleniu zażalenia na postanowienie o umorzeniu postępowania restrukturyzacyjnego
+65010OB	Obwieszczenie postanowienia Sądu Okręgowego o oddaleniu zażalenia na postanowienie o otwarciu postępowania o zmianę układu
+65011OB	Obwieszczenie postanowienia Sądu Okręgowego o uchyleniu postanowienia o otwarciu postępowania o zmianę układu i przekazaniu sprawy do ponownego rozpoznania
+65012OB	Obwieszczenie postanowienia SO o zmianie postanowienia SR o otwarciu postępowania o zmianę układu
+65013OB	Obwieszczenie postanowienia Sądu Okręgowego o uchyleniu postanowienia o odmowie otwarcia postępowania o zmianę układu i przekazaniu sprawy do ponownego rozpoznania
+65014OB	Obwieszczenie postanowienia SO o zmianie postanowienia SR o odmowie otwarcia postępowania o zmianę układu
+65015OB	Obwieszczenie postanowienia Sądu Okręgowego o oddaleniu zażalenia na postanowienie o odmowie otwarcia postępowania o zmianę układu
+65016OB	Obwieszczenie postanowienia SO o uchyleniu postanowienia SR o ustaleniu planu spłaty i przekazaniu sprawy do ponownego rozpoznania
+65017OB	Obwieszczenie postanowienia SO o zmianie postanowienia SR o ustaleniu planu spłaty
+65018OB	Obwieszczenie postanowienia SO o oddaleniu zażalenia na postanowienie o ustaleniu planu spłaty
+65019OB	Obwieszczenie postanowienia SO o uchyleniu postanowienia SR o odmowie ustalenia planu spłaty i przekazaniu sprawy do ponownego rozpoznania
+65020OB	Obwieszczenie postanowienia SO o zmianie postanowienia SR o odmowie ustalenia planu spłaty
+65021OB	Obwieszczenie postanowienia SO o oddaleniu zażalenia na postanowienie o odmowie ustalenia planu spłaty
+65022OB	Obwieszczenie postanowienia SO o uchyleniu postanowienia SR o umorzeniu zobowiązań upadłego bez ustalenia planu spłaty wierzycieli i przekazaniu sprawy do ponownego rozpoznania
+65023OB	Obwieszczenie postanowienia SO o zmianie postanowienia SR o umorzeniu zobowiązań upadłego bez ustalenia planu spłaty wierzycieli
+65024OB	Obwieszczenie postanowienia SO o oddaleniu zażalenia na postanowienie o umorzeniu zobowiązań upadłego bez ustalenia planu spłaty wierzycieli
+65025OB	Obwieszczenie postanowienia SO o uchyleniu postanowienia SR o odmowie umorzenia zobowiązań upadłego bez ustalenia planu spłaty wierzycieli i przekazaniu sprawy do ponownego rozpoznania
+65026OB	Obwieszczenie postanowienia SO o zmianie postanowienia SR o odmowie umorzenia zobowiązań upadłego bez ustalenia planu spłaty wierzycieli
+65027OB	Obwieszczenie postanowienia SO o oddaleniu zażalenia na postanowienie o odmowie umorzenia zobowiązań upadłego bez ustalenia planu spłaty wierzycieli
+65028OB	Obwieszczenie postanowienia SO o uchyleniu postanowienia SR o warunkowym umorzeniu zobowiązań upadłego bez ustalenia planu spłaty wierzycieli i przekazaniu sprawy do ponownego rozpoznania
+65029OB	Obwieszczenie postanowienia SO o zmianie postanowienia SR o warunkowym umorzeniu zobowiązań upadłego bez ustalenia planu spłaty wierzycieli
+65030OB	Obwieszczenie postanowienia SO o oddaleniu zażalenia na postanowienie o warunkowym umorzeniu zobowiązań upadłego bez ustalenia planu spłaty wierzycieli
+65031OB	Obwieszczenie postanowienia SO o uchyleniu postanowienia SR o odmowie warunkowego umorzenia zobowiązań upadłego bez ustalenia planu spłaty wierzycieli i przekazaniu sprawy do ponownego rozpoznania
+65032OB	Obwieszczenie postanowienia SO o zmianie postanowienia SR o odmowie warunkowego umorzenia zobowiązań upadłego bez ustalenia planu spłaty wierzycieli
+65033OB	Obwieszczenie postanowienia SO o oddaleniu zażalenia na postanowienie o odmowie warunkowego umorzenia zobowiązań upadłego bez ustalenia planu spłaty wierzycieli
+65034OB	Obwieszczenie postanowienia SO o uchyleniu postanowienia SR o zatwierdzeniu układu w upadłości i przekazaniu sprawy do ponownego rozpoznania
+65035OB	Obwieszczenie postanowienia SO o zmianie postanowienia SR o zatwierdzeniu układu w upadłości
+65036OB	Obwieszczenie postanowienia SO o oddaleniu zażalenia na postanowienie o zatwierdzeniu układu w upadłości
+65037OB	Obwieszczenie postanowienia SO o uchyleniu postanowienia SR o odmowie zatwierdzenia układu w upadłości i przekazaniu sprawy do ponownego rozpoznania
+65038OB	Obwieszczenie postanowienia SO o zmianie postanowienia SR o odmowie zatwierdzenia układu w upadłości i zatwierdeniu ukladu
+65039OB	Obwieszczenie postanowienia SO o oddaleniu zażalenia na postanowienie o odmowie zatwierdzenia układu w upadłości
+65040OB	Obwieszczenie postanowienia SO o uchyleniu postanowienia SR o umorzeniu postępowania upadłościowego i przekazaniu sprawy do ponownego rozpoznania
+65041OB	Obwieszczenie postanowienia SO o zmianie postanowienia SR o umorzeniu postępowania upadłościowego
+65042OB	Obwieszczenie postanowienia SO o oddaleniu zażalenia na postanowienie o umorzeniu postępowania upadłościowego
+65043OB	Obwieszczenie postanowienia SO o uchyleniu postanowienia SR o zakończeniu postępowania upadłościowego i przekazaniu sprawy do ponownego rozpoznania
+65044OB	Obwieszczenie postanowienia SO o zmianie postanowienia SR o zakończeniu postępowania upadłościowego
+65045OB	Obwieszczenie postanowienia SO o oddaleniu zażalenia na postanowienie o zakończeniu postępowania upadłościowego
+65046OB	Obwieszczenie postanowienia SO o uchyleniu postanowienia SR o uchyleniu postępowania upadłościowego i przekazaniu sprawy do ponownego rozpoznania
+65047OB	Obwieszczenie postanowienia SO o zmianie postanowienia SR o uchyleniu postępowania upadłościowego
+65048OB	Obwieszczenie postanowienia SO o oddaleniu zażalenia na postanowienie o uchyleniu postępowania upadłościowego
+65049OB	Obwieszczenie postanowienia SO o uchyleniu postanowienia SR o zmianie planu spłaty i przekazaniu sprawy do ponownego rozpoznania
+65050OB	Obwieszczenie postanowienia SO o zmianie postanowienia SR o zmianie planu spłaty
+65051OB	Obwieszczenie postanowienia SO o oddaleniu zażalenia na postanowienie o zmianie planu spłaty
+65052OB	Obwieszczenie postanowienia SO o uchyleniu postanowienia SR o uchyleniu planu spłaty wierzycieli i umorzeniu niewykonanych zobowiązań, o których jest mowa w art. 369 ust. 1 lub art. 49115 ust. 1-3 p.u. i przekazaniu sprawy do ponownego rozpoznania
+65053OB	Obwieszczenie postanowienia SO o zmianie postanowienia SR o uchyleniu planu spłaty wierzycieli i umorzeniu niewykonanych zobowiązań, o których jest mowa w art. 369 ust. 1 lub art. 49115 ust. 1-3 p.u.
+65054OB	Obwieszczenie postanowienia SO o oddaleniu zażalenia na postanowienie o uchyleniu planu spłaty wierzycieli i umorzeniu niewykonanych zobowiązań, o których jest mowa w art. 369 ust. 1 lub art. 49115 ust. 1-3 p.u.
+65055OB	Obwieszczenie postanowienia SO o uchyleniu postanowienia SR o uchyleniu planu spłaty wierzycieli bez umorzenia niewykonanych zobowiązań i przekazaniu sprawy do ponownego rozpoznania
+65056OB	Obwieszczenie postanowienia SO o zmianie postanowienia SR o uchyleniu planu spłaty wierzycieli bez umorzenia niewykonanych zobowiązań
+65057OB	Obwieszczenie postanowienia SO o oddaleniu zażalenia na postanowienie o uchyleniu planu spłaty wierzycieli bez umorzenia niewykonanych zobowiązań
+65058OB	Obwieszczenie postanowienia SO o uchyleniu postanowienia SR o stwierdzeniu wykonania planu spłaty i umorzeniu zobowiązań i przekazaniu sprawy do ponownego rozpoznania
+65059OB	Obwieszczenie postanowienia SO o zmianie postanowienia SR o stwierdzeniu wykonania planu spłaty i umorzeniu zobowiązań
+65060OB	Obwieszczenie postanowienia SO o oddaleniu zażalenia na postanowienie o stwierdzeniu wykonania planu spłaty i umorzeniu zobowiązań
+65061OB	Obwieszczenie postanowienia SO o uchyleniu postanowienia SR  o uchyleniu postanowienia o warunkowym umorzeniu zobowiązań bez ustalania planu spłaty i przekazaniu sprawy do ponownego rozpoznania
+65062OB	Obwieszczenie postanowienia SO o zmianie postanowienia SR o uchyleniu postanowienia o warunkowym umorzeniu zobowiązań bez ustalania planu spłaty
+65063OB	Obwieszczenie postanowienia SO o oddaleniu zażalenia na postanowienie o uchyleniu postanowienia o warunkowym umorzeniu zobowiązań bez ustalania planu spłaty
+65064OB	Obwieszczenie postanowienia SO o uchyleniu postanowienia SR o umorzeniu postępowania o zawarcie układu na zgromadzeniu wierzycieli i przekazaniu sprawy do ponownego rozpoznania
+65065OB	Obwieszczenie postanowienia SO o zmianie postanowienia SR o umorzeniu postępowania o zawarcie układu na zgromadzeniu wierzycieli
+65066OB	Obwieszczenie postanowienia SO o oddaleniu zażalenia na postanowienie o umorzeniu postępowania o zawarcie układu na zgromadzeniu wierzycieli
+65067OB	Obwieszczenie postanowienia Sądu Okręgowego o uchyleniu postanowienia o umorzeniu postępowania o zmianę układu i przekazaniu sprawy do ponownego rozpoznania
+65068OB	Obwieszczenie postanowienia SO o zmianie postanowienia SR o umorzeniu postępowania o zmianę układu
+65069OB	Obwieszczenie postanowienia Sądu Okręgowego o oddaleniu zażalenia na postanowienie o umorzeniu postępowania o zmianę układu
+65070OB	Obwieszczenie postanowienia SO o uchyleniu postanowienia SR o uchyleniu układu i przekazaniu sprawy do ponownego rozpoznania
+65071OB	Obwieszczenie postanowienia SO o zmianie postanowienia SR o uchyleniu układu
+65072OB	Obwieszczenie postanowienia SO o oddaleniu zażalenia na postanowienie o uchyleniu układu
+65073OB	Obwieszczenie postanowienia SO o uchyleniu postanowienia SR o uchyleniu układu konsumenckiego i przekazaniu sprawy do ponownego rozpoznania
+65074OB	Obwieszczenie postanowienia SO o zmianie postanowienia SR o uchyleniu układu konsumenckiego
+65075OB	Obwieszczenie postanowienia SO o oddaleniu zażalenia na postanowienie o uchyleniu układu konsumenckiego
+65076OB	Obwieszczenie postanowienia SO o uchyleniu postanowienia SR o stwierdzeniu wykonania układu i przekazaniu sprawy do ponownego rozpoznania
+65077OB	Obwieszczenie postanowienia SO o zmianie postanowienia SR o stwierdzeniu wykonania układu
+65078OB	Obwieszczenie postanowienia SO o oddaleniu zażalenia na postanowienie o stwierdzeniu wykonania układu
+65079OB	Obwieszczenie postanowienia SO o uchyleniu postanowienia SR o wykonaniu układu konsumenckiego i przekazaniu sprawy do ponownego rozpoznania
+65080OB	Obwieszczenie postanowienia SO o zmianie postanowienia SR o wykonaniu układu konsumenckiego
+65081OB	Obwieszczenie postanowienia SO o oddaleniu zażalenia na postanowienie o wykonaniu układu konsumenckiego
+65082OB	Obwieszczenie postanowienia Sądu Okręgowego o uchyleniu postanowienia o otwarciu postępowania o zmianę układu konsumenckiego i przekazaniu sprawy do ponownego rozpoznania
+65083OB	Obwieszczenie postanowienia SO o zmianie postanowienia SR o otwarciu postępowania o zmianę układu konsumenckiego
+65084OB	Obwieszczenie postanowienia Sądu Okręgowego o oddaleniu zażalenia na postanowienie o otwarciu postępowania o zmianę układu konsumenckiego
+65085OB	Obwieszczenie postanowienia Sądu Okręgowego o uchyleniu postanowienia o odmowie otwarcia postępowania o zmianę układu konsumenckiego i przekazaniu sprawy do ponownego rozpoznania
+65086OB	Obwieszczenie postanowienia SO o zmianie postanowienia SR o odmowie otwarcia postępowania o zmianę układu konsumenckiego
+65087OB	Obwieszczenie postanowienia Sądu Okręgowego o oddaleniu zażalenia na postanowienie o odmowie otwarcia postępowania o zmianę układu konsumenckiego
+65088OB	Obwieszczenie postanowienia SO o uchyleniu postanowienia SR o umorzeniu postępowania o zmianę układu konsumenckiego i przekazaniu sprawy do ponownego rozpoznania
+65089OB	Obwieszczenie postanowienia SO o zmianie postanowienia SR o umorzeniu postępowania o zmianę układu konsumenckiego
+65090OB	Obwieszczenie postanowienia SO o oddaleniu zażalenia na postanowienie o umorzeniu postępowania o zmianę układu konsumenckiego
+65091OB	Obwieszczenie postanowienia Sądu Okręgowego o uchyleniu postanowienia o otwarciu postępowania o zmianę układu w upadłości i przekazaniu sprawy do ponownego rozpoznania
+65092OB	Obwieszczenie postanowienia SO o zmianie postanowienia SR o otwarciu postępowania o zmianę układu w upadłości
+65093OB	Obwieszczenie postanowienia Sądu Okręgowego o oddaleniu zażalenia na postanowienie o otwarciu postępowania o zmianę układu w upadłości
+65094OB	Obwieszczenie postanowienia Sądu Okręgowego o uchyleniu postanowienia o odmowie otwarcia postępowania o zmianę układu w upadłości i przekazaniu sprawy do ponownego rozpoznania
+65095OB	Obwieszczenie postanowienia SO o zmianie postanowienia SR o odmowie otwarcia postępowania o zmianę układu w upadłości
+65096OB	Obwieszczenie postanowienia Sądu Okręgowego o oddaleniu zażalenia na postanowienie o odmowie otwarcia postępowania o zmianę układu w upadłości
+65097OB	Obwieszczenie postanowienia SO o uchyleniu postanowienia SR o umorzeniu postępowania o zmianę układu w upadłości i przekazaniu sprawy do ponownego rozpoznania
+65098OB	Obwieszczenie postanowienia SO o zmianie postanowienia SR o umorzeniu postępowania o zmianę układu  w upadłości
+65099OB	Obwieszczenie postanowienia SO o oddaleniu zażalenia na postanowienie o umorzeniu postępowania o zmianę układu w upadłości
+65100OB	Obwieszczenie postanowienia SO o uchyleniu postanowienia SR o uchyleniu układu w upadłości i przekazaniu sprawy do ponownego rozpoznania
+65101OB	Obwieszczenie postanowienia SO o zmianie postanowienia SR o uchyleniu układu w upadłości
+65102OB	Obwieszczenie postanowienia SO o oddaleniu zażalenia na postanowienie o uchyleniu układu w upadłości
+65103OB	Obwieszczenie postanowienia SO o uchyleniu postanowienia SR o stwierdzeniu wykonania układu i przekazaniu sprawy do ponownego rozpoznania
+65104OB	Obwieszczenie postanowienia SO o zmianie postanowienia SR o stwierdzeniu wykonania układu
+65105OB	Obwieszczenie postanowienia SO o oddaleniu zażalenia na postanowienie o stwierdzeniu wykonania układu
+99960OB	Obwieszczenie o stwierdzeniu prawomocności
+70019RE	Wniosek o przywrócenie terminu do złożenia wniosku o ustalenie wynagrodzenia
+70019UP	Wniosek syndyka o przywrócenie terminu do złożenia wniosku o ustalenie ostatecznego wynagrodzenia
+80101WE	Wyciąg z zatwierdzonej listy wierzytelności jako tytuł egzekucyjny
+80102WE	Wyciąg z zatwierdzonego spisu wierzytelności jako tytuł egzekucyjny
