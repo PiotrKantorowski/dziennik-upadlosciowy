@@ -1,0 +1,370 @@
+# Wzory pism KRZ wnoszone przez formularz. Zrodlo: Zestawienie wzorow wnioskow i dokumentow dostepnych w KRZ od 06.05.2025 + opisy zmian 1.20-1.23 (70063, 70070).
+# kto: heurystyka po tytule (uczestnik = uczestnik/pelnomocnik; organ = syndyk, nadzorca, zarzadca, kurator, rada wierzycieli).
+kod	tytul	od	kto
+20001	Wniosek o otwarcie przyspieszonego postępowania układowego	01.12.2021	uczestnik
+20002	Wniosek o otwarcie postępowania układowego	01.12.2021	uczestnik
+20003	Wniosek dłużnika/kuratora dłużnika o otwarcie postępowania sanacyjnego	01.12.2021	organ
+20004	Wniosek wierzyciela o otwarcie postępowania sanacyjnego	01.12.2021	uczestnik
+20005	Wniosek o zabezpieczenie majątku dłużnika na etapie rozpoznawania wniosku		uczestnik
+20013	Wniosek dłużnika, tymczasowego nadzorcy sądowego lub tymczasowego zarządcy o zawieszenie postępowania egzekucyjnego oraz uchylenie zajęcia rachunku bankowego		organ
+20014	Zażalenie na postanowienie o zawieszeniu postępowania egzekucyjnego lub uchyleniu zajęcia rachunku bankowego	01.12.2021	uczestnik
+20015	Wniosek kuratora o ustalenie wynagrodzenia i zwrot wydatków		organ
+20016	Zażalenie na postanowienie w przedmiocie wynagrodzenia oraz zwrotu wydatków kuratora	01.12.2021	uczestnik
+20017	Wniosek tymczasowego nadzorcy sądowego o ustalenie wynagrodzenia/Wniosek tymczasowego zarządcy o ustalenie wynagrodzenia		organ
+20018	Zażalenie na postanowienie w przedmiocie wynagrodzenia (tymczasowego nadzorcy sądowego)/(tymczasowego zarządcy)		uczestnik
+20019	Sprawozdanie tymczasowego nadzorcy sądowego (zarządcy przymusowego)		organ
+20020	Zażalenie na postanowienie w przedmiocie rozpoznania wniosku restrukturyzacyjnego		uczestnik
+20021	Pismo tymczasowego nadzorcy sądowego/nadzorcy/zarządcy w przedmiocie złożenia do akt postępowania dokumentów (różnych)		organ
+20022	Zażalenie na postanowienie w przedmiocie zabezpieczenia majątku dłużnika	01.12.2021	uczestnik
+20023	Wniosek o ustanowienie rady wierzycieli i powołanie wskazanych wierzycieli na członków rady wierzycieli		uczestnik
+20024	Zażalenie na postanowienie sędziego-komisarza o odwołaniu członka rady wierzycieli	01.12.2021	uczestnik
+20025	Zażalenie na postanowienie sędziego-komisarza oddalające wniosek o powołanie na członka rady wierzycieli wierzyciela wskazanego przez wnioskodawcę	01.12.2021	uczestnik
+20026	Wniosek (członka rady wierzycieli)/(zastępcy członka rady wierzycieli) o odwołanie z rady wierzycieli		uczestnik
+20027	Wniosek o zmianę składu rady wierzycieli		uczestnik
+20028	Zażalenie na postanowienie sędziego-komisarza o oddaleniu wniosku o zmianę składu rady wierzycieli	01.12.2021	uczestnik
+20029	Protokół posiedzenia rady wierzycieli		organ
+20030	Informacja o podjęciu uchwały poza posiedzeniem rady wierzycieli		organ
+20031	Uchwała rady wierzycieli		organ
+20032	Zarzuty przeciwko uchwale rady wierzycieli		uczestnik
+20033	Zażalenie na postanowienie sędziego-komisarza w przedmiocie rozpoznania zarzutów do uchwały rady wierzycieli	01.12.2021	uczestnik
+20034	Wniosek do rady wierzycieli	10.04.2024	uczestnik
+20035	Zawiadomienie o posiedzeniu rady wierzycieli		uczestnik
+20036	Wniosek członka rady wierzycieli o zwrot wydatków koniecznych oraz przyznanie wynagrodzenia/Wniosek zastępcy członka rady wierzycieli o zwrot wydatków koniecznych oraz przyznanie wynagrodzenia		organ
+20037	Karta do głosowania na zgromadzeniu wierzycieli	01.12.2021	uczestnik
+20038	Wniosek wierzyciela o dopuszczenie do udziału w zgromadzeniu wierzycieli	01.12.2021	uczestnik
+20041	Zażalenie na postanowienie sędziego- komisarza w przedmiocie uchwały zgromadzenia wierzycieli (przyjęcie uchwały, nieprzyjęcie uchwały, uchylenie uchwały zgromadzenia wierzycieli)	01.12.2021	uczestnik
+20042	WYCOFANY_Zażalenie na postanowienie sędziego-komisarza w przedmiocie uchylenia uchwały zgromadzenia wierzycieli	01.12.2021	uczestnik
+20043	Zażalenie na postanowienie sędziego-komisarza o przeprowadzeniu głosowania w szczególnym trybie (art. 110 ust. 7 p.r.)	01.12.2021	uczestnik
+20044	Pismo zawierające propozycje układowe	01.12.2021	uczestnik
+20045	Pismo zawierające zgłoszenie zmiany propozycji układowych	01.12.2021	uczestnik
+20046	Główne założenia planu restrukturyzacyjnego wraz z opinią o możliwości wykonania układu	01.12.2021	organ
+20047	Sprawozdanie z wykonania planu restrukturyzacyjnego w postępowaniu sanacyjnym wraz z opinią o możliwości wykonania układu	01.12.2021	organ
+20048	Zawiadomienie wierzycieli o terminie zgromadzenia wierzycieli	01.12.2021	organ
+20049	Spis wierzytelności	01.12.2021	organ
+20050	Spis wierzytelności spornych	01.12.2021	organ
+20051	Sprzeciw co do umieszczenia wierzytelności w spisie wierzytelności	01.12.2021	uczestnik
+20052	Sprzeciw co do pominięcia wierzytelności w spisie wierzytelności	01.12.2021	uczestnik
+20053	Odpowiedź na sprzeciw co do umieszczenia wierzytelności w spisie wierzytelności		uczestnik
+20054	Zażalenie na postanowienie w przedmiocie sprzeciwu do spisu wierzytelności		uczestnik
+20055	Odpowiedź na zażalenie na postanowienie w przedmiocie sprzeciwu do spisu wierzytelności		uczestnik
+20056	Zażalenie na postanowienie o wykreśleniu wierzytelności ze spisu wierzytelności (art. 99 p.r.)		uczestnik
+20057	Wniosek o nadanie klauzuli wykonalności		uczestnik
+20058	Zażalenie na postanowienie w przedmiocie wniosku o nadanie klauzuli wykonalności/Skarga na postanowienie referendarza sądowego w przedmiocie wniosku o nadanie klauzuli wykonalności		uczestnik
+20059	Zastrzeżenia przeciwko układowi		uczestnik
+20060	Zażalenie na postanowienie w przedmiocie zatwierdzenia układu		uczestnik
+20061	Sprawozdanie nadzorcy wykonania układu dotyczące wykonywania planu restrukturyzacyjnego oraz wykonywania układu		organ
+20062	Zażalenie na postanowienie o wykonaniu układu	01.12.2021	uczestnik
+20063	Wniosek o otwarcie postępowania o zmianę układu	01.12.2021	uczestnik
+20064	Zażalenie na postanowienie w przedmiocie otwarcia postępowania o zmianę układu	01.12.2021	uczestnik
+20065	Wykaz wierzycieli uprawnionych do uczestniczenia w zgromadzeniu wierzycieli w postępowaniu o zmianę układu (art. 175 p.r.)		organ
+20066	Wniosek o uchylenie układu		uczestnik
+20067	Zażalenie na postanowienie w przedmiocie uchylenia układu	01.12.2021	uczestnik
+20068	Zażalenie na postanowienie w przedmiocie zgodności z prawem kryteriów wyodrębnienia wierzycieli objętych układem częściowym	01.12.2021	uczestnik
+20069	Pismo procesowe dłużnika - zmienione kryteria wyodrębnienia wierzycieli objętych układem częściowym		uczestnik
+20070	Wniosek dłużnika o umorzenie postępowania restrukturyzacyjnego		uczestnik
+20071	Wniosek o umorzenie postępowania restrukturyzacyjnego przez sąd z urzędu (sygnalizacja)		uczestnik
+20072	Zażalenie na postanowienie w przedmiocie umorzenia postępowania restrukturyzacyjnego	01.12.2021	uczestnik
+20073	Uproszczony wniosek o otwarcie postępowania sanacyjnego	01.12.2021	uczestnik
+20074	Wniosek o przymusowe odebranie majątku od zarządcy		organ
+20075	Wniosek zarządcy o wyrażenie zgody na likwidację majątku w celu pokrycia kosztów przechowania ksiąg, korespondencji lub dokumentów dłużnika		organ
+20076	Wniosek o zasądzenie kosztów przechowania ksiąg, korespondencji lub dokumentów należących do dłużnika		uczestnik
+20077	Zażalenie na postanowienie w przedmiocie kosztów przechowania ksiąg, korespondencji lub dokumentów należących do dłużnika	01.12.2021	uczestnik
+20078	Wniosek o zarządzenie likwidacji majątku dłużnika		uczestnik
+20079	Zażalenie na postanowienie w przedmiocie likwidacji nieodebranego majątku dłużnika	01.12.2021	uczestnik
+20080	Uproszczony wniosek o ogłoszenie upadłości	01.12.2021	uczestnik
+20082	Wniosek o zatwierdzenie układu	01.12.2021	uczestnik
+20083	Sprawozdanie nadzorcy układu		organ
+20084	Zgłoszenie do udziału w sprawie w charakterze uczestnika postępowania w przypadku wniosku o zatwierdzenie układu, który dotyczy przedsiębiorstwa państwowego albo jednoosobowej spółki skarbu państwa, wraz ze złożeniem opinii w sprawie		uczestnik
+20086	Spis inwentarza w restrukturyzacji	01.12.2021	organ
+20087	Wniosek zarządcy o wyrażenie zgody na zbycie składników mienia oraz określenie warunków ich zbycia		organ
+20088	Odrębny plan podziału w postępowaniu sanacyjnym		organ
+20089	Zarzuty przeciwko odrębnemu planowi podziału w postępowaniu sanacyjnym		uczestnik
+20090	Zażalenie na postanowienie sędziego-komisarza w przedmiocie rozpoznania zarzutów przeciwko odrębnemu planowi podziału w postępowaniu sanacyjnym		uczestnik
+20091	Zarzuty przeciwko odrębnemu planowi podziału w postępowaniu sanacyjnym		uczestnik
+20092	Wniosek o ustalenie wynagrodzenia nadzorcy sądowego		organ
+20093	Wniosek o przywrócenie terminu do złożenia wniosku o ustalenie wynagrodzenia		uczestnik
+20094	Zażalenie na postanowienie w przedmiocie ustalenia wynagrodzenia nadzorcy sądowego	01.12.2021	uczestnik
+20095	Wniosek o rozstrzygnięcie sporu co do wysokości zaliczek kwartalnych na wynagrodzenie nadzorcy sądowego		organ
+20096	Wniosek o ustalenie wysokości dalszych zaliczek kwartalnych na wynagrodzenie nadzorcy sądowego		organ
+20097	Wniosek o ustalenie wynagrodzenia wstępnego zarządcy		organ
+20098	Zażalenie na postanowienie w przedmiocie ustalenia wynagrodzenia wstępnego zarządcy	01.12.2021	uczestnik
+20099	Wniosek o ustalenie wysokości dalszych zaliczek kwartalnych na wynagrodzenie zarządcy		organ
+20100	Wniosek o ustalenie wynagrodzenia ostatecznego zarządcy		organ
+20101	Zażalenie na postanowienie w przedmiocie ustalenia wynagrodzenia ostatecznego zarządcy	01.12.2021	uczestnik
+20102	Wniosek o zezwolenie na złożenie do depozytu sądowego kwoty wynagrodzenia ostatecznego zarządcy		organ
+20103	Wniosek o wydanie z depozytu sądowego kwoty wynagrodzenia ostatecznego zarządcy	01.12.2021	organ
+20104	Wniosek o zmianę nadzorcy sądowego na podstawie art. 28 ust. 1 pkt 1 p.r.		uczestnik
+20105	Wniosek o zmianę nadzorcy sądowego na podstawie art. 28 ust. 1 pkt 4 p.r.		uczestnik
+20106	Wniosek o zastosowanie z urzędu przez sędziego-komisarza środka w postaci upomnienia nadzorcy sądowego lub środka w postaci nałożenia grzywny na nadzorcę sądowego/Wniosek o zastosowanie z urzędu przez sędziego-komisarza środka w postaci upomnienia zarządcy lub środka w postaci nałożenia grzywny na zarządcę		uczestnik
+20107	Wniosek o zastosowanie z urzędu przez sąd środka w postaci odwołania nadzorcy sądowego/Wniosek o zastosowanie z urzędu przez sąd środka w postaci odwołania zarządcy		uczestnik
+20108	Zażalenie na postanowienie sędziego-komisarza o zastosowaniu wobec nadzorcy sądowego upomnienia lub nałożeniu grzywny/Zażalenie na postanowienie sędziego-komisarza o zastosowaniu wobec zarządcy upomnienia lub nałożeniu grzywny	01.12.2021	uczestnik
+20109	Zażalenie na postanowienie sądu w przedmiocie odwołania nadzorcy sądowego/Zażalenie na postanowienie sądu w przedmiocie odwołania zarządcy	01.12.2021	uczestnik
+20110	Sprawozdanie z czynności nadzorcy sądowego		organ
+20111	Sprawozdanie z czynności zarządcy		organ
+20112	Sprawozdanie rachunkowe zarządcy		organ
+20113	Sprawozdanie końcowe zarządcy		organ
+20114	Zażalenie na postanowienie w przedmiocie sprawozdania końcowego zarządcy	01.12.2021	uczestnik
+20115	Zażalenie na postanowienie w przedmiocie oddalenia zarzutów dotyczących wydatków poniesionych przez zarządcę albo odmowy zatwierdzenia wydatku zarządcy i nakazaniu zwrotu kwoty wydatku do masy sanacyjnej (układowej)	01.12.2021	uczestnik
+20116	Zarzuty dotyczące wydatków poniesionych przez zarządcę		uczestnik
+20117	Wniosek o zwolnienie od kosztów sądowych w postępowaniu restrukturyzacyjnym		uczestnik
+20119	Zażalenie na postanowienie w przedmiocie wniosku o zwolnienie od kosztów sądowych		uczestnik
+20120	Plan restrukturyzacyjny		organ
+20121	Wniosek (nadzorcy sądowego)/(zarządcy) o przeprowadzenie dowodu na podstawie art. 195 p.r.		organ
+20122	Opinia organu ws. Pomocy publicznej (art. 204 p.r.)		organ
+20123	Zażalenie na postanowienie o uchyleniu zarządu własnego dłużnika i ustanowieniu zarządcy		uczestnik
+20124	Wniosek o stwierdzenie z urzędu przez sędziego-komisarza niedopuszczalności wpisu ograniczonego prawa rzeczowego ustanowionego na majątku dłużnika		uczestnik
+20125	Zażalenie na postanowienie w przedmiocie niedopuszczalności wpisu organicznego prawa rzeczowego ustanowionego na majątku dłużnika		uczestnik
+20126	Wniosek o stwierdzenie zawieszenia postępowania egzekucyjnego dotyczącego wierzytelności objętej z mocy prawa układem		uczestnik
+20127	Wniosek o stwierdzenie zawieszenia postępowania egzekucyjnego dotyczącego wierzytelności objętej z mocy prawa układem		uczestnik
+20128	Wniosek o zawieszenia postępowania egzekucyjnego dotyczącego wierzytelności nieobjętej z mocy prawa układem		uczestnik
+20129	Zażalenie na postanowienie w przedmiocie zawieszenia postępowania egzekucyjnego dotyczącego wierzytelności nieobjętej z mocy prawa układem		uczestnik
+20131	Wniosek zarządcy o wyrażenie zgody na odstąpienie od umowy wzajemnej		organ
+20132	Zażalenie na postanowienie w przedmiocie wyrażenia zgody na odstąpienie przez zarządcę od umowy wzajemnej	01.12.2021	uczestnik
+20133	Wniosek zarządcy o uznanie za bezskuteczne w stosunku do masy sanacyjnej wynagrodzenia przypadającego za okres sprzed otwarcia postępowania sanacyjnego (art. 305 ust. 1 p.r.)		organ
+20134	Wniosek zarządcy o uznanie za bezskuteczne w stosunku do masy sanacyjnej wynagrodzenia przypadającego za okres po otwarciu postępowania sanacyjnego (art. 305 ust. 2 p.r.)		organ
+20135	Zażalenie na postanowienie w przedmiocie uznania wynagrodzenia za bezskuteczne w stosunku do masy sanacyjnej za czas sprzed otwarcia postępowania sanacyjnego (art. 305 ust. 1 p.r.)	01.12.2021	uczestnik
+20136	Zażalenie na postanowienie w przedmiocie uznania wynagrodzenia za bezskuteczne w stosunku do masy sanacyjnej za czas po otwarciu postępowania sanacyjnego (art. 305 ust. 2 p.r.)	01.12.2021	uczestnik
+20138	Zażalenie na postanowienie w przedmiocie zobowiązania osoby trzeciej do przekazania świadczenia do masy sanacyjnej	01.12.2021	uczestnik
+20139	Wniosek osoby trzeciej o zwolnienie z obowiązku przekazania świadczenia do masy sanacyjnej w zamian za zapłatę odpowiedniej kwoty pieniężnej	01.12.2021	uczestnik
+20140	Zażalenie na postanowienie w przedmiocie zwolnienia osoby trzeciej z obowiązku przekazania świadczenia do masy sanacyjnej w zamian za zapłatę odpowiedniej kwoty pieniężnej		uczestnik
+20141	Informacja zarządcy o zamiarze podjęcia doraźnych działań sanacyjnych (art. 317 p.r.)		organ
+20142	Listy nabywców w (postępowaniu upadłościowym)/(postępowaniu restrukturyzacyjnym) prowadzonym wobec dewelopera		organ
+20143	Wniosek obligatariusza o dopuszczenie do udziału w postępowaniu		uczestnik
+20144	Sprawozdanie kuratora obligatariuszy		organ
+20145	Wniosek posiadacza listu zastawnego o dopuszczenie do udziału w postępowaniu upadłościowym		uczestnik
+20146	Sprawozdanie kuratora ustanowionego dla reprezentowania w postępowaniu upadłościowym praw posiadaczy listów zastawnych		organ
+20147	Sprawozdanie kuratora ustanowionego do reprezentowania w postępowaniu upadłościowym interesów osób ubezpieczających, ubezpieczonych, uposażonych lub uprawnionych z umów ubezpieczenia		organ
+20148	Wskazanie pełnomocnika do doręczeń w Rzeczypospolitej przez wierzyciela, który nie ma miejsca zamieszkania, zwykłego pobytu albo siedziby w Rzeczypospolitej Polskiej lub w innym państwie członkowskim Unii Europejskiej		uczestnik
+20149	Wniosek o uznanie orzeczenia o wszczęciu zagranicznego postępowania upadłościowego	01.12.2021	uczestnik
+20150	Zażalenie na postanowienie w przedmiocie uznania orzeczenia o wszczęciu zagranicznego postępowania upadłościowego	01.12.2021	uczestnik
+20151	Wniosek o stwierdzenie wykonalności zagranicznego tytułu egzekucyjnego wydanego przeciwko upadłemu		uczestnik
+20152	Zażalenie na postanowienie w przedmiocie stwierdzenia wykonalności zagranicznego tytułu egzekucyjnego wydanego przeciwko upadłemu	01.12.2021	uczestnik
+20153	Wniosek o uchylenie lub zmianę postanowienia w przedmiocie uznania orzeczenia o wszczęciu zagranicznego postępowania upadłościowego		uczestnik
+20155	Spis inwentarza i oszacowanie sporządzony przez zarządcę zagranicznego lub dłużnika, któremu pozostawiono zarząd własny majątkiem		organ
+20156	Plan likwidacji majątku położonego w Rzeczypospolitej Polskiej wraz z ogólną informacją o przewidywanym sposobie zaspokojenia wierzycieli		organ
+20157	Wniosek o wszczęcie wtórnego postępowania upadłościowego	01.12.2021	uczestnik
+20158	Wniosek o orzeczenie zakazu prowadzenia działalności gospodarczej	01.12.2021	uczestnik
+20159	Apelacja od postanowienia w przedmiocie rozpoznania wniosku o orzeczenie zakazu prowadzenia działalności gospodarczej	01.12.2021	uczestnik
+20160	Odpowiedź na apelację	01.12.2021	uczestnik
+20161	Skarga kasacyjna		uczestnik
+20162	Odpowiedź na skargę kasacyjną	01.12.2021	uczestnik
+20177	Wniosek dłużnika o ogłoszenie upadłości konsumenckiej	01.12.2021	uczestnik
+20178	Wniosek wierzyciela o ogłoszenie upadłości osoby fizycznej nieprowadzącej działalności gospodarczej	01.12.2021	uczestnik
+20179	Odpowiedź na wniosek o orzeczenie zakazu prowadzenia działalności gospodarczej	01.12.2021	uczestnik
+20180	Wniosek o wydanie postanowienia o wykonaniu układu		uczestnik
+30001	Wniosek dłużnika o ogłoszenie upadłości	01.12.2021	uczestnik
+30010	Wniosek wierzyciela osobistego lub innego podmiotu niż wierzyciel osobisty o ogłoszenie upadłości dłużnika	01.12.2021	uczestnik
+30011	Wniosek uczestnika o zatwierdzenie warunków sprzedaży przedsiębiorstwa dłużnika lub jego zorganizowanej części lub składników majątku o znacznej wartości	01.12.2021	uczestnik
+30012	Zażalenie na postanowienie w przedmiocie rozpoznania wniosku o ogłoszenie upadłości	01.12.2021	uczestnik
+30013	Odpowiedź na zażalenie na postanowienie w przedmiocie rozpoznania wniosku o ogłoszenie upadłości	01.01.2022	uczestnik
+30014	Zażalenie na postanowienie w przedmiocie zatwierdzenia warunków sprzedaży przedsiębiorstwa dłużnika lub jego zorganizowanej części lub składników majątku o znacznej wartości	01.12.2021	uczestnik
+30015	Wniosek o zabezpieczenie majątku dłużnika na etapie rozpoznawania wniosku o ogłoszenie upadłości		uczestnik
+30016	Wniosek wnioskodawcy, dłużnika, tymczasowego nadzorcy sądowego o zawieszenie postępowania egzekucyjnego oraz uchylenie zajęcia rachunku bankowego		organ
+30017	Zażalenie na postanowienie w przedmiocie zabezpieczenia majątku dłużnika	01.12.2021	uczestnik
+30018	Zażalenie na postanowienie o zawieszeniu postępowania egzekucyjnego lub uchyleniu zajęcia rachunku bankowego	01.12.2021	uczestnik
+30019	Wniosek tymczasowego nadzorcy sądowego o ustalenie wynagrodzenia/Wniosek zarządcy przymusowego o ustalenie wynagrodzenia		organ
+30020	Zażalenie na postanowienie w przedmiocie wynagrodzenia (tymczasowego nadzorcy sądowego)/(zarządcy przymusowego)		uczestnik
+30021	Pismo tymczasowego nadzorcy sądowego/zastępcy w przedmiocie złożenia do akt postępowania dokumentów		organ
+30022	Wniosek tymczasowego nadzorcy sądowego o przyznanie zaliczki na wydatki/Wniosek tymczasowego zarządcy o przyznanie zaliczki na wydatki		organ
+30023	Wniosek o powołanie zastępcy		uczestnik
+30024	Sprawozdanie		organ
+30025	Wniosek o zwrot wydatków		uczestnik
+30026	Wniosek o ustanowienie rady wierzycieli i powołanie wskazanych wierzycieli na członków rady wierzycieli w postępowaniu upadłościowym		uczestnik
+30027	Zażalenie na postanowienie sędziego-komisarza oddalające wniosek o powołanie na członka rady wierzycieli wierzyciela wskazanego przez wnioskodawcę		uczestnik
+30028	Zażalenie na postanowienie sędziego-komisarza o odwołaniu członka rady wierzycieli		uczestnik
+30029	Wniosek członka rady wierzycieli lub zastępcy członka rady wierzycieli o odwołanie z rady wierzycieli		uczestnik
+30030	Wniosek o zmianę składu rady wierzycieli		uczestnik
+30031	Zażalenie na postanowienie sędziego-komisarza o oddaleniu wniosku o zmianę składu rady wierzycieli		uczestnik
+30032	Protokół posiedzenia rady wierzycieli		organ
+30033	Uchwała rady wierzycieli		organ
+30034	Informacja o podjęciu uchwały poza posiedzeniem rady wierzycieli		organ
+30035	Zarzuty przeciwko uchwale rady wierzycieli		uczestnik
+30036	Zażalenie na postanowienie sędziego-komisarza o oddaleniu wniosku o zmianę składu rady wierzycieli		uczestnik
+30037	Wniosek do rady wierzycieli	10.04.2024	uczestnik
+30038	Zawiadomienie o posiedzeniu rady wierzyciel		uczestnik
+30039	Wniosek zwrot wydatków koniecznych oraz przyznanie wynagrodzenia		uczestnik
+30041	Wniosek wierzycieli o zwołanie zgromadzenia wierzycieli (art. 191 ustawy prawo upadłościowe z dnia 28 lutego 2003 r.)	01.12.2021	uczestnik
+30043	Wniosek wierzyciela o dopuszczenie do udziału w zgromadzeniu wierzycieli		uczestnik
+30044	Zażalenie na postanowienie sędziego-komisarza w przedmiocie uchylenia uchwały zgromadzenia wierzycieli		uczestnik
+30046	Wniosek syndyka o zwołanie zgromadzenia wierzycieli w przedmiocie podjęcia uchwały co do wpłacenia przez wierzycieli zaliczki na pokrycie kosztów postępowania upadłościowego lub zobowiązania wierzycieli do złożenia zaliczki na koszty postępowania		organ
+30048	Zgłoszenie wierzytelności w postępowaniu upadłościowym	01.12.2021	uczestnik
+30049	Lista wierzytelności w postępowaniu upadłościowym	01.12.2021	organ
+30050	Sprzeciw do listy wierzytelności w postępowaniu upadłościowym	01.12.2021	uczestnik
+30051	Odpowiedź na sprzeciw do listy wierzytelności w postępowaniu upadłościowym		uczestnik
+30052	Zażalenie na postanowienie w przedmiocie sprzeciwu do listy wierzytelności		uczestnik
+30053	Odpowiedź na zażalenie na postanowienie w przedmiocie sprzeciwu do listy wierzytelności	01.12.2021	uczestnik
+30054	Wniosek o nadanie klauzuli wykonalności		uczestnik
+30055	Zażalenie na postanowienie w przedmiocie wniosku o nadanie klauzuli wykonalności		uczestnik
+30056	Wniosek o wstrzymanie likwidacji masy upadłości do czasu zatwierdzenia układu		uczestnik
+30057	Zastrzeżenia przeciwko układowi		uczestnik
+30058	Zażalenie na postanowienie w przedmiocie zatwierdzenia układu		uczestnik
+30059	Sprawozdanie nadzorcy wykonania układu dotyczące wykonywania układu		organ
+30060	Wniosek o wydanie postanowienia o wykonaniu układu		uczestnik
+30061	Zażalenie na postanowienie o wykonaniu układu		uczestnik
+30062	Wniosek o otwarcie postępowania o zmianę układu		uczestnik
+30063	Zażalenie na postanowienie w przedmiocie otwarcia postępowania o zmianę układu		uczestnik
+30064	Wykaz wierzycieli uprawnionych do uczestniczenia w zgromadzeniu wierzycieli w postępowaniu o zmianę układu (art. 175 p.r.)		organ
+30065	Wniosek o uchylenie układu	01.12.2021	uczestnik
+30066	Zażalenie na postanowienie w przedmiocie uchylenia układu		uczestnik
+30067	Pismo zawierające propozycje układowe		uczestnik
+30068	Pismo zawierające zgłoszenie zmiany propozycji układowych		uczestnik
+30069	Wniosek syndyka o umorzenie postępowania upadłościowego (art. 361 ustawy prawo upadłościowe z dnia 28 lutego 2003 r.)		organ
+30070	Wniosek o umorzenie postępowania upadłościowego przez sąd z urzędu (sygnalizacja)		uczestnik
+30071	Wniosek wierzycieli o umorzenie postępowania upadłościowego		uczestnik
+30072	Zażalenie na postanowienie w przedmiocie umorzenia postępowania upadłościowego		uczestnik
+30073	Wniosek o przymusowe odebranie majątku syndykowi	01.12.2021	organ
+30074	Wniosek syndyka o wyrażenie zgody na likwidację majątku w celu pokrycia kosztów przechowania ksiąg, korespondencji lub dokumentów upadłego		uczestnik
+30075	Wniosek o zasądzenie kosztów przechowania ksiąg, korespondencji lub dokumentów należących do upadłego		uczestnik
+30076	Zażalenie na postanowienie w przedmiocie kosztów przechowania ksiąg, korespondencji lub dokumentów należących do upadłego		uczestnik
+30077	Wniosek o zarządzenie likwidacji majątku upadłego		uczestnik
+30078	Zażalenie na postanowienie w przedmiocie likwidacji nieodebranego majątku upadłego		uczestnik
+30079	Wniosek syndyka o stwierdzenie zakończenia postępowania upadłościowego (art. 368 ustawy prawo upadłościowe z dnia 28 lutego 2003 r.)	01.12.2021	organ
+30080	Wniosek o stwierdzenie zakończenia postępowania upadłościowego przez sąd z urzędu (sygnalizacja)		uczestnik
+30081	Zażalenie na postanowienie w przedmiocie stwierdzenia zakończenia postępowania upadłościowego		uczestnik
+30084	Wniosek o określenie zakresu i czasu korzystania przez upadłego lub osoby mu bliskie z nieruchomości wchodzącej w skład masy upadłości (art. 75 ust. 2 p.u.)		uczestnik
+30085	Wniosek syndyka o oznaczenie środków pieniężnych jako niewchodzących w skład masy upadłości		organ
+30086	Wniosek o wyłączenie składnika majątkowego z masy upadłości		uczestnik
+30087	Zażalenie na postanowienie o wyłączeniu z masy upadłości		uczestnik
+30089	Wniosek o zabezpieczenie powództwa o wyłączenie składnika majątkowego z masy upadłości		uczestnik
+30090	Zażalenie na postanowienie w przedmiocie zabezpieczenia powództwa o wyłączenie składnika majątkowego z masy upadłości		uczestnik
+30091	Apelacja od wyroku w przedmiocie rozpoznania powództwa o wyłączenie składnika majątkowego z masy upadłości	01.12.2021	uczestnik
+30092	Odpowiedź na apelację		uczestnik
+30093	Skarga kasacyjna		uczestnik
+30094	Odpowiedź na skargę kasacyjną	01.12.2021	uczestnik
+30095	Wniosek o rozstrzygnięcie wątpliwości, co do tego które z przedmiotów należących do upadłego wchodzą w skład masy upadłości		uczestnik
+30096	Oświadczenie upadłego w przedmiocie wskazania i wydania syndykowi całego majątku i dokumentacji oraz wskazania adresu korespondencyjnego dla potrzeb toczącego się postępowania upadłościowego		organ
+30098	Wniosek upadłego o wstrzymanie likwidacji masy upadłości do czasu uprawomocnienia się postanowienia o ogłoszeniu upadłości		uczestnik
+30099	Plan likwidacyjny		organ
+30100	Preliminarz wydatków w postępowaniu upadłościowym		organ
+30101	Spis inwentarza	01.12.2021	organ
+30102	Sprawozdanie ogólne o stanie masy upadłości i możliwości zaspokojenia wierzycieli		organ
+30103	Sprzeciw wierzyciela zabezpieczonego rzeczowo do wniosku o wstrzymanie likwidacji masy upadłości		uczestnik
+30105	Wniosek syndyka o wyłączenie składnika majątkowego ze składu masy upadłości		organ
+30106	Wniosek o wyłączenie składnika majątkowego z masy upadłości		uczestnik
+30107	Zażalenie na postanowienie w przedmiocie wyłączenia lub zniszczenia składnika majątkowego z masy upadłości		uczestnik
+30108	Wniosek syndyka o wydanie zezwolenia na zawarcie umowy przekazania nieruchomości gminie lub Skarbowi Państwa		organ
+30109	Wniosek syndyka o zatwierdzenie warunków przetargu lub aukcji		organ
+30110	Zażalenie na postanowienie w przedmiocie zatwierdzenia wyboru oferenta		uczestnik
+30111	Opis przedsiębiorstwa		organ
+30112	Zarzuty na opis i oszacowanie przedsiębiorstwa lub składnika majątkowego wchodzącego w skład masy upadłości		uczestnik
+30113	Plan podziału	01.12.2021	organ
+30114	Oddzielny plan podziału	01.12.2021	organ
+30115	Zarzuty przeciwko planowi podziału funduszów masy upadłości		uczestnik
+30116	Zarzuty przeciwko oddzielnemu planowi podziału funduszów masy upadłości		uczestnik
+30117	Zażalenie na postanowienie sędziego-komisarza w przedmiocie rozpoznania zarzutów przeciwko planowi podziału funduszów masy upadłości / oddzielnemu planowi podziału funduszów masy upadłości (art. 350 ust. 3 ustawy prawo upadłościowe z dnia 28 lutego 2003 r.)		uczestnik
+30118	Sprawozdanie syndyka z wykonania planu podziału funduszów masy upadłości		organ
+30119	Sprawozdanie syndyka z wykonania oddzielnego planu podziału funduszów masy upadłości		organ
+30120	Pismo syndyka/zastępcy syndyka w przedmiocie złożenia do akt postępowania dokumentu potwierdzającego zawarcie umowy ubezpieczenia odpowiedzialności cywilnej za szkody wyrządzone w związku z pełnieniem funkcji wraz z oświadczeniem o braku przeszkód do pełnienia funkcji		organ
+30121	Wniosek syndyka o powołanie zastępcy		organ
+30122	Wniosek syndyka o ustalenie wstępnego wynagrodzenia		organ
+30123	Zażalenie na postanowienie sędziego-komisarza w przedmiocie rozpoznania zarzutów przeciwko planowi podziału funduszów masy upadłości / oddzielnemu planowi podziału funduszów masy upadłości (art. 350 ust. 3 ustawy prawo upadłościowe z dnia 28 lutego 2003 r.)		uczestnik
+30124	Wniosek syndyka o ustalenie ostatecznego wynagrodzenia		organ
+30125	Wniosek syndyka o przywrócenie terminu do złożenia wniosku o ustalenie ostatecznego wynagrodzenia	01.12.2021	organ
+30126	Zażalenie na postanowienie w przedmiocie ustalenia wynagrodzenia ostatecznego syndyka		uczestnik
+30127	Wniosek o zezwolenie na złożenie do depozytu sądowego kwoty wynagrodzenia ostatecznego syndyka		organ
+30128	Wniosek o wydanie z depozytu sądowego kwoty wynagrodzenia ostatecznego syndyka		organ
+30129	Wniosek o zastosowanie z urzędu przez sędziego-komisarza środka w postaci upomnienia syndyka lub środka w postaci nałożenia grzywny na syndyka	01.12.2021	uczestnik
+30130	Wniosek o zastosowanie z urzędu przez sąd środka w postaci odwołania syndyka	01.12.2021	uczestnik
+30131	Zażalenie na postanowienie sędziego-komisarza o zastosowaniu wobec syndyka upomnienia lub nałożeniu grzywny		uczestnik
+30132	Zażalenie na postanowienie sądu w przedmiocie odwołania (syndyka)/(zastępcy syndyka)		uczestnik
+30133	Sprawozdanie syndyka	01.12.2021	organ
+30134	Sprawozdanie ostateczne syndyka	01.12.2021	organ
+30135	Zażalenie na postanowienie w przedmiocie oddalenia zarzutów dotyczących wydatków poniesionych przez syndyka lub zastępcę syndyka albo odmowy zatwierdzenia wydatku syndyka lub zastępcę syndyka i nakazaniu zwrotu kwoty wydatku do masy upadłości		uczestnik
+30136	Zarzuty dotyczące wydatków poniesionych przez syndyka lub zastępcę syndyka		uczestnik
+30137	Wniosek syndyka ogólny o powołanie/odwołanie/zmianę		organ
+30138	Wniosek o zwolnienie od kosztów sądowych w postępowaniu upadłościowym		uczestnik
+30141	Zażalenie na postanowienie w przedmiocie wniosku o zwolnienie od kosztów sądowych		uczestnik
+30142	Wniosek syndyka o przeprowadzenie dowodu na podstawie art. 218 p.u.		organ
+30143	Skarga na czynności komornika w toku postępowania upadłościowego	01.12.2021	uczestnik
+30144	Wniosek kuratora o ustalenie wynagrodzenia i zwrot wydatków	01.12.2021	organ
+30145	Wniosek kuratora dłużnika o przyznanie wynagrodzenia w związku z pełnieniem funkcji	01.12.2021	organ
+30146	Zażalenie na postanowienie w przedmiocie wynagrodzenia oraz zwrotu wydatków kuratora		uczestnik
+30147	Wniosek o stwierdzenie z urzędu przez sędziego-komisarza niedopuszczalności wpisu organicznego prawa rzeczowego ustanowionego na majątku upadłego		uczestnik
+30148	Zażalenie na postanowienie w przedmiocie niedopuszczalności wpisu organicznego prawa rzeczowego ustanowionego na majątku będącym w masie upadłości		uczestnik
+30150	Wniosek syndyka o wyrażenie zgody na odstąpienie od umowy innej niź wzajemna		organ
+30151	Wniosek syndyka o wyrażenie zgody na wykonanie zobowiązania upadłego i zażądanie od drugiej strony spełnienia świadczenia wzajemnego		organ
+30152	Zażalenie na postanowienie w przedmiocie wyrażenia zgody na odstąpienie przez syndyka od umowy innej niż wzajemna		uczestnik
+30153	Zażalenie na postanowienie w przedmiocie wyrażenia zgody na wykonanie zobowiązania upadłego i zażądanie od drugiej strony spełnienia świadczenia wzajemnego		uczestnik
+30154	Wniosek syndyka o wyrażenie zgody na wypowiedzenie umowy najmu lub dzierżawy nieruchomości, przedsiębiorstwa lub zorganizowanej części przedsiębiorstwa upadłego		organ
+30155	Zażalenie na postanowienie w przedmiocie wyrażenia zgody na wypowiedzenie umowy najmu lub dzierżawy nieruchomości, przedsiębiorstwa lub zorganizowanej części przedsiębiorstwa upadłego		uczestnik
+30156	Wniosek syndyka o wyrażenie zgody na odstąpienie od umowy leasingu na podstawie art. 114 p.u.		organ
+30157	Zażalenie na postanowienie w przedmiocie wyrażenia zgody na wypowiedzenie umowy najmu lub dzierżawy na podstawie art. 110 p.u.		uczestnik
+30158	Wniosek syndyka o wyrażenie zgody na wypowiedzenie umowy najmu lub dzierżawy nieruchomości	20.09.2021	organ
+30159	Zażalenie na postanowienie w przedmiocie wyrażenia zgody na odstąpienie od umowy leasingu na podstawie art. 114 p.u.		uczestnik
+30160	Wniosek o wyłączenie spadku z masy upadłości		uczestnik
+30161	Zażalenie na postanowienie w przedmiocie wyłączenia spadku z masy upadłości		uczestnik
+30162	Wniosek syndyka o uznanie za bezskuteczne w stosunku do masy upadłości odpłatnej czynności prawnej (art. 128 p.u.)		organ
+30163	Zażalenie na postanowienie w przedmiocie uznania odpłatnej czynności prawnej za bezskuteczną w stosunku do masy upadłości (art. 128 p.u.)		uczestnik
+30164	Wniosek syndyka o uznanie za bezskuteczne w stosunku do masy upadłości obciążenia majątku upadłego (art. 130 p.u.)		organ
+30165	Zażalenie na postanowienie w przedmiocie uznania obciążenia majątku upadłego za bezskuteczne w stosunku do masy upadłości (art. 130 ust 4 p.u.)		uczestnik
+30166	Wniosek syndyka o uznanie za bezskuteczne w stosunku do masy upadłości obciążenia majątku upadłego (art. 130 p.u.)		organ
+30167	Zażalenie na postanowienie w przedmiocie uznania kar umownych za bezskuteczne w stosunku do masy upadłości (art. 130a p.u.)		uczestnik
+30168	Wniosek syndyka o zezwolenie		organ
+30169	Wniosek syndyka o wyrażenie zgody na odstąpienie od umowy wzajemnej		organ
+30170	Zażalenie na postanowienie w przedmiocie wyrażenia zgody na odstąpienie przez syndyka od umowy wzajemnej		uczestnik
+30171	Wniosek syndyka o uznanie za bezskuteczne w stosunku do masy upadłości wynagrodzenia przypadającego za okres przed dniem ogłoszenia upadłości (art. 129 ust. 1 p.u.)		organ
+30172	Wniosek syndyka o uznanie za bezskuteczne w stosunku do masy upadłości wynagrodzenia przypadającego za okres po ogłoszeniu upadłości (art. 129 ust. 1 p.u.)		organ
+30173	Zażalenie na postanowienie w przedmiocie uznania wynagrodzenia za bezskuteczne w stosunku do masy upadłości za okres przed ogłoszenia upadłości (art. 129 ust. 4 p.u.)		uczestnik
+30174	Zażalenie na postanowienie w przedmiocie uznania wynagrodzenia za bezskuteczne w stosunku do masy upadłości po ogłoszeniu upadłości (art. 129 ust. 4 p.u.)		uczestnik
+30176	Zażalenie na postanowienie w przedmiocie zobowiązania osoby trzeciej do przekazania świadczenia do masy upadłości		uczestnik
+30177	Wniosek osoby trzeciej o zwolnienie z obowiązku przekazania świadczenia do masy upadłości w zamian za zapłatę odpowiedniej kwoty pieniężnej		uczestnik
+30178	Zażalenie na postanowienie w przedmiocie zwolnienia osoby trzeciej z obowiązku przekazania świadczenia do masy upadłości w zamian za zapłatę odpowiedniej kwoty pieniężnej		uczestnik
+30179	Wniosek syndyka o wyrażenie zgody na likwidację majątku w celu pokrycia kosztów przechowania ksiąg, korespondencji lub dokumentów upadłego	01.12.2021	organ
+70005	DO_POTWIERDZENIA_Wniosek o ustalenie dnia układowego	01.12.2021	uczestnik
+70006	Wniosek o zmianę / korektę danych dłużnika dla otwartego postępowania	01.12.2021	uczestnik
+70008	Pismo inne	01.12.2021	uczestnik
+70014	Uogólnione zażalenie na postanowienie o wykonaniu układu	01.12.2021	uczestnik
+70015	Wniosek dłużnika o otwarcie postępowania o zawarcie układu na zgromadzeniu wierzycieli przez osobę fizyczną nieprowadzącą działalności gospodarczej	01.12.2021	uczestnik
+70016	Uogólnione pismo procesowe	01.12.2021	uczestnik
+70017	Uogólniona apelacja	01.12.2021	uczestnik
+70018	Uogólniony pozew uniwersalny		uczestnik
+70019RE	Wniosek o przywrócenie terminu do złożenia wniosku o ustalenie wynagrodzenia	01.12.2021	uczestnik
+70019UP	Wniosek syndyka o przywrócenie terminu do złożenia wniosku o ustalenie ostatecznego wynagrodzenia	01.12.2021	organ
+70020	Uogólniona Skarga na czynności komornika	01.12.2021	uczestnik
+70021A	Uogólniona odpowiedź na zażalenie	01.12.2021	uczestnik
+70021B	Uogólniona odpowiedź na sprzeciw	01.12.2021	uczestnik
+70021C	Uogólniona odpowiedź na apelację	01.12.2021	uczestnik
+70021D	Uogólniona odpowiedź na skargę kasacyjną	01.12.2021	uczestnik
+70021E	Uogólniona odpowiedź na wniosek	01.12.2021	uczestnik
+70022	Zażalenie na postanowienie w przedmiocie rozpoznania wniosku	01.12.2021	uczestnik
+70023	Pozew o uznanie rozdzielności majątkowej za skuteczną w stosunku do masy upadłości	01.12.2021	uczestnik
+70024	Pozew o wyłączenie składnika majątkowego z masy upadłości	01.12.2021	uczestnik
+70025	Pozew syndyka o nakazanie przekazania składników majątkowych do masy upadłości	01.12.2021	organ
+70026	Pozew zarządcy o nakazanie przekazania składników majątkowych do masy sanacyjnej	01.12.2021	organ
+70027	Pozew uniwersalny	01.12.2021	uczestnik
+70028	Zgłoszenie ustalenia dnia układowego w PZU	01.12.2021	uczestnik
+70029	Wniosek o uchylenie skutków obwieszczenia o ustaleniu dnia układowego	01.12.2021	uczestnik
+70031	Skarga na zarządzenie nadzorcy układu o odmowie dokonania obwieszczenia o ustaleniu dnia układowego	01.12.2021	uczestnik
+70033	Wniosek o dostęp do akt postępowania		uczestnik
+70034	Wniosek uczestnika postępowania o korektę lub zmianę swoich danych identyfikacyjnych.		uczestnik
+70035	Wniosek o zmianę zarządcy na podstawie art. 28 ust. 1 pkt 1 p.r.		uczestnik
+70036	Wniosek o zmianę zarządcy na podstawie art. 28 ust. 1 pkt 4 p.r.		uczestnik
+70037	Oświadczenie ws. braku przeszkód do pełnienia funkcji syndyka (art. 157A P.U.)	14.09.2022	organ
+70038	Pismo nadzorcy sądowego lub zarządcy w przedmiocie przekazania kart do głosowania i innych dokumentów dot. głosowania nad układem (art. 105 ust. 6 P.R.)	15.09.2021	organ
+70039	Zastrzeżenia co do zgodności z prawem przebiegu samodzielnego zbierania głosów (art. 216 ust. 2 P.R.)	16.09.2021	uczestnik
+70040	Stanowisko odnośnie planu spłaty	17.09.2021	uczestnik
+70041	Projekt planu spłaty	18.09.2021	organ
+70042	Wniosek o wydanie uzasadnienia orzeczenia	19.09.2021	uczestnik
+70043	Wniosek o umorzenie zobowiązań bez ustalenia planu spłaty		uczestnik
+70044	Wniosek wierzyciela o ustalenie planu spłaty		uczestnik
+70045	Wniosek o zmianę planu spłaty		uczestnik
+70046	Wniosek o uchylenie planu spłat		uczestnik
+70047	Wniosek o stwierdzenie wykonania planu spłaty		uczestnik
+70048	Sprawozdanie upadłego za ubiegły rok		organ
+70050	Wniosek syndyka o umorzenie zobowiązań bez ustalenia planu spłaty		organ
+70051	Wniosek wierzyciela o zmianę planu spłaty		uczestnik
+70052	Wniosek wierzyciela o uchylenie planu spłaty		uczestnik
+70053	Wniosek wierzyciela o ustalenie planu spłaty		uczestnik
+70054	Wniosek o stwierdzenie umorzenia zobowiązań upadłego bez ustalenia planu spłaty wierzycieli		uczestnik
+70055	Skarga uniwersalna	01.12.2021	uczestnik
+70056	Wniosek o ustanowienie pełnomocnika z urzędu oraz zwolnienie z kosztów sądowych		uczestnik
+70058	Zgłoszenie wierzytelności w upadłości banków	10.09.2024	uczestnik
+70059	Wniosek o zmianę Nadzorcy Układu w postępowaniu o zatwierdzenie układu	05.11.2024	uczestnik
+70060	Wniesienie zastrzeżeń do spisu wierzytelności – art. 90 p.r. – PPU	13.12.2024	uczestnik
+70061	Sprzeciw dłużnika, gdy spis nie jest zgodny z jego oświadczeniem lub nie złożył oświadczenia z przyczyn od niego niezależnych	13.12.2024	uczestnik
+70062	Wniosek o zmianę spisu wierzytelności na podstawie art. 101 ust. 2 PR	13.12.2024	uczestnik
+70300	Wniosek o zatwierdzenie układu konsumenckiego/umorzenie postępowania	24.01.2025	uczestnik
+70301	Wniosek syndyka o zaliczkę na koszty postępowania	24.01.2025	organ
+70302	Wniosek o odmowę ustalenia planu spłaty wierzycieli albo umorzenia zobowiązań upadłego bez ustalania planu spłaty art. 491 (14a) ust. 1 PU	24.01.2025	uczestnik
+70063	Karta do głosowania (nowy formularz, zastępuje 20037)	wyd. 1.20.001	uczestnik
+70070	Zgłoszenie wierzytelności w upadłości domów maklerskich	wyd. 1.23.001	uczestnik

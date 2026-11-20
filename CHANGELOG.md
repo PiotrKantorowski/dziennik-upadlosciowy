@@ -1,5 +1,21 @@
 # Changelog
 
+## Pisma KRZ 2026-11-20 — prototyp zakładki i wtyczka 1.10.0
+
+- NOWE: zakładka „Pisma KRZ” (`/krz`) obok „Raportu dziennego”. Pisma robocze
+  wzoru 30048 (zgłoszenie wierzytelności w upadłości), walidacja według art. 240
+  p.u. i sum kontrolnych (PESEL, NIP, IBAN), karta wypełnienia w kolejności metryk
+  formularza PUZ, podsumowanie kwot do porównania z sekcją VI KRZ.
+- NOWE: katalog 367 wzorów pism KRZ (`/krz/wzory`) z zestawienia wzorów KRZ od
+  06.05.2025 i opisów zmian 1.20–1.23 (70063, 70070).
+- NOWE: API tylko do odczytu dla wtyczki `/api/krz/pisma[/{id}]` (token `X-KRZ-Token`).
+- WTYCZKA 1.10.0: rozpoznaje otwarty wzór i jego wersję w PUZ (`content_puz.js`)
+  i pokazuje w popupie, czy zgadza się z pismem z DUiR. Niczego nie wpisuje
+  i nie klika — wypełnianie pól po zmapowaniu formularza na żywym portalu.
+- ARCHITEKTURA: moduł w `app/KrzPisma/` nie zależy od monitoringu (test tego
+  pilnuje), żeby można go było przenieść do LexPilota. Szczegóły: `app/KrzPisma/README.md`.
+- BAZA: tabela `krz_pisma` tworzy się sama przy pierwszym wejściu (bez migracji ręcznej).
+
 ## KRZ 2026-10-27 — to samo postępowanie wpadało do bazy jako nowe zdarzenie
 
 - OBJAW (feedback: „wyszukiwanie, w szczególności w KRZ, wychodzi gorzej"):

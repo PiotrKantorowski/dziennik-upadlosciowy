@@ -6,6 +6,9 @@
 // od content-scriptu przechwycone wyniki i odesłać je do programu. Bez
 // headless, bez podszywania — to realna sesja.
 
+// Pisma KRZ (prototyp) trzymamy w osobnym pliku — moduł do przeniesienia do LexPilota.
+importScripts("pisma_bg.js");
+
 const DEFAULTS = { appUrl: "http://127.0.0.1:8080", token: "", scheduleHour: 7, scheduleMinute: 0, autoRun: true, instanceLabel: "", backgroundWindow: true };
 // Ile kart naraz w JEDNEJ przeglądarce. COFNIĘTE DO 1 (2026-07-13): po włączeniu
 // równoległości (2) przebiegi KRZ przestały się KOŃCZYĆ — wieloramkowy, wrażliwy na
@@ -985,6 +988,7 @@ chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
       if (msg.type === "krzTrustedTabClick") { await handleTrustedKrzTabClick(msg, sender, sendResponse); return; }
       if (msg.type === "runNow") { sendResponse(await runAll()); return; }
       if (msg.type === "ping") { sendResponse(await ping()); return; }
+      if (String(msg.type || "").startsWith("pisma")) { sendResponse(await handlePismaMessage(msg)); return; }
       if (msg.type === "getState") {
         const cfg = await getConfig();
         const { lastRun } = await chrome.storage.local.get("lastRun");

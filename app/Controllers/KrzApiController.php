@@ -7,12 +7,30 @@ use Duir\Repository;
 use Duir\Services\CheckService;
 use Duir\Services\ReportService;
 use Duir\Support\Http;
+use Duir\KrzPisma\{KrzForms,DraftStore};
 
 final class KrzApiController
 {
     private const MIN_PLUGIN_VERSION = '1.8.6';
 
-    public function __construct(private Repository $repo, private CheckService $check, private ?ReportService $reports = null) {}
+    public function __construct(private Repository $repo, private CheckService $check, private ?ReportService $reports = null, private ?DraftStore $pisma = null) {}
+
+    // Pisma KRZ dla wtyczki: lista pism roboczych i karta jednego pisma
+    // (ten sam kontrakt co widok „Karta wypełnienia"). Tylko odczyt.
+    public function pismaList(): void
+    {
+        $this->guard();
+        Http::json(['ok'=>true, 'items'=>$this->pisma?->all() ?? []]);
+    }
+
+    public function pismo(int $id): void
+    {
+        $this->guard();
+        $row = $this->pisma?->find($id);
+        if (!$row) Http::json(['ok'=>false, 'error'=>'not found'], 404);
+        Http::json(['ok'=>true, 'id'=>(int)$row['id'], 'wzor'=>$row['wzor'], 'tytul'=>$row['tytul'],
+            'karta'=>KrzForms::card($row['dane']), 'braki'=>KrzForms::validate($row['dane'])]);
+    }
 
     // Automatyczna wysyłka raportu dziennego: wtyczka melduje się tu cyklicznie
     // (ping co 3 min, runFinished po przebiegu), więc to naturalny "zegar" —

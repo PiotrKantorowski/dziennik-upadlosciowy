@@ -105,6 +105,8 @@ async function testBackgroundRegistersJobBeforeNavigation() {
     clearTimeout() {},
     setInterval: () => ({ interval: true }),
     clearInterval() {},
+    // Service worker MV3 ładuje pisma_bg.js przez importScripts — w teście wczytujemy prawdziwy plik.
+    importScripts: (...files) => files.forEach((f) => vm.runInContext(fs.readFileSync(path.join(extensionDir, f), "utf8"), context, { filename: f })),
   });
   vm.runInContext(source, context, { filename: "background.js" });
 
