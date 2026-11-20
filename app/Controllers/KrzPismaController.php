@@ -18,7 +18,7 @@ final class KrzPismaController extends BaseController
         echo '<section class="card"><h2>Pisma w opracowaniu</h2>'
             .'<p class="muted">Prototyp: przygotowanie danych i karty wypełnienia formularza KRZ. Pismo podpisuje i wysyła pełnomocnik w Portalu Użytkowników Zarejestrowanych KRZ.</p>'
             .'<div class="actions"><a class="btn primary" href="/krz/pisma/nowe">Nowe zgłoszenie wierzytelności (30048)</a><a class="btn" href="/krz/wzory">Katalog wzorów KRZ</a></div>';
-        $rows = $this->store->all();
+        $rows = $this->store->all($this->owner());
         if (!$rows) { echo '<p class="muted">Nie ma jeszcze pism roboczych.</p></section>'; $this->footer(); return; }
         echo '<table><tr><th>Pismo</th><th>Wzór</th><th>Zmienione</th><th>Akcje</th></tr>';
         foreach ($rows as $r) {
@@ -59,7 +59,7 @@ final class KrzPismaController extends BaseController
 
     public function form(?int $id): void
     {
-        $row = $id ? $this->store->find($id) : null;
+        $row = $id ? $this->store->find($id, $this->owner()) : null;
         if ($id && !$row) { http_response_code(404); echo '404'; return; }
         $d = $row['dane'] ?? KrzForms::fromPost([]);
         $this->header($id ? 'Zgłoszenie wierzytelności — edycja' : 'Nowe zgłoszenie wierzytelności');
@@ -122,18 +122,18 @@ final class KrzPismaController extends BaseController
         $this->footer();
     }
 
-    public function save(?int $userId): void
+    public function save(): void
     {
         $data = KrzForms::fromPost(is_array($_POST['d'] ?? null) ? $_POST['d'] : []);
         $id = (int)($_POST['id'] ?? 0);
-        if ($id && !$this->store->find($id)) { http_response_code(404); echo '404'; return; }
-        $id = $this->store->save($id ?: null, self::WZOR, $data, $userId);
+        $id = $this->store->save($id ?: null, self::WZOR, $data, $this->owner());
+        if ($id === null) { http_response_code(404); echo '404'; return; }
         Http::redirect('/krz/pisma/'.$id.'?saved=1');
     }
 
     public function card(int $id): void
     {
-        $row = $this->store->find($id);
+        $row = $this->store->find($id, $this->owner());
         if (!$row) { http_response_code(404); echo '404'; return; }
         $d = $row['dane'];
         $this->header('Karta wypełnienia — wzór '.$row['wzor']);
@@ -159,8 +159,32 @@ final class KrzPismaController extends BaseController
 
     public function delete(int $id): void
     {
-        $this->store->delete($id);
+        if (!$this->store->delete($id, $this->owner())) { http_response_code(404); echo '404'; return; }
         Http::redirect('/krz?deleted=1');
+    }
+
+    // Dla wtyczki: JSON w sesji zalogowanego użytkownika (cookie DUiR w tej samej
+    // przeglądarce). Bez wspólnego tokenu — dane pisma trafiają tylko do przeglądarki
+    // właściciela, a serwer sprawdza właściciela przy każdym odczycie.
+    public function listJson(): void
+    {
+        Http::json(['ok'=>true, 'items'=>$this->store->all($this->owner())]);
+    }
+
+    public function cardJson(int $id): void
+    {
+        $row = $this->store->find($id, $this->owner());
+        if (!$row) Http::json(['ok'=>false, 'error'=>'not found'], 404);
+        Http::json(['ok'=>true, 'id'=>(int)$row['id'], 'wzor'=>$row['wzor'], 'tytul'=>$row['tytul'],
+            'karta'=>KrzForms::card($row['dane']), 'braki'=>KrzForms::validate($row['dane'])]);
+    }
+
+    /** Konto zalogowanego użytkownika; trasy /krz* są za bramką logowania, więc 0 = błąd konfiguracji. */
+    private function owner(): int
+    {
+        $id = (int)($_SESSION['user_id'] ?? 0);
+        if ($id <= 0) { http_response_code(401); exit('Wymagane logowanie.'); }
+        return $id;
     }
 
     private function validationBox(array $v): string

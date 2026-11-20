@@ -8,7 +8,9 @@
   formularza PUZ, podsumowanie kwot do porównania z sekcją VI KRZ.
 - NOWE: katalog 367 wzorów pism KRZ (`/krz/wzory`) z zestawienia wzorów KRZ od
   06.05.2025 i opisów zmian 1.20–1.23 (70063, 70070).
-- NOWE: API tylko do odczytu dla wtyczki `/api/krz/pisma[/{id}]` (token `X-KRZ-Token`).
+- DOSTĘP: pismo należy do konta, które je utworzyło; inni użytkownicy go nie widzą
+  i nie mogą zmienić ani usunąć. Wtyczka pobiera pisma w sesji DUiR zalogowanej
+  w tej samej przeglądarce (`/krz/pisma.json`), bez wspólnego tokenu wtyczki.
 - WTYCZKA 1.10.0: rozpoznaje otwarty wzór i jego wersję w PUZ (`content_puz.js`)
   i pokazuje w popupie, czy zgadza się z pismem z DUiR. Niczego nie wpisuje
   i nie klika — wypełnianie pól po zmapowaniu formularza na żywym portalu.

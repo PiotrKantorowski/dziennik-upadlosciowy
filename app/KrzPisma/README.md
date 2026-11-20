@@ -12,7 +12,7 @@ Moduł niczego nie składa. Pismo podpisuje i wysyła pełnomocnik w KRZ.
 | `DraftStore.php` | zapis pism roboczych w tabeli `krz_pisma` (tworzy się sama) | PDO MySQL/MariaDB |
 | `wzory.tsv` | 367 wzorów KRZ: kod, tytuł, data, kto składa (heurystyka) | — |
 
-Warstwa widoku DUiR: `app/Controllers/KrzPismaController.php` (zakładka „Pisma KRZ”), API dla wtyczki: `KrzApiController::pismaList()` i `pismo()` pod `/api/krz/pisma[/{id}]`, token `X-KRZ-Token`.
+Warstwa widoku DUiR: `app/Controllers/KrzPismaController.php` (zakładka „Pisma KRZ”). Pisma są przypisane do konta (`utworzyl`); wtyczka pobiera je w sesji użytkownika: `GET /krz/pisma.json` i `GET /krz/pisma/{id}.json` (bez wspólnego tokenu).
 
 Wtyczka: `chrome_extension/pisma_bg.js` (service worker, przez `importScripts`), `content_puz.js` (rozpoznanie wzoru i wersji w PUZ), `popup_pisma.js` (sekcja popupu). Wtyczka na razie nic nie wpisuje.
 

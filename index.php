@@ -36,7 +36,7 @@ $check = new CheckService($repo, new KrsClient(), $risk);
 $reports = new ReportService($repo);
 $subjects = new SubjectController($repo,$check,$reports);
 $krzPismaStore = new \Duir\KrzPisma\DraftStore($repo->pdo());
-$krz = new KrzApiController($repo,$check,$reports,$krzPismaStore);
+$krz = new KrzApiController($repo,$check,$reports);
 $krzPisma = new KrzPismaController($krzPismaStore, __DIR__.'/app/KrzPisma/wzory.tsv');
 $msigApi = new MsigApiController($repo,$check,$reports);
 $reportCtl = new ReportController($repo,$reports);
@@ -75,8 +75,6 @@ try {
         if ($path==='/api/krz/subjects') { $krz->subjects(); return; }
         if ($path==='/api/krz/ingest' && $method==='POST') { $krz->ingest(); return; }
         if ($path==='/api/krz/run-finished' && $method==='POST') { $krz->runFinished(); return; }
-        if ($path==='/api/krz/pisma' && $method==='GET') { $krz->pismaList(); return; }
-        if (preg_match('#^/api/krz/pisma/(\d+)$#',$path,$m) && $method==='GET') { $krz->pismo((int)$m[1]); return; }
         if ($path==='/api/msig/ping') { $msigApi->ping(); return; }
         if ($path==='/api/msig/worklist') { $msigApi->worklist(); return; }
         if ($path==='/api/msig/ingest' && $method==='POST') { $msigApi->ingest(); return; }
@@ -145,8 +143,10 @@ try {
     // Pisma KRZ (prototyp, moduł app/KrzPisma) — dla każdego zalogowanego.
     if ($path==='/krz' && $method==='GET') { $krzPisma->index(); return; }
     if ($path==='/krz/wzory' && $method==='GET') { $krzPisma->catalog(); return; }
+    if ($path==='/krz/pisma.json' && $method==='GET') { $krzPisma->listJson(); return; }
+    if (preg_match('#^/krz/pisma/(\d+)\.json$#',$path,$m) && $method==='GET') { $krzPisma->cardJson((int)$m[1]); return; }
     if ($path==='/krz/pisma/nowe' && $method==='GET') { $krzPisma->form(null); return; }
-    if ($path==='/krz/pisma/zapisz' && $method==='POST') { $krzPisma->save((int)($_SESSION['user_id'] ?? 0) ?: null); return; }
+    if ($path==='/krz/pisma/zapisz' && $method==='POST') { $krzPisma->save(); return; }
     if (preg_match('#^/krz/pisma/(\d+)$#',$path,$m) && $method==='GET') { $krzPisma->form((int)$m[1]); return; }
     if (preg_match('#^/krz/pisma/(\d+)/karta$#',$path,$m) && $method==='GET') { $krzPisma->card((int)$m[1]); return; }
     if (preg_match('#^/krz/pisma/(\d+)/usun$#',$path,$m) && $method==='POST') { $krzPisma->delete((int)$m[1]); return; }

@@ -86,11 +86,15 @@ function test_krz_pisma_card_follows_krz_order(): void {
 function test_krz_pisma_is_wired_and_read_only(): void {
     $root = dirname(__DIR__);
     $index = file_get_contents($root.'/index.php');
-    foreach (["'/krz'", "'/krz/wzory'", "'/krz/pisma/zapisz' && \$method==='POST'", "'/api/krz/pisma'"] as $route) assert_true(str_contains($index, $route), "brak trasy $route");
+    foreach (["'/krz'", "'/krz/wzory'", "'/krz/pisma/zapisz' && \$method==='POST'", "'/krz/pisma.json'"] as $route) assert_true(str_contains($index, $route), "brak trasy $route");
     assert_true(str_contains(file_get_contents($root.'/app/Controllers/BaseController.php'), 'href="/krz"'), 'zakładka w menu');
-    $api = file_get_contents($root.'/app/Controllers/KrzApiController.php');
-    $fn = substr($api, strpos($api, 'function pismaList'), 600);
-    assert_eq(2, substr_count($fn, '$this->guard();'), 'API pism wymaga tokenu wtyczki');
+    // Pisma nie są dostępne wspólnym tokenem wtyczki — tylko w sesji zalogowanego właściciela.
+    assert_true(!str_contains($index, '/api/krz/pisma'), 'pisma nie mogą wisieć na API z tokenem wtyczki');
+    assert_true(!str_contains(file_get_contents($root.'/app/Controllers/KrzApiController.php'), 'KrzPisma'), 'API monitoringu nie dotyka pism');
+    $sessionGate = strpos($index, "Wymagane logowanie.");
+    assert_true($sessionGate !== false && $sessionGate < strpos($index, "'/krz/pisma.json'"), 'trasy pism za bramką logowania');
+    $bgPisma = file_get_contents($root.'/chrome_extension/pisma_bg.js');
+    assert_true(str_contains($bgPisma, 'credentials: "include"') && !str_contains($bgPisma, 'appFetch('), 'wtyczka pobiera pisma w sesji, nie tokenem');
     // Moduł ma się dać przenieść do LexPilota: zero zależności od monitoringu DUiR.
     foreach (glob($root.'/app/KrzPisma/*.php') as $f) {
         $src = file_get_contents($f);
@@ -104,4 +108,24 @@ function test_krz_pisma_is_wired_and_read_only(): void {
     // Prototyp niczego nie wpisuje i nie klika w KRZ.
     $puz = file_get_contents($root.'/chrome_extension/content_puz.js');
     foreach (['.click(', 'dispatchEvent', '.value =', 'submit'] as $forbidden) assert_true(!str_contains($puz, $forbidden), "content_puz.js: $forbidden");
+}
+
+// Izolacja pism między kontami — na SQLite w pamięci (tabelę zakładamy ręcznie, bo DDL jest pod MySQL).
+function test_krz_pisma_are_scoped_to_owner(): void {
+    $pdo = new PDO('sqlite::memory:');
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $pdo->sqliteCreateFunction('NOW', fn() => date('Y-m-d H:i:s'), 0);
+    $pdo->exec('CREATE TABLE krz_pisma (id INTEGER PRIMARY KEY AUTOINCREMENT, wzor TEXT, tytul TEXT, dane_json TEXT, utworzyl INTEGER NOT NULL, created_at TEXT, updated_at TEXT)');
+    $ready = new ReflectionProperty(\Duir\KrzPisma\DraftStore::class, 'ready');
+    $ready->setValue(null, true);
+    $store = new \Duir\KrzPisma\DraftStore($pdo);
+    $a = $store->save(null, '30048', krz_pisma_sample(), 1);
+    $b = $store->save(null, '30048', krz_pisma_sample(), 2);
+    assert_eq(1, count($store->all(1)), 'użytkownik 1 widzi tylko swoje pismo');
+    assert_true($store->find($b, 1) === null, 'cudze pismo niewidoczne');
+    assert_true($store->save($b, '30048', KrzForms::fromPost([]), 1) === null, 'cudzego pisma nie da się nadpisać');
+    assert_true(!$store->delete($b, 1), 'cudzego pisma nie da się usunąć');
+    assert_true($store->find($b, 2) !== null && $store->find($b, 2)['dane']['sygnatura'] === 'RZ1Z/GUp/12/2026', 'pismo użytkownika 2 nietknięte');
+    assert_true($store->delete($a, 1), 'właściciel usuwa swoje pismo');
+    $ready->setValue(null, false);
 }
