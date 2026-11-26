@@ -146,3 +146,27 @@ function test_identifier_glued_by_space_to_neighbouring_number_still_matches(): 
     assert_true(!$r->textMatchesSubject('ul. Robotnicza 40 0000891019', ['name'=>'X', 'krs'=>'4000008910']), 'sklejenie dwóch liczb nie jest identyfikatorem');
     assert_true($r->textMatchesSubject('NIP 868 198 06 17', ['name'=>'X', 'nip'=>'8681980617']), 'NIP ze spacjami nadal pasuje');
 }
+
+/** 26.11.2026: CW CAPITAL - 3 umorzone egzekucje w KRZ, zapisana 1. Pierwsza pozycja zamykała zadanie, kolejne dostawały invalid_task_claim. */
+function test_next_items_of_same_capture_are_accepted_only_with_same_claim(): void {
+    [$repo, $pdo] = capture_guard_test_repository();
+    $pdo->exec("INSERT INTO subjects (id,name,krs,type,service_mode) VALUES (2,'INNA SPÓŁKA','0000999999','company','office_monitoring')");
+    $pdo->exec("INSERT INTO krz_tasks (id,subject_id,status,claimed_by) VALUES (30,1,'running','claim-a'),(31,1,'running','claim-b')");
+    assert_true($repo->markKrzTaskDone(1, 'KRZ — 1 postępowanie', ['n'=>1], 30), 'pierwsza pozycja zamyka zadanie');
+    assert_eq((string)$pdo->query('SELECT status FROM krz_tasks WHERE id=30')->fetchColumn(), 'done');
+    assert_true(!$repo->taskClaimIsValid('KRZ', 30, 1, 'claim-a'), 'zamknięte zadanie nie jest już dzierżawą');
+    assert_true($repo->taskClaimJustCaptured('KRZ', 30, 1, 'claim-a'), 'kolejna pozycja tego samego przechwycenia');
+    assert_true(!$repo->taskClaimJustCaptured('KRZ', 30, 1, 'claim-b'), 'inny komputer');
+    assert_true(!$repo->taskClaimJustCaptured('KRZ', 30, 2, 'claim-a'), 'inny podmiot');
+    assert_true(!$repo->taskClaimJustCaptured('KRZ', 31, 1, 'claim-b'), 'otwarte zadanie idzie zwykłą ścieżką');
+    assert_true(!$repo->taskClaimJustCaptured('MSIG', 30, 1, 'claim-a'), 'inna kolejka');
+    assert_true($repo->markKrzTaskDone(1, 'KRZ — kolejne postępowanie', ['n'=>2], 30), 'kontrola kolejnej pozycji się zapisuje');
+    assert_eq((int)$pdo->query("SELECT COUNT(*) FROM source_checks WHERE source='KRZ' AND status='success'")->fetchColumn(), 2);
+    $pdo->exec("UPDATE krz_tasks SET finished_at='2000-01-01 00:00:00' WHERE id=30");
+    assert_true(!$repo->taskClaimJustCaptured('KRZ', 30, 1, 'claim-a'), 'spóźniony wynik po dzierżawie');
+    $pdo->exec("UPDATE krz_tasks SET status='error', finished_at=NOW() WHERE id=30");
+    assert_true(!$repo->taskClaimJustCaptured('KRZ', 30, 1, 'claim-a'), 'zadanie zakończone błędem nie przyjmuje pozycji');
+    assert_true(!$repo->markKrzTaskDone(2, 'obcy', null, 30), 'cudze zadanie nie zapisuje kontroli');
+    $src = file_get_contents(dirname(__DIR__).'/app/Services/CheckService.php');
+    assert_true(str_contains($src, "taskClaimJustCaptured('KRZ', \$taskId, \$subjectId, \$claimToken)"), 'ingestKrz przyjmuje kolejne pozycje przechwycenia');
+}

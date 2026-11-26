@@ -125,7 +125,10 @@ final class CheckService
         if (!$subjectId || !$subject) { return ['ok'=>false,'status'=>'error','reason'=>'no_subject','events'=>0]; }
         $taskId = (int)($meta['task_id'] ?? 0) ?: null;
         $claimToken = trim((string)($meta['claim_token'] ?? $meta['claimToken'] ?? ''));
-        $taskValid = $taskId !== null && $this->repo->taskClaimIsValid('KRZ', $taskId, $subjectId, $claimToken);
+        // Druga i dalsza pozycja tego samego przechwycenia trafia już na zamknięte zadanie (pierwsza je
+        // zamyka) - przyjmujemy ją z tym samym claim_token (26.11.2026, CW CAPITAL).
+        $taskValid = $taskId !== null && ($this->repo->taskClaimIsValid('KRZ', $taskId, $subjectId, $claimToken)
+            || $this->repo->taskClaimJustCaptured('KRZ', $taskId, $subjectId, $claimToken));
         $hasTaskContext = $taskId !== null || $claimToken !== '';
         if ($hasTaskContext && !$taskValid) {
             // Nie oznaczamy żadnego zadania błędem: przesłany task_id należy do

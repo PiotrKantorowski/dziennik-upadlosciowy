@@ -767,7 +767,7 @@ final class Repository
      * Sam subject_id przesłany przez wtyczkę nie jest dowodem powiązania: karta może
      * zostać przejęta przez inny przebieg albo wysłać spóźniony komunikat.
      */
-    public function taskBelongsToSubject(string $source, int $taskId, int $subjectId): bool
+    public function taskBelongsToSubject(string $source, int $taskId, int $subjectId, ?string $status = null): bool
     {
         if ($taskId <= 0 || $subjectId <= 0) return false;
         $table = match (strtoupper($source)) {
@@ -776,8 +776,11 @@ final class Repository
             default => null,
         };
         if ($table === null) return false;
-        $st = $this->pdo->prepare("SELECT 1 FROM $table WHERE id=? AND subject_id=? AND status IN ('pending','running') LIMIT 1");
-        $st->execute([$taskId, $subjectId]);
+        // Domyślnie tylko otwarte zadanie; $status='done' - wyłącznie dla kolejnej pozycji przechwycenia.
+        $st = $status === null
+            ? $this->pdo->prepare("SELECT 1 FROM $table WHERE id=? AND subject_id=? AND status IN ('pending','running') LIMIT 1")
+            : $this->pdo->prepare("SELECT 1 FROM $table WHERE id=? AND subject_id=? AND status=? LIMIT 1");
+        $st->execute($status === null ? [$taskId, $subjectId] : [$taskId, $subjectId, $status]);
         return (bool)$st->fetchColumn();
     }
 
@@ -800,11 +803,39 @@ final class Repository
         return (bool)$st->fetchColumn();
     }
 
+    /**
+     * Kolejna pozycja TEGO SAMEGO przechwycenia (26.11.2026, CW CAPITAL: 3 umorzone egzekucje, zapisana 1).
+     * Wtyczka wysyła pozycje KRZ pojedynczo (flush - ramka portalu potrafi zginąć w trakcie), a pierwsza
+     * zapisana pozycja zamyka zadanie. Dalsze pozycje przyjmujemy tylko z tym samym tajnym claim_token,
+     * dla tego samego podmiotu i najwyżej w czasie dzierżawy od zamknięcia - obcy komputer i spóźniony
+     * wynik dalej są odrzucane.
+     */
+    public function taskClaimJustCaptured(string $source, int $taskId, int $subjectId, string $claimToken): bool
+    {
+        $claimToken = trim($claimToken);
+        if ($taskId <= 0 || $subjectId <= 0 || $claimToken === '') return false;
+        $table = match (strtoupper($source)) {
+            'KRZ' => 'krz_tasks',
+            'MSIG' => 'msig_tasks',
+            default => null,
+        };
+        if ($table === null) return false;
+        // Czas bazy (nie PHP) - finished_at ustawia NOW() bazy; strefy obu mogą się różnić.
+        $now = strtotime((string)$this->pdo->query('SELECT NOW()')->fetchColumn());
+        $cutoff = date('Y-m-d H:i:s', $now - self::TASK_LEASE_MINUTES * 60);
+        $st = $this->pdo->prepare("SELECT 1 FROM $table WHERE id=? AND subject_id=? AND claimed_by=? AND status='done' AND finished_at >= ? LIMIT 1");
+        $st->execute([$taskId, $subjectId, $claimToken, $cutoff]);
+        return (bool)$st->fetchColumn();
+    }
+
     public function markKrzTaskDone(int $subjectId, ?string $message = null, ?array $raw = null, ?int $taskId = null): bool
     {
         // Brak taskId oznacza świadomy, ręczny import z przycisku w portalu. Taki
         // import zapisuje kontrolę, ale nigdy nie zamyka zadań kolejki w tle.
-        if ($taskId !== null && !$this->updateKrzTask($subjectId, 'done', null, $raw, $taskId)) return false;
+        // Zadanie już zamknięte przez wcześniejszą pozycję tego przechwycenia (taskClaimJustCaptured
+        // sprawdził claim w CheckService) - kontrola zapisuje się, zadania nie ruszamy.
+        if ($taskId !== null && !$this->updateKrzTask($subjectId, 'done', null, $raw, $taskId)
+            && !$this->taskBelongsToSubject('KRZ', $taskId, $subjectId, 'done')) return false;
         $this->addCheck($subjectId, 'KRZ', 'success', $message ?: 'KRZ sprawdzony przez wtyczkę.', $raw);
         $this->updateSubjectCheck($subjectId, 'krz_done');
         return true;
