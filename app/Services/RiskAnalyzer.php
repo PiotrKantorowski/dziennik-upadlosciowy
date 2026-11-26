@@ -36,7 +36,13 @@ final class RiskAnalyzer
         // tylko samodzielny token o długości właściwej dla KRS/NIP/REGON/PESEL.
         $tokens = [];
         if (preg_match_all('/(?<!\d)\d[\d\s-]{4,18}\d(?!\d)/u', $text, $matches)) {
-            foreach ($matches[0] as $token) {
+            // Cały ciąg i jego części rozdzielone spacją: separator spacji (NIP „868 198 06 17") skleja też
+            // sąsiednie liczby - „ul. Robotnicza 40 0000891019" (CW CAPITAL, 26.11.2026).
+            $czesci = [];
+            foreach ($matches[0] as $m) {
+                array_push($czesci, $m, ...(preg_split('/\s+/u', trim($m)) ?: []));
+            }
+            foreach (array_unique($czesci) as $token) {
                 $digits = Normalize::digits($token);
                 if (in_array(strlen($digits), [9, 10, 11, 14], true)) $tokens[$digits] = true;
                 // Portal KRZ pokazuje KRS także bez zer wiodących (888175 zamiast 0000888175),
