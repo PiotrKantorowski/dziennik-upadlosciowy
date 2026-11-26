@@ -922,7 +922,9 @@
     if (!text || !query) return false;
     const queryDigits = query.replace(/\D/g, "");
     if (queryDigits.length >= 6) {
-      const ids = text.match(/(?<!\d)\d[\d\s-]{4,18}\d(?!\d)/g) || [];
+      // Separator spacji (NIP „868 198 06 17") skleja też sąsiednie liczby: „ul. Robotnicza 40 0000891019"
+      // (CW CAPITAL, 26.11.2026). Sprawdzamy więc cały ciąg ORAZ jego części rozdzielone spacją.
+      const ids = (text.match(/(?<!\d)\d[\d\s-]{4,18}\d(?!\d)/g) || []).flatMap((v) => [v, ...v.split(/\s+/)]);
       // portal KRZ może wyświetlać KRS bez zer wiodących (888175 zamiast 0000888175)
       const stripped = queryDigits.replace(/^0+/, "");
       return ids.some((value) => {

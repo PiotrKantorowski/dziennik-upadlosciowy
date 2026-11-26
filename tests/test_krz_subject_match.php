@@ -134,3 +134,15 @@ function test_backend_contract_validates_each_item_even_when_extension_says_trus
     assert_true(str_contains($src, "taskClaimIsValid('KRZ'"));
     assert_true(str_contains($src, "taskClaimIsValid('MSIG'"));
 }
+
+/** 26.11.2026: CW CAPITAL - adres kończy się liczbą („Robotnicza 40”) tuż przed KRS i NIP w wierszu wyników KRZ. */
+function test_identifier_glued_by_space_to_neighbouring_number_still_matches(): void {
+    $r = new RiskAnalyzer();
+    $row = 'CW CAPITAL Spółka z ograniczoną odpowiedzialnością 53-608 Wrocław, ul. Robotnicza 40 0000891019 8681980617 Umorzone postępowania egzekucyjne';
+    $s = ['name'=>'Inna nazwa skrócona', 'krs'=>'0000891019', 'nip'=>'8681980617'];
+    assert_true($r->textMatchesSubject($row, ['name'=>'X', 'krs'=>'0000891019']), 'KRS obok numeru domu musi pasować');
+    assert_true($r->textMatchesSubject($row, ['name'=>'X', 'nip'=>'8681980617']), 'NIP po KRS musi pasować');
+    assert_true(!$r->textMatchesSubject($row, ['name'=>'X', 'krs'=>'0000400000']), 'z części nie wolno budować nowych identyfikatorów');
+    assert_true(!$r->textMatchesSubject('ul. Robotnicza 40 0000891019', ['name'=>'X', 'krs'=>'4000008910']), 'sklejenie dwóch liczb nie jest identyfikatorem');
+    assert_true($r->textMatchesSubject('NIP 868 198 06 17', ['name'=>'X', 'nip'=>'8681980617']), 'NIP ze spacjami nadal pasuje');
+}

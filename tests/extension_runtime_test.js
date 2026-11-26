@@ -243,10 +243,35 @@ async function testContentRetriesReadyAndRunsJobOnce() {
   assert.strictEqual(jobDoneMessages[0].type, "krzJobDone");
 }
 
+// 26.11.2026 (CW CAPITAL): adres „ul. Robotnicza 40” tuż przed KRS w wierszu wyników -
+// wyrażenie z separatorem spacji sklejało „40 0000891019” i bramka odrzucała właściwy wynik.
+function loadTextMatchesQuery() {
+  const source = fs.readFileSync(path.join(extensionDir, "content_krz.js"), "utf8");
+  const start = source.indexOf("function textMatchesQuery");
+  let depth = 0, end = start;
+  for (let i = source.indexOf("{", start); i < source.length; i++) {
+    if (source[i] === "{") depth++;
+    if (source[i] === "}" && --depth === 0) { end = i + 1; break; }
+  }
+  return new Function("norm", source.slice(start, end) + "; return textMatchesQuery;")((t) => String(t || "").toLowerCase());
+}
+
+async function testIdentifierNextToHouseNumberMatches() {
+  const match = loadTextMatchesQuery();
+  const row = "CW CAPITAL Spółka z ograniczoną odpowiedzialnością 53-608 Wrocław, ul. Robotnicza 40 0000891019 8681980617";
+  assert.ok(match(row, "0000891019"), "KRS obok numeru domu musi pasować");
+  assert.ok(match(row, "8681980617"), "NIP po KRS musi pasować");
+  assert.ok(match("KRS 891019 w wierszu", "0000891019"), "KRS bez zer wiodących nadal pasuje");
+  assert.ok(match("NIP 868 198 06 17", "8681980617"), "NIP ze spacjami nadal pasuje");
+  assert.ok(!match(row, "0000400000"), "z części nie wolno budować innego identyfikatora");
+  assert.ok(!match("ul. Robotnicza 40 0000891019", "4000008910"), "sklejenie liczb nie jest identyfikatorem");
+}
+
 (async () => {
   const tests = [
     ["background registers job before navigation", testBackgroundRegistersJobBeforeNavigation],
     ["content retries ready and runs job once", testContentRetriesReadyAndRunsJobOnce],
+    ["identifier next to house number matches", testIdentifierNextToHouseNumberMatches],
   ];
   for (const [name, test] of tests) {
     await test();

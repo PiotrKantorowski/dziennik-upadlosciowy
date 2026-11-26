@@ -410,8 +410,11 @@ function matchSubject(text, items) {
   const re = /(?<!\d)[\d][\d\s-]{7,18}[\d](?!\d)/g;
   let m;
   while ((m = re.exec(raw)) !== null) {
-    const cleaned = m[0].replace(/[^0-9]/g, "");
-    if (ID_LENGTHS.has(cleaned.length)) foundIds.add(cleaned);
+    // Cały ciąg i jego części rozdzielone spacją - „ul. Robotnicza 40 0000891019" (26.11.2026).
+    for (const part of [m[0], ...m[0].split(/\s+/)]) {
+      const cleaned = part.replace(/[^0-9]/g, "");
+      if (ID_LENGTHS.has(cleaned.length)) foundIds.add(cleaned);
+    }
   }
   for (const it of items) {
     for (const id of [it.krs, it.nip, it.regon, it.pesel]) {

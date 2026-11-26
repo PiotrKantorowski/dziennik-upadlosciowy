@@ -170,7 +170,8 @@ function test_extension_identifies_safe_protocol_version(): void {
     // 1.9.0 = osobne okno robocze bez fokusu — przebieg nie odbiera użytkownikowi klawiatury.
     // 1.9.1 = wynik każdego zadania zgłaszany od razu, przebieg nie kończy się na
     // ponownie wydanym zadaniu, harmonogram 7:00 z nadrabianiem przez poll.
-    assert_eq('1.9.3', $manifest['version'] ?? null, 'wydanie musi rozpoznawać wynik KRZ także w układzie kartowym');
+    // 1.9.4 = identyfikator obok numeru domu w wierszu wyników („Robotnicza 40 0000891019”) nie jest sklejany.
+    assert_eq('1.9.4', $manifest['version'] ?? null, 'wydanie musi rozpoznawać KRS obok liczby z adresu');
     $gate = substr(file_get_contents(dirname(__DIR__).'/chrome_extension/content_krz.js'), 0);
     $gateFn = substr($gate, strpos($gate, 'function resultRowsMatchCurrentQuery'), 900);
     assert_true(str_contains($gateFn, 'resultsSectionText()') && str_contains($gateFn, 'liczba podmiotow: [1-9]'), 'zapasowa bramka musi czytać tylko sekcję wyników z niezerową liczbą podmiotów');
